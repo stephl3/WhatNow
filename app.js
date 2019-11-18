@@ -13,14 +13,16 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
-app.use(passport.initialize());
-require("./config/passport")(passport);
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use(passport.initialize());
+require("./config/passport")(passport);
+
+
+
 app.use("/api/users", users);
-app.use("/api/events", events);
+// app.use("/api/events", events);
 
 const port = process.envPORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
