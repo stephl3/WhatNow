@@ -1,0 +1,20 @@
+{
+  "name": "whatnow",
+  "version": "1.0.0",
+  "description": "WhatNow is a web-based app built on the MERN stack",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephl3/WhatNow.git"
+  },
+  "author": "Christopher Trinh, Nathaniel Kevin Suriawijaya, Lisa Wen, Stephen Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephl3/WhatNow/issues"
+  },
+  "homepage": "https://github.com/stephl3/WhatNow#readme"
+}
