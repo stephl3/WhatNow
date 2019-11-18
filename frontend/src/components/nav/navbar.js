@@ -6,12 +6,24 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
+    this.signupModal = this.signupModal.bind(this);
+    this.loginModal = this.loginModal.bind(this);
     this.getLinks = this.getLinks.bind(this);
   }
 
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
+  }
+
+  signupModal(e) {
+    e.preventDefault();
+    this.props.openModal("signup");
+  }
+
+  loginModal(e) {
+    e.preventDefault();
+    this.props.openModal("login");
   }
 
   getLinks() {
@@ -27,8 +39,8 @@ class NavBar extends React.Component {
     } else {
       return (
         <div>
-          <Link to={"/signup"}>Signup</Link>
-          <Link to={"/login"}>Login</Link>
+          <button onClick={this.signupModal}>Signup</button>
+          <button onClick={this.loginModal}>Login</button>
         </div>
       );
     }
