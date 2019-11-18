@@ -45,10 +45,9 @@ class SessionForm extends React.Component {
       password: this.state.password
     };
 
-    (this.props.formType === 'signup') ?
-    this.props.processForm(newUser, this.props.history)
-      .then(this.props.closeModal) :
-    this.props.processForm(existingUser)
+    let user = (this.props.formType === 'Sign up') ? newUser : existingUser;
+    // this.props.processForm(newUser, this.props.history)
+    this.props.processForm(user)
       .then(this.props.closeModal)
   }
 
@@ -112,37 +111,69 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    const { formType, switchForm } = this.props;
+    const switchFormLink = (
+      <a className="switch-form-link" onClick={switchForm}>
+        {formType === "Sign up" ?
+        "Already have an account? Log in" :
+        "Not on WhatNow yet? Sign up"}
+      </a>
+    );
+
     return (
-      <div className='login-form-container'>
+      <div className='session-form-container'>
         <form onSubmit={this.handleSubmit}>
-          <div className='login-form'>
+          <div className='session-form'>
             <br />
             <input type='text'
+              className="session-form-input"
               value={this.state.email}
               onChange={this.update('email')}
               placeholder='Email'
             />
             <br />
             <input type='text'
+              className="session-form-input"
               value={this.state.username}
               onChange={this.update('username')}
               placeholder='Username'
             />
             <br />
+            <input type='text'
+              className="session-form-input"
+              value={this.state.firstName}
+              onChange={this.update('firstName')}
+              placeholder='First Name'
+            />
+            <br />
+            <input type='text'
+              className="session-form-input"
+              value={this.state.lastName}
+              onChange={this.update('lastName')}
+              placeholder='Last Name'
+            />
+            <br />
             <input type='password'
+              className="session-form-input"
               value={this.state.password}
               onChange={this.update('password')}
               placeholder='Password'
             />
             <br />
             <input type='password'
+              className="session-form-input"
               value={this.state.password2}
               onChange={this.update('password2')}
               placeholder='Confirm Password'
             />
             <br />
-            <input type='submit' value='Submit' />
+            <input type='submit'
+              className='session-form-button'
+              value={formType}
+            />
             {this.renderErrors()}
+            <br />
+            {switchFormLink}
           </div>
         </form>
       </div>
