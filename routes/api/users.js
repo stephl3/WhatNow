@@ -13,8 +13,6 @@ router.get("/current", passport.authenticate("jwt", { session: false }, (req, re
   res.json({
     id: req.user.id,
     username: req.user.username,
-    firstName: req.user.firstName,
-    lastName: req.user.lastName,
     email: req.user.email
   });
 }))
@@ -35,6 +33,8 @@ router.post("/register", (req, res) => {
       const newUser = new User({
         username: req.body.username,
         email: req.body.email,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         password: req.body.password
       })
 
