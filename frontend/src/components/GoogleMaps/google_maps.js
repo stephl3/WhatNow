@@ -1,4 +1,4 @@
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import React from 'react';
 const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
@@ -16,7 +16,9 @@ class GoogleMap extends React.Component{
           zoom={8}
           style={mapStyles}
           initialCenter={{ lat: 37.788268, lng: -122.407545}}
-        />
+        >
+          <Marker position={{ lat: 37.788268, lng: -122.407545 }} />
+        </Map>
       </div>
     );
   }

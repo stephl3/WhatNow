@@ -6,6 +6,12 @@ import configureStore from "./store/store";
 // import { setAuthToken } from "./util/session_api_util";
 // import { logout } from "./actions/session_actions";
 
+// import { fetchNearbyPlaces } from '../../frontend/src/actions/find_places_actions';
+import { findGeneralPlaces } from '../../frontend/src/util/find_places_api_util';
+
+// window.fetchNearbyPlaces = fetchNearbyPlaces;
+window.findGeneralPlaces = findGeneralPlaces;
+
 document.addEventListener("DOMContentLoaded", () => {
   let store;
 
