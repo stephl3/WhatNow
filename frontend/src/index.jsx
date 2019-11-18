@@ -23,11 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
 //       window.location.href = "/login";
 //     }
 //   } else {
-    store = configureStore({});
+    // store = configureStore({});
 //   }
 
   const root = document.getElementById("root");
 
-  ReactDOM.render(<Root store={store} />, root);
+  ReactDOM.render(<Root />, root);
 
 });
