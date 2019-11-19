@@ -22,7 +22,7 @@ require("./config/passport")(passport);
 
 
 app.use("/api/users", users);
-// app.use("/api/events", events);
+app.use("/api/events", events);
 
 const port = process.envPORT || 7000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
