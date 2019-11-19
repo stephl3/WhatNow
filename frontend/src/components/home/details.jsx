@@ -6,16 +6,13 @@ class Details extends React.Component{
   constructor(props){
     super(props);
   }
-  componentDidMount() {
-    this.props.fetchNearbyPlaces();
-  }
 
   render(){
+      const { place } = this.props
+
     return(
       <div className="places-wrapper">
         <div className="places-container">
-          {this.props.places.map(place => {
-            return (
              <div className="place-details">
                 <div className="place-name">
                   {place.name}
@@ -30,8 +27,6 @@ class Details extends React.Component{
                   {place.formatted_address}
                 </div>
             </div>
-            )
-          })}
         </div>
       </div>
     );
