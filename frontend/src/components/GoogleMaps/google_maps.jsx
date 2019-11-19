@@ -13,19 +13,25 @@ class GoogleMap extends React.Component{
     // this.createMarkers = this.createMarkers.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchNearbyPlaces();
-  }
+  // componentDidMount() {
+  //   this.props.fetchNearbyPlaces();
+  // }
 
-  createMarkers() {
-    this.props.places.map(place => {
-      let lat = place.geometry.location.lat;
-      let lng = place.geometry.location.lng;
-      return (
-        <Marker position={{lat: lat, lng: lng}}/>
-      )
-    })
-  }
+  // createMarkers() {
+  //   this.props.places.map(place => {
+  //     let lat = place.geometry.location.lat;
+  //     let lng = place.geometry.location.lng;
+  //     return (
+  //       <Marker position={{lat: lat, lng: lng}}/>
+  //     )
+  //   })
+  // }
+
+  // findPlaceInfo() {
+  //   this.props.places.map(place => {
+  //     let place_id = place.
+  //   })
+  // }
 
   
   render() {

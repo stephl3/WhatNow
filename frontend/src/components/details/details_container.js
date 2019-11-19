@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
   fetchNearbyPlaces: () => dispatch(fetchNearbyPlaces())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(GoogleMap);
+export default connect(mapStateToProps, mapDispatchToProps)(Details);
