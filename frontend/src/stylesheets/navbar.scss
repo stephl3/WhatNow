@@ -23,7 +23,7 @@
     font-size: 20px;
 }
 
-.session-buttons {
+.session-buttons, #logout-button {
     margin: 20px;
     width: 120px;
     height: 25px;
@@ -31,7 +31,7 @@
     justify-content: space-between;
 }
 
-.session-buttons button {
+.session-buttons button, #logout-button {
     display: flex;
     justify-content: center;
     align-items: center;
