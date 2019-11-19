@@ -8,6 +8,14 @@ const mapStyles = {
 };
 
 class GoogleMap extends React.Component{
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount() {
+    this.props.fetchNearbyPlaces();
+  }
+  
   render() {
     return (
       <div className="google-map">

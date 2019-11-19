@@ -9,5 +9,5 @@ const receiveNearbyPlaces = data => ({
 
 export const fetchNearbyPlaces = () => dispatch => {
   FindPlacesAPIUtil.findGeneralPlaces()
-    .then( data => console.log(data))
+    .then( data => dispatch(receiveNearbyPlaces(data)));
 };
