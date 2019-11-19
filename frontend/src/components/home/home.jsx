@@ -1,5 +1,5 @@
 import React from 'react';
-import Details from './details';
+import Place from './Place';
 import GoogleMaps from '../GoogleMaps/google_maps';
 
 class Home extends React.Component {
@@ -22,10 +22,10 @@ class Home extends React.Component {
           <div className="what-now-button">
             WHAT NOW?
           </div>
-          <div className="places-details-wrapper">
+          <div className="places-place-wrapper">
             {places.map(place => {
               return (
-                <Details
+                <Place
                   place={place}
                   key={place.id}
                   findPlacePhoto={findPlacePhoto}

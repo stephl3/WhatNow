@@ -2,7 +2,7 @@
 import React from 'react';
 // import { link } from 'fs';
 
-class Details extends React.Component{
+class Place extends React.Component{
   constructor(props){
     super(props);
     this.state = {
@@ -53,4 +53,4 @@ class Details extends React.Component{
   }
 }
 
-export default Details;
+export default Place;
