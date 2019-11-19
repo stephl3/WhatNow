@@ -5,7 +5,7 @@ const PlacesReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_NEARBY_PLACES:
-      return action.data.results
+      return action.places.data.results;
     default:
       return oldState;
   }

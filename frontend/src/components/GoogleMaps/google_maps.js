@@ -13,8 +13,13 @@ class GoogleMap extends React.Component{
   }
 
   componentDidMount() {
-    this.props.fetchNearbyPlaces();
+    // this.props.fetchNearbyPlaces();
   }
+
+  // showPlaces() {
+
+  // }
+
   
   render() {
     return (
