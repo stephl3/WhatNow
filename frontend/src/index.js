@@ -4,7 +4,8 @@ import Root from "./components/root";
 import configureStore from "./store/store";
 import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./util/session_api_util";
-import { logout } from "./actions/session_actions";
+import { logout, signup } from "./actions/session_actions";
+import "./stylesheets/index.scss";
 
 import axios from "axios"
 
@@ -18,9 +19,6 @@ import { findPlacePhoto } from './util/find_places_api_util';
 // window.fetchNearbyPlaces = fetchNearbyPlaces;
 // window.axios = axios;
 
-// export const findGeneralPlaces = () => {
-//   axios.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=${API_KEY}&location=37.788268,-122.407545&radius=1000`)
-// };
 
 window.findGeneralPlaces = findGeneralPlaces;
 
@@ -50,6 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
   window.findPlacePhoto = findPlacePhoto;
 
+  
+  window.dispatch = store.dispatch;
+  window.signup = signup;
+  
   const root = document.getElementById("root");
 
   ReactDOM.render(<Root store={store} />, root);

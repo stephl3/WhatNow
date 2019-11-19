@@ -110,69 +110,104 @@ class SessionForm extends React.Component {
     );
   }
 
+  
+
   render() {
     const { formType, switchForm } = this.props;
-    const switchFormLink = (
-      <a className="switch-form-link" onClick={switchForm}>
-        {formType === "Sign up" ?
-        "Already have an account? Log in" :
-        "Not on WhatNow yet? Sign up"}
-      </a>
-    );
-
-    return (
-      <div className='session-form-container'>
-        <form onSubmit={this.handleSubmit}>
-          <div className='session-form'>
-            <br />
-            <input type='text'
-              className="session-form-input"
-              value={this.state.email}
-              onChange={this.update('email')}
-              placeholder='Email'
-            />
-            <br />
+    const sessionFormInputs = (
+      <div className='session-form-text-inputs'>
+        <label className='session-form-input-label'>Email
+          <input type='text'
+            className='session-form-input'
+            id='email'
+            value={this.state.email}
+            onChange={this.update('email')}
+          />
+        </label>
+        {formType === 'Sign up' ? (
+        <div className='signup-form-additionals'>
+          <label className='session-form-input-label'>Username
             <input type='text'
               className="session-form-input"
               value={this.state.username}
               onChange={this.update('username')}
-              placeholder='Username'
             />
-            <br />
+          </label>
+          <label className='session-form-input-label'>First name
             <input type='text'
               className="session-form-input"
               value={this.state.firstName}
               onChange={this.update('firstName')}
-              placeholder='First Name'
             />
-            <br />
+          </label>
+          <label className='session-form-input-label'>Last name
             <input type='text'
               className="session-form-input"
               value={this.state.lastName}
               onChange={this.update('lastName')}
-              placeholder='Last Name'
             />
-            <br />
-            <input type='password'
-              className="session-form-input"
-              value={this.state.password}
-              onChange={this.update('password')}
-              placeholder='Password'
-            />
-            <br />
+          </label>
+        </div>
+        ) : null}
+        <label className='session-form-input-label'>Password
+          <input type='password'
+            className="session-form-input"
+            id='password'
+            value={this.state.password}
+            onChange={this.update('password')}
+          />
+        </label>
+        {formType === 'Sign up' ? (
+        <div className='signup-form-additionals'>
+          <label className='session-form-input-label'>Confirm password
             <input type='password'
               className="session-form-input"
               value={this.state.password2}
               onChange={this.update('password2')}
-              placeholder='Confirm Password'
             />
-            <br />
+          </label>
+        </div>
+        ) : null}
+      </div>
+    );
+
+    const demoLogin = (formType === 'Sign up') ? null : (
+      <input type='submit'
+        className='session-form-button-input'
+        id='demo-login'
+        value='Demo Login'
+        onClick={this.handleDemo}
+      />
+    );
+
+    const switchFormLink = (
+      
+      <div className="switch-form-link" onClick={switchForm}>
+        {formType === "Sign up" ?
+        "Already have an account? Log in" :
+        "Not on WhatNow yet? Sign up"}
+      </div>
+    );
+
+    return (
+      <div className='session-form-container'>
+        <form className='session-form' onSubmit={this.handleSubmit}>
+          <div className='session-form-icon-container'>
+            <i className='fab fa-weebly' id='session-form-icon'></i>
+          </div>
+          <div className='session-form-title'>
+            Welcome to WhatNow
+          </div>
+          <div className='session-form-inputs'>
+            {sessionFormInputs}
+            {this.renderErrors()}
             <input type='submit'
-              className='session-form-button'
+              className='session-form-button-input'
+              id='form-action'
               value={formType}
             />
-            {this.renderErrors()}
-            <br />
+            {demoLogin}
+            <div className='session-form-spacer'></div>
             {switchFormLink}
           </div>
         </form>

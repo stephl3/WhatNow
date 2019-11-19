@@ -1,0 +1,19 @@
+@import './reset.scss';
+@import "./modal.scss";
+@import "./session_form.scss";
+@import './splash_page.scss';
+@import './navbar.scss';
+
+html {
+  --theme-color: goldenrod;
+  --session-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
+}
+
+#root {
+    display: flex;
+    align-items: center;
+}
+#main-content {
+    width: 100%;
+    height: 100%;
+}

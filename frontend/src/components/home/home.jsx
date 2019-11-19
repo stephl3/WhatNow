@@ -1,5 +1,5 @@
 import React from 'react';
-import Place from './Place';
+import Place from './place';
 import GoogleMaps from '../GoogleMaps/google_maps';
 
 class Home extends React.Component {

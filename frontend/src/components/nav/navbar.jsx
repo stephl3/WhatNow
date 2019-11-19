@@ -1,17 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
-// import "./navbar.css";
+// import { Link } from "react-router-dom";
+import '../../stylesheets/navbar.scss';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
+    this.signupModal = this.signupModal.bind(this);
+    this.loginModal = this.loginModal.bind(this);
     this.getLinks = this.getLinks.bind(this);
   }
 
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
+  }
+
+  signupModal(e) {
+    e.preventDefault();
+    this.props.openModal("signup");
+  }
+
+  loginModal(e) {
+    e.preventDefault();
+    this.props.openModal("login");
   }
 
   getLinks() {
@@ -21,14 +33,14 @@ class NavBar extends React.Component {
           {/* <Link to={"/events"}>All Events</Link> */}
           {/* <Link to={"/profile"}>Profile</Link> */}
           {/* <Link to={"/new_tweet"}>Write a Tweet</Link> */}
-          <button onClick={this.logoutUser}>Logout</button>
+          <button id="logout-button" onClick={this.logoutUser}>Logout</button>
         </div>
       );
     } else {
       return (
-        <div>
-          <Link to={"/signup"}>Signup</Link>
-          <Link to={"/login"}>Login</Link>
+        <div className="session-buttons">
+          <button onClick={this.signupModal}>Signup</button>
+          <button onClick={this.loginModal}>Login</button>
         </div>
       );
     }
@@ -36,7 +48,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="navbar-wrapper">
         <h1>What Now?</h1>
         {this.getLinks()}
       </div>
