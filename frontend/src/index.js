@@ -41,19 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore({});
   }
-
+  
   window.findGeneralPlaces = findGeneralPlaces;
   window.fetchNearbyPlaces = fetchNearbyPlaces;
   window.axios = axios;
   window.dispatch = store.dispatch;
   window.findPlacePhoto = findPlacePhoto;
-
-  
   window.dispatch = store.dispatch;
   window.signup = signup;
   
   const root = document.getElementById("root");
-
   ReactDOM.render(<Root store={store} />, root);
-
 });
