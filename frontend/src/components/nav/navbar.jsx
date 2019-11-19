@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import "./navbar.css";
+import '../../stylesheets/navbar.scss';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class NavBar extends React.Component {
       );
     } else {
       return (
-        <div>
+        <div className="session-buttons">
           <button onClick={this.signupModal}>Signup</button>
           <button onClick={this.loginModal}>Login</button>
         </div>
@@ -48,7 +48,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="navbar-wrapper">
         <h1>What Now?</h1>
         {this.getLinks()}
       </div>
