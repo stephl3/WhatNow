@@ -1,0 +1,8 @@
+// @import "./reset.scss";
+@import "./modal.scss";
+@import "./session_form.scss";
+
+html {
+  --theme-color: goldenrod;
+  --session-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
+}

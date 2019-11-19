@@ -1,0 +1,124 @@
+.session-form-container {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  box-shadow: #00000073 0px 2px 10px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+  align-items: content;
+}
+
+.session-form-icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+#session-form-icon {
+  color: var(--theme-color);
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.session-form-title {
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  display: block;
+  color: #212124;
+  font-family: var(--session-font);
+  line-height: 1.3;
+}
+
+.session-form-inputs {
+  display: block;
+}
+
+.session-form-text-inputs {}
+
+.session-form-input-label {
+  width: 100%;
+  height: 3.5rem;
+  // position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  flex-direction: column;
+  display: flex;
+  color: #898989;
+  margin-bottom: 0.5rem;
+  font-family: var(--session-font);
+  line-height: 1.3;
+  font-size: 1rem;
+  cursor: text;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.session-form-input {
+  width: 100%;
+  cursor: text;
+  box-sizing: border-box;
+  align-self: start;
+  padding: 0.5rem 1rem;
+  outline: none;
+  -webkit-box-flex: 1;
+  flex: 1;
+  color: #212124;
+  box-shadow: none;
+  border-radius: 0.25rem;
+  border: 1px solid darkgray;
+}
+
+.session-form-button-input {
+  min-height: 2.5rem;
+  width: 100%;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #fff;
+  background-color: var(--theme-color);
+  margin-top: 2rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  outline: none;
+  border-style: none;
+  &:hover {
+    background-color: #FFB302;
+  }
+}
+
+.session-form-spacer {
+  width: 100%;
+  border-top: 1px solid lightgray;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.switch-form-link {
+  color: #A9A9A9;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.875rem;
+  font-family: var(--session-font);
+  line-height: 1.3;
+  &:hover {
+    color: gray;
+    text-decoration: underline;
+  }
+}
