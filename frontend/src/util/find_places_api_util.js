@@ -10,6 +10,14 @@ export const findGeneralPlaces = () => (
   axios.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=san+francisco++point+of+interest&language=en&key=${API_KEY}`)
 );
 
-export const findPlacePhoto = (placeId) => (
-  axios.get(`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${placeId}&key=AIzaSyDprE0Anv5jO-8HxXIc9cl_ppg2ONlUKkU`)
+// export const findPlaceDetail = () => (
+//   axios.get(`https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJAQAAQIyAhYARRN3yIQG4hd4&fields=name,formatted_address,photo,geometry&key=AIzaSyBCq5Ety2T1XshVaGs4hkOcMBCRO7hloOs`)
+//; )
+
+// export const findPlacePhoto = photoRef => (
+//   axios.get(`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoRef}&key=AIzaSyBCq5Ety2T1XshVaGs4hkOcMBCRO7hloOs`)
+// );
+
+export const findPlacePhoto = (photoRef) => (
+  axios.get(`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoRef}&key=${API_KEY}`)
 );

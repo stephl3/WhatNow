@@ -13,19 +13,22 @@ class Home extends React.Component {
 
   render() {
 
-    const { places } = this.props
+    const { places, findPlacePhoto } = this.props
 
     return (
       <div className="home wrapper">
         <div className="home-container-1"></div>
         <div className="home-container-2">
-          <div className="what-now-button"></div>
+          <div className="what-now-button">
+            WHAT NOW?
+          </div>
           <div className="places-details-wrapper">
             {places.map(place => {
               return (
                 <Details
                   place={place}
                   key={place.id}
+                  findPlacePhoto={findPlacePhoto}
                 />
               )
             })}
