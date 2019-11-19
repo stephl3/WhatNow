@@ -115,4 +115,13 @@ router.post("/login", (req, res) => {
   })
 })
 
+router.get('/profile', (req, res) => {
+  User.findOne({ id: req.body.userId }).then(
+    user => {
+      console.log(user);
+      return res.json(user);
+    }
+  )
+})
+
 module.exports = router;
