@@ -5,6 +5,7 @@
     width: 100%;
     height: 100%;
 }
+
 .splash-background {
     z-index: -1;
     background-image: url('https://d.newsweek.com/en/full/1502445/san-francisco-salifornia.webp') no-repeat center center fixed;
@@ -14,8 +15,24 @@
     background-size: cover;
     width: 100%;
     height: 800px;
-    opacity: 0.5;
+    opacity: 0.9;
     position: absolute;
+    // background-blend-mode: darken;
+    // opacity: 1;
+	// animation-name: fadeInOpacity;
+	// animation-iteration-count: 1;
+	// animation-timing-function: ease-in;
+	// animation-duration: 2s;
+
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .whatnow-button {

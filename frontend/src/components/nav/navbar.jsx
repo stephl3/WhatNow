@@ -33,7 +33,7 @@ class NavBar extends React.Component {
           {/* <Link to={"/events"}>All Events</Link> */}
           {/* <Link to={"/profile"}>Profile</Link> */}
           {/* <Link to={"/new_tweet"}>Write a Tweet</Link> */}
-          <button onClick={this.logoutUser}>Logout</button>
+          <button id="logout-button" onClick={this.logoutUser}>Logout</button>
         </div>
       );
     } else {
