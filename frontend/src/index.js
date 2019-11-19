@@ -12,6 +12,7 @@ import axios from "axios"
 
 import { findGeneralPlaces } from './util/find_places_api_util';
 import { fetchNearbyPlaces } from "./actions/find_places_actions";
+import { findPlacePhoto } from './util/find_places_api_util';
 
 // window.findGeneralPlaces = findGeneralPlaces;
 // window.fetchNearbyPlaces = fetchNearbyPlaces;
@@ -47,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.fetchNearbyPlaces = fetchNearbyPlaces;
   window.axios = axios;
   window.dispatch = store.dispatch;
+  window.findPlacePhoto = findPlacePhoto;
 
   const root = document.getElementById("root");
 
