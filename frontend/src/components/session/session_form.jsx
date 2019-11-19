@@ -181,11 +181,12 @@ class SessionForm extends React.Component {
     );
 
     const switchFormLink = (
-      <a className="switch-form-link" onClick={switchForm}>
+      
+      <div className="switch-form-link" onClick={switchForm}>
         {formType === "Sign up" ?
         "Already have an account? Log in" :
         "Not on WhatNow yet? Sign up"}
-      </a>
+      </div>
     );
 
     return (

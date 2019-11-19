@@ -5,8 +5,8 @@ import Modal from "./modal/modal";
 import NavBarContainer from "./nav/navbar_container";
 
 import SplashPage from "./splash/splash_page.jsx";
-import LoginFormContainer from "./session/login_form_container";
-import SignupFormContainer from "./session/signup_form_container";
+// import LoginFormContainer from "./session/login_form_container";
+// import SignupFormContainer from "./session/signup_form_container";
 
 const App = () => (
     <div id="main-content">
