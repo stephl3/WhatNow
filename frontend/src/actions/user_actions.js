@@ -14,7 +14,7 @@ export const fetchUserInfo = userId => dispatch => {
         .then(userData => dispatch(receiveUserInfo(userData))))
 }
 
-export const addFriend = (userId, friendId) => dispatch => (
-    UserAPIUtil.addFriend(userId, friendId)
-        .then(userData => dispatch(receiveUserInfo(userData)))
-)
+// export const addFriend = (userId, friendId) => dispatch => (
+//     UserAPIUtil.addFriend(userId, friendId)
+//         .then(userData => dispatch(receiveUserInfo(userData)))
+// )
