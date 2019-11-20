@@ -41,7 +41,8 @@ class WhativitiesTab extends React.Component {
           />
         </div>
         <div className="whativities-tab">
-          <WhativityIndex whatItems={whativityIndexTabItems} />
+          {/* <WhativityIndex whatItems={whativityIndexTabItems} /> */}
+          <WhativityIndex whatItems={this.props.whativities} />
         </div>
       </div>
     )

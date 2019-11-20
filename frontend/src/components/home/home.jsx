@@ -38,14 +38,14 @@ class Home extends React.Component {
     let newOptions = [];
     if (this.state.num === 0) {
       this.props.places.map( place => {
-        if (newOptions.length <= 3) {
+        if (newOptions.length < 3) {
           newOptions.push([place, 'google'])
         }
       });
       // newOptions = this.props.places;
-    } else {
+    } else if (this.state.num === 1) {
       this.props.events.map( event => {
-        if (newOptions.length <= 3) {
+        if (newOptions.length < 3) {
           newOptions.push([event, 'yelp'])
         }
         // debugger
@@ -81,16 +81,10 @@ class Home extends React.Component {
             <button onClick={this.handleWhatNow}>
               WHAT NOW?
             </button>
-            <h1>
-              {/* {(this.state.options.length > 0) ? this.state.options[0].name : 'none'} */}
-            </h1>
           </div>
         </div>
         <div className="home-container-3">
           <div className="google-maps-container">
-            {/* <GoogleMaps
-              places={places}
-            /> */}
           </div>
         </div>
       </div>
