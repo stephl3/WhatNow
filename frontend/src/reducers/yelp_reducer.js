@@ -10,7 +10,7 @@ const YelpReducer = (oldState = [], action) => {
     case RECEIVE_YELP_EVENTS:
       return action.events.local.data.events;
     case RECEIVE_YELP_EVENT:
-      debugger;
+      // debugger;
       return oldState;
     default:
       return oldState;
