@@ -26,10 +26,10 @@ export const logoutUser = () => ({
   type: RECEIVE_USER_LOGOUT
 });
 
-export const receiveFriends = userData => ({
-  type: RECEIVE_FRIENDS,
-  userData
-})
+// export const receiveFriends = userData => ({
+//   type: RECEIVE_FRIENDS,
+//   userData
+// })
 
 export const signup = user => dispatch => {
   return APIUtil.signup(user).then(
@@ -58,7 +58,7 @@ export const logout = () => dispatch => {
   dispatch(logoutUser());
 };
 
-export const addFriend = (userId, friendId) => dispatch =>
-  APIUtil.addFriend(userId, friendId).then(userData => {
-    dispatch(receiveFriends(userData));
-  });
+// export const addFriend = (userId, friendId) => dispatch =>
+//   APIUtil.addFriend(userId, friendId).then(userData => {
+//     dispatch(receiveFriends(userData));
+//   });

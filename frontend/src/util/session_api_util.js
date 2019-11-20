@@ -15,7 +15,3 @@ export const signup = userData => {
 export const login = userData => {
   return axios.post("/api/users/login", userData);
 };
-
-export const addFriend = (userId, friendId) => {
-  return axios.patch(`/api/users/update/${userId}`, { friendId: friendId });
-};

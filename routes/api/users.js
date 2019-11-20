@@ -128,6 +128,7 @@ router.patch('/update/:id', (req, res) => {
     .then(user => {
       // debugger
       user.friends.push(req.body.friendId);
+      user.save();
       console.log(user);
       res.status(200).json(user);
     })

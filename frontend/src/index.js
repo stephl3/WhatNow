@@ -4,7 +4,7 @@ import Root from "./components/root";
 import configureStore from "./store/store";
 import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./util/session_api_util";
-import { logout, signup, addFriend } from "./actions/session_actions";
+import { logout, signup } from "./actions/session_actions";
 import { fetchUserInfo } from './actions/user_actions';
 import "./stylesheets/index.scss";
 import { findGeneralPlaces } from './util/google_api_util';
@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.fetchNearbyPlaces = fetchNearbyPlaces;
   // window.axios = axios;
   // window.findPlacePhoto = findPlacePhoto;
-  window.addFriend = addFriend;
 
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
