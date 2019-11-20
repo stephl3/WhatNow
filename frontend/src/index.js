@@ -8,6 +8,21 @@ import { logout, signup } from "./actions/session_actions";
 import { fetchUserInfo } from './actions/user_actions';
 import "./stylesheets/index.scss";
 
+import axios from "axios"
+
+// const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
+
+import { findGeneralPlaces } from './util/find_places_api_util';
+import { fetchNearbyPlaces } from "./actions/find_places_actions";
+import { findPlacePhoto } from './util/find_places_api_util';
+
+// window.findGeneralPlaces = findGeneralPlaces;
+// window.fetchNearbyPlaces = fetchNearbyPlaces;
+// window.axios = axios;
+
+
+window.findGeneralPlaces = findGeneralPlaces;
+
 document.addEventListener("DOMContentLoaded", () => {
   let store;
   
@@ -32,8 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
   window.signup = signup;
   window.fetchUserInfo = fetchUserInfo;
+  window.findGeneralPlaces = findGeneralPlaces;
+  window.fetchNearbyPlaces = fetchNearbyPlaces;
+  window.axios = axios;
+  window.findPlacePhoto = findPlacePhoto;
+  
   const root = document.getElementById("root");
-
   ReactDOM.render(<Root store={store} />, root);
-
 });
