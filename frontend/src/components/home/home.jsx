@@ -1,13 +1,20 @@
 import React from 'react';
 import Place from './place';
+import YelpIndexContainer from '../yelp/yelp_index_container';
+import YelpIndex from '../yelp/yelp_index';
 // import GoogleMaps from '../GoogleMaps/google_maps';
+
+import WhativityIndex from './whativity_index';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       num: null,
-      options: []
+      options: [],
+      spontaneous: [],
+      popular: [],
+      friends: []
     }
     this.handleWhatNow = this.handleWhatNow.bind(this);
   }
@@ -26,44 +33,48 @@ class Home extends React.Component {
 
   handleWhatNow(e) {
     e.preventDefault();
-    let newOptions;
+    let newOptions = [];
     if (this.state.num === 0) {
-      newOptions = this.props.places;
+      this.props.places.map( place => {
+        if (newOptions.length <= 3) {
+          newOptions.push([place, 'google'])
+        }
+      });
+      // newOptions = this.props.places;
     } else {
-      newOptions = this.props.events;
+      this.props.events.map( event => {
+        if (newOptions.length <= 3) {
+          newOptions.push([event, 'yelp'])
+        }
+        // debugger
+      });
+      // newOptions = this.props.events;
     }
+
     this.setState({
       options: newOptions
     })
-    // debugger;
   }
 
   render() {
+    const { places, events, findPlacePhoto } = this.props
 
-    const { places, findPlacePhoto } = this.props
 
     return (
       <div className="home wrapper">
-        <div className="home-container-1"></div>
+        <div className="home-container-1">
+            <WhativityIndex
+              whatItems={this.state.options}
+            />
+        </div>
         <div className="home-container-2">
           <div className="what-now-button">
             <button onClick={this.handleWhatNow}>
               WHAT NOW?
             </button>
             <h1>
-              {(this.state.options.length > 0) ? this.state.options[0].name : 'none'}
+              {/* {(this.state.options.length > 0) ? this.state.options[0].name : 'none'} */}
             </h1>
-          </div>
-          <div className="places-place-wrapper">
-            {places.map(place => {
-              return (
-                <Place
-                  place={place}
-                  key={place.id}
-                  findPlacePhoto={findPlacePhoto}
-                />
-              )
-            })}
           </div>
         </div>
         <div className="home-container-3">

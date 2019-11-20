@@ -14,7 +14,7 @@ class Place extends React.Component{
   }
 
   componentDidMount() {
-    this.renderPhoto();
+    // this.renderPhoto();
   }
 
   renderPhoto() {
