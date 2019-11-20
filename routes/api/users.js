@@ -116,21 +116,20 @@ router.post("/login", (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-  // debugger
-  // User.find({ id: req.params.id }, (err, items) => {
-  //   if (err) res.status(404).json('No user')
-  //   res.status(200).json(items);
-  // })
-    // .then( user => {
-    //   console.log(user);
-    //   return res.json(user);
-    // })
-    // .catch(err => res.status(404).json('No user found'))
-  User.findOne({_id: req.params.id}).then(user => {
-    // debugger
-      // if (err) res.status(404).json('No user')
+  User.findOne({_id: req.params.id})
+    .then(user => {
       res.status(200).json(user);
-  });
+    })
+    .catch(err => res.status(404).json('User not found'))
 })
 
+router.patch('/update/:id', (req, res) => {
+  User.findOne({_id: req.params.id})
+    .then(user => {
+      // debugger
+      user.friends.push(req.body.friendId);
+      console.log(user);
+      res.status(200).json(user);
+    })
+})
 module.exports = router;

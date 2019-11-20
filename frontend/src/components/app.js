@@ -20,7 +20,7 @@ const App = () => (
         <Switch>
         {/* <YelpIndexContainer /> */}
             {/* <AuthRoute exact path="/home" component={HomeContainer} /> */}
-            <AuthRoute exact path='/:userId/profile' component={ProfileContainer} />
+            <ProtectedRoute exact path='/:userId/profile' component={ProfileContainer} />
             <AuthRoute exact path="/" component={SplashPage} />
             {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}

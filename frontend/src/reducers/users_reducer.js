@@ -5,8 +5,6 @@ export default function(state = {}, action) {
     let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_USER_INFO:
-            // debugger
-
             return action.userData.data;
         default:
             return state;

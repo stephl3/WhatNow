@@ -23,7 +23,7 @@ class Profile extends React.Component {
     }
 
     addFriend() {
-
+        
     }
 
     render() {
@@ -36,7 +36,7 @@ class Profile extends React.Component {
         //     return null;
         // }
         
-        debugger
+        // debugger
         return (
             <div className="profile-wrapper">
                 <h2> {firstName}'s Profile Page</h2>

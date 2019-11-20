@@ -5,7 +5,7 @@ import configureStore from "./store/store";
 import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./util/session_api_util";
 import { logout, signup } from "./actions/session_actions";
-import { fetchUserInfo } from './util/user_api_util';
+import { fetchUserInfo, addFriend } from './util/user_api_util';
 import "./stylesheets/index.scss";
 
 import axios from "axios"
@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.fetchNearbyPlaces = fetchNearbyPlaces;
   window.axios = axios;
   window.findPlacePhoto = findPlacePhoto;
+  window.addFriend = addFriend;
   
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
