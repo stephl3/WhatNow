@@ -35,7 +35,7 @@
   font-size: 1.25rem;
   display: block;
   color: #212124;
-  font-family: var(--session-font);
+  font-family: var(--theme-font);
   line-height: 1.3;
 }
 
@@ -57,7 +57,7 @@
   display: flex;
   color: #898989;
   margin-bottom: 0.5rem;
-  font-family: var(--session-font);
+  font-family: var(--theme-font);
   line-height: 1.3;
   font-size: 1rem;
   cursor: text;
@@ -115,7 +115,7 @@
   cursor: pointer;
   text-align: center;
   font-size: 0.875rem;
-  font-family: var(--session-font);
+  font-family: var(--theme-font);
   line-height: 1.3;
   &:hover {
     color: gray;

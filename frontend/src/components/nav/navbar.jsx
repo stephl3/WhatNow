@@ -49,7 +49,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="navbar-wrapper">
-        <h1>What Now?</h1>
+        <h1>WhatNow</h1>
         {this.getLinks()}
       </div>
     );
