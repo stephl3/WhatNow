@@ -55,6 +55,7 @@ class Home extends React.Component {
 
     this.setState({
       options: newOptions,
+      
       tabVisible: true
     })
   }
