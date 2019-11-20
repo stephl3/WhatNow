@@ -1,16 +1,76 @@
 .home-wrapper {
   display: flex;
+  flex-direction: column;
 }
 
 .home-container-1 {
   background-color: lightblue;
-  width: 33%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 400px;
 }
 .home-container-2 {
   background-color: lightcoral;
-  width: 33%;
+  width: 100%;
+  height: 600px;
 }
 .home-container-3 {
   background-color: lightgreen;
-  width: 33%;
+  width: 100%;
+  height: 600px;
+}
+
+.yelp-index-wrapper, .google-index-wrapper {
+  width: 30%
+}
+
+.yelp-index-container, .google-index-container {
+}
+
+.yelp-index, .google-index {
+  display: flex;
+  justify-content: space-around;
+}
+
+.yelp-index-item {
+  display: flex;
+  width: 30%;
+  height: 240px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 
+              0 1px 4px rgba(0, 0, 0, 0.24);
+  border-radius: 8px;
+  background-color: teal
+
+}
+
+.yelp-index-item > div {
+  // margin: 50px;
+}
+
+.yelp-item-photo {
+  width: 180px;
+  height: 190px;
+  padding: 15px
+}
+
+.yelp-item-info {
+  padding: 10px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.yelp-item-info > div {
+  padding: 5px;
+}
+
+.what-now-button {
+  width: 500px;
+  height: 500px;
 }

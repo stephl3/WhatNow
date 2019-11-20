@@ -33,7 +33,7 @@ class Place extends React.Component{
         <div className="places-container">
              <div className="place-details">
                 <div className="place-name">
-                  {/* {place.name} */}
+                  {place.name}
                 </div>
                 <div className="place-photo">
               <img src={this.state.photoUrl} alt=""/>

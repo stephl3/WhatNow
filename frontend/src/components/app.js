@@ -14,7 +14,7 @@ const App = () => (
         {/* <NavBarContainer /> */}
         <HomeContainer />
         <Switch>
-            <AuthRoute path="/" component={SplashPage} />
+            {/* <AuthRoute path="/" component={SplashPage} /> */}
             {/* <AuthRoute path="/" component={HomeContainer} /> */}
             {/* <ProtectedRoute exact path='/:userId/profile' component={ProfileContainer} /> */}
         </Switch>
