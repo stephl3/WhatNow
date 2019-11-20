@@ -27,7 +27,7 @@ const UserSchema = new Schema({
   whativities: [{
     type: Schema.Types.ObjectId,
     ref:  'whativity'
-  }]
+  }],
   friends: [{
     type: Schema.Types.ObjectId,
     ref: 'users'
