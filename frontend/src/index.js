@@ -5,6 +5,7 @@ import configureStore from "./store/store";
 import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./util/session_api_util";
 import { logout, signup } from "./actions/session_actions";
+import { fetchUserInfo } from './actions/user_actions';
 import "./stylesheets/index.scss";
 
 import axios from "axios"
@@ -42,13 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore({});
   }
   
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.signup = signup;
+  window.fetchUserInfo = fetchUserInfo;
   window.findGeneralPlaces = findGeneralPlaces;
   window.fetchNearbyPlaces = fetchNearbyPlaces;
   window.axios = axios;
-  window.dispatch = store.dispatch;
   window.findPlacePhoto = findPlacePhoto;
-  window.dispatch = store.dispatch;
-  window.signup = signup;
   
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);

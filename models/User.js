@@ -28,6 +28,10 @@ const UserSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref:  'whativity'
   }]
+  friends: [{
+    type: Schema.Types.ObjectId,
+    ref: 'users'
+  }]
 })
 
 module.exports = User = mongoose.model("users", UserSchema);

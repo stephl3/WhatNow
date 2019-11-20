@@ -44,7 +44,13 @@ router.post("/register", (req, res) => {
           newUser.password = hash;
           newUser.save()
             .then(user => {
-              const payload = { id: user.id, username: user.username };
+              const payload = { 
+                id: user.id, 
+                username: user.username, 
+                firstName: user.firstName,
+                lastName: user.lastName,
+                friends: user.friends
+              };
 
               jwt.sign(
                 payload,
@@ -83,7 +89,13 @@ router.post("/login", (req, res) => {
 
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
-        const payload = { id: user.id, username: user.username };
+        const payload = { 
+          id: user.id, 
+          username: user.username,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          friends: user.friends
+        };
 
         jwt.sign(
           payload,
@@ -101,6 +113,15 @@ router.post("/login", (req, res) => {
       }
     })
   })
+})
+
+router.get('/profile', (req, res) => {
+  User.findOne({ id: req.body.userId }).then(
+    user => {
+      console.log(user);
+      return res.json(user);
+    }
+  )
 })
 
 module.exports = router;
