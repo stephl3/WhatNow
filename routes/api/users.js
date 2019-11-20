@@ -115,13 +115,21 @@ router.post("/login", (req, res) => {
   })
 })
 
-router.get('/profile', (req, res) => {
-  User.findOne({ id: req.body.userId }).then(
-    user => {
-      console.log(user);
-      return res.json(user);
-    }
-  )
+router.get('/:id', (req, res) => {
+  User.findOne({_id: req.params.id})
+    .then(user => {
+      res.status(200).json(user);
+    })
+    .catch(err => res.status(404).json('User not found'))
 })
 
+router.patch('/update/:id', (req, res) => {
+  User.findOne({_id: req.params.id})
+    .then(user => {
+      // debugger
+      user.friends.push(req.body.friendId);
+      console.log(user);
+      res.status(200).json(user);
+    })
+})
 module.exports = router;
