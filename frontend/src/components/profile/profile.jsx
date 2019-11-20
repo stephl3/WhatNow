@@ -1,5 +1,6 @@
 import React from "react";
 import '../../stylesheets/profile.scss';
+import FriendContainer from './friend_container';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class Profile extends React.Component {
     componentDidMount() {
         this.props.fetchUserInfo(this.props.match.params.userId)
             .then(user => {
+                // debugger
                 return this.setState({firstName: user.userData.data.firstName})
             });
     }
@@ -22,17 +24,22 @@ class Profile extends React.Component {
         if (!friends) {
             return null;
         }
-        return(
-            <ul>
-                {friends.map((friend, i) => {
-                    return (
-                        <li key={`friend${i}`}>
-                            {friend}
-                        </li>
-                    )
-                })}
-            </ul>
-        )
+        // return (<FriendContainer key={0} userId={friends[0]} />)
+        // return(
+            // <ul>
+                friends.map((friendId, i) => {
+                    if (friendId != null) {
+                        // debugger
+                        return (
+                            <div>
+                                <FriendContainer key={i} userId={friendId} />
+                            </div>
+                        )
+                    }
+                    
+                })
+            // </ul>
+        // )
     }
 
     addFriend(e) {
@@ -45,12 +52,26 @@ class Profile extends React.Component {
     render() {
         const { friends } = this.props;
         const { firstName } = this.state;
+        let renderFriends;
+        if (friends) {
+            renderFriends = friends.map((friendId, i) => {
+                if (friendId != null) {
+                    // debugger
+                    return (
+                        <div>
+                            <FriendContainer key={i} userId={friendId} />
+                        </div>
+                    )
+                }
+
+            })
+        }
         return (
             <div className="profile-wrapper">
                 <h2> {firstName}'s Profile Page</h2>
                 <div className="friends-container">
                     <h2>Friends</h2>
-                    {this.renderFriends()}
+                    {renderFriends}
                     <button onClick={this.addFriend}>Add Friend</button>
                 </div>
                 <div className="user-events-container">
