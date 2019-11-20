@@ -19,45 +19,79 @@ class Home extends React.Component {
       friends: []
     }
     this.handleWhatNow = this.handleWhatNow.bind(this);
+    this.state.shuffleChoices = this.shuffleChoices.bind(this);
   }
 
   componentDidMount() {
-    let num = Math.round(Math.random());
-    if (num === 0) {
-      this.props.fetchNearbyPlaces()
-        // .then(res => console.log(res))
-    } else {
-      this.props.fetchYelpEvents()
-        // .then(res => console.log(res))
+    // let num = Math.round(Math.random());
+    this.props.fetchNearbyPlaces();
+    this.props.fetchYelpEvents();
+    // this.props.fetchYelpEvents();
+    // this.shuffleChoices();
+    // if (num === 0) {
+    //   this.props.fetchNearbyPlaces();
+    //   // this.shuffleChoices();
+    // } else {
+    //   this.props.fetchYelpEvents();
+    //   // this.shuffleChoices();
+    // }
+    // this.setState({ num })
+          // this.shuffleChoices();
+
+  }
+
+  shuffleChoices() {
+    let choices = this.props.places.concat(this.props.events)
+    let newSpontaneous = [];
+    let newPopular = [];
+    let newFriends = [];
+    // debugger
+    for (let i = 0; i < 3; i++) {
+      let randomIdxOne = Math.round(Math.random() * (choices.length - 1));
+      let randomIdxTwo = Math.round(Math.random() * (choices.length - 1));
+      let randomIdxThree = Math.round(Math.random() * (choices.length - 1));
+      // debugger
+      let choiceOne = choices[randomIdxOne];
+      let choiceTwo = choices[randomIdxTwo];
+      let choiceThree = choices[randomIdxThree];
+      // debugger
+      newSpontaneous.push(choiceOne);
+      newPopular.push(choiceTwo);
+      newFriends.push(choiceThree);
     }
-    this.setState({ num })
+    this.setState({
+      spontaneous: newSpontaneous,
+      popular: newPopular,
+      friends: newFriends
+    })
   }
 
   handleWhatNow(e) {
-    e.preventDefault();
-    let newOptions = [];
-    if (this.state.num === 0) {
-      this.props.places.map( place => {
-        if (newOptions.length < 3) {
-          newOptions.push([place, 'google'])
-        }
-      });
-      // newOptions = this.props.places;
-    } else if (this.state.num === 1) {
-      this.props.events.map( event => {
-        if (newOptions.length < 3) {
-          newOptions.push([event, 'yelp'])
-        }
-        // debugger
-      });
-      // newOptions = this.props.events;
-    }
+    // e.preventDefault();
+    // let newOptions = [];
+    // if (this.state.num === 0) {
+    //   this.props.places.map( place => {
+    //     if (newOptions.length < 3) {
+    //       newOptions.push([place, 'google'])
+    //     }
+    //   });
+    //   // newOptions = this.props.places;
+    // } else if (this.state.num === 1) {
+    //   this.props.events.map( event => {
+    //     if (newOptions.length < 3) {
+    //       newOptions.push([event, 'yelp'])
+    //     }
+    //     // debugger
+    //   });
+    //   // newOptions = this.props.events;
+    // }
 
-    this.setState({
-      options: newOptions,
+    // this.setState({
+    //   options: newOptions,
       
-      tabVisible: true
-    })
+    //   tabVisible: true
+    // })
+    // debugger
   }
 
   render() {
