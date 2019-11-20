@@ -11,10 +11,11 @@ import HomeContainer from './home/home_container';
 const App = () => (
     <div id="main-content">
         <Modal />
-        <NavBarContainer />
+        {/* <NavBarContainer /> */}
+        <HomeContainer />
         <Switch>
             <AuthRoute path="/" component={SplashPage} />
-            <ProtectedRoute exact path="/" component={HomeContainer} />
+            {/* <AuthRoute path="/" component={HomeContainer} /> */}
             {/* <ProtectedRoute exact path='/:userId/profile' component={ProfileContainer} /> */}
         </Switch>
     </div>
