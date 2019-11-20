@@ -20,11 +20,11 @@ const App = () => (
             {/* <AuthRoute path="/" component={SplashPage} /> */}
             {/* <AuthRoute path="/" component={HomeContainer} /> */}
             {/* <ProtectedRoute exact path='/:userId/profile' component={ProfileContainer} /> */}
-        {/* <YelpIndexContainer /> */}
+            {/* <YelpIndexContainer /> */}
             <AuthRoute exact path="/home" component={HomeContainer} />
             <AuthRoute exact path="/" component={SplashPage} />
             <ProtectedRoute exact path='/:userId/profile' component={ProfileContainer} />
-            <Link to="/whativities" component={WhativitiesContainer}/>
+            {/* <Link to="/whativities" component={WhativitiesContainer}/> */}
         </Switch>
     </div>
 );

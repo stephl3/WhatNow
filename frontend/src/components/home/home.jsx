@@ -2,6 +2,7 @@ import React from 'react';
 import Place from './place';
 import YelpIndexContainer from '../yelp/yelp_index_container';
 import YelpIndex from '../yelp/yelp_index';
+import WhativitiesTab from '../whativity/whativities_tab';
 // import GoogleMaps from '../GoogleMaps/google_maps';
 
 import WhativityIndex from './whativity_index';
@@ -12,6 +13,7 @@ class Home extends React.Component {
     this.state = {
       num: null,
       options: [],
+      tabVisible: false,
       spontaneous: [],
       popular: [],
       friends: []
@@ -52,7 +54,8 @@ class Home extends React.Component {
     }
 
     this.setState({
-      options: newOptions
+      options: newOptions,
+      tabVisible: true
     })
   }
 
@@ -63,9 +66,14 @@ class Home extends React.Component {
     return (
       <div className="home wrapper">
         <div className="home-container-1">
-            <WhativityIndex
-              whatItems={this.state.options}
-            />
+            {/* <WhativityIndex
+              whatItems={this.state.options} */}
+            <div className ={`whativities-tab-wrapper ${this.state.tabVisible}`}>
+              <WhativitiesTab
+                whativities={this.state.options}
+                visibility={this.state.tabVisible}
+              />
+            </div>
         </div>
         <div className="home-container-2">
           <div className="what-now-button">

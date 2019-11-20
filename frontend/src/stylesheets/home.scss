@@ -74,3 +74,12 @@
   width: 500px;
   height: 500px;
 }
+
+.whativities-tab-wrapper {
+  &.true {
+    visibility: visible;
+  }
+  &.false {
+    visibility: hidden;
+  }
+}

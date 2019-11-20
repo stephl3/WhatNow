@@ -1,5 +1,6 @@
 import React from "react";
 
+import WhativityIndex from '../home/whativity_index';
 import WhativitiesTabHeaders from "./whativities_tab_headers";
 import PopularWhativities from './whativity_tabs/popular_whativities';
 import SpontaneousWhativities from './whativity_tabs/spontaneous_whativities';
@@ -25,10 +26,13 @@ class WhativitiesTab extends React.Component {
       'Spontaneous',
       'Friends'
     ];
+      {/* <PopularWhativities whativities={this.props.whativities}/>,
+      <SpontaneousWhativities whativities={this.props.whativities}/>,
+      <FriendsWhativities whativities={this.props.whativities}/> */}
     const whativitiesTabs = [
-      <PopularWhativities />,
-      <SpontaneousWhativities />,
-      <FriendsWhativities />
+      <WhativityIndex whatItems={this.props.whativities} />,
+      <WhativityIndex whatItems={this.props.whativities} />,
+      <WhativityIndex whatItems={this.props.whativities} />
     ];
     const selectedTab = whativitiesTabs[this.state.selectedTab];
 
