@@ -2,16 +2,16 @@ import * as UserAPIUtil from "../util/user_api_util";
 
 export const RECEIVE_USER_INFO = 'RECEIVE_USER_INFO';
 
-export const receiveUserInfo = user => {
-    // debugger
+export const receiveUserInfo = userData => {
+    debugger
     return {
     type: RECEIVE_USER_INFO,
-    user
+    userData
     }
 };
 
 export const fetchUserInfo = userId => dispatch => {
-    // debugger
+    debugger
     return (UserAPIUtil.fetchUserInfo(userId)
-        .then(res => dispatch(receiveUserInfo(res.data))))
+        .then(userData => dispatch(receiveUserInfo(userData))))
 }

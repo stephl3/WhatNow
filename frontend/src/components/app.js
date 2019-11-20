@@ -17,11 +17,11 @@ const App = () => (
     <div id="main-content">
         <Modal />
         <NavBarContainer />
-        <YelpIndexContainer />
         <Switch>
-            <AuthRoute exact path="/home" component={HomeContainer} />
+        {/* <YelpIndexContainer /> */}
+            {/* <AuthRoute exact path="/home" component={HomeContainer} /> */}
+            <AuthRoute exact path='/:userId/profile' component={ProfileContainer} />
             <AuthRoute exact path="/" component={SplashPage} />
-            <ProtectedRoute exact path='/:userId/profile' component={ProfileContainer} />
             {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
         </Switch>

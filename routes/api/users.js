@@ -115,13 +115,22 @@ router.post("/login", (req, res) => {
   })
 })
 
-router.get('/profile', (req, res) => {
-  User.findOne({ id: req.body.userId }).then(
-    user => {
-      console.log(user);
-      return res.json(user);
-    }
-  )
+router.get('/:id', (req, res) => {
+  // debugger
+  // User.find({ id: req.params.id }, (err, items) => {
+  //   if (err) res.status(404).json('No user')
+  //   res.status(200).json(items);
+  // })
+    // .then( user => {
+    //   console.log(user);
+    //   return res.json(user);
+    // })
+    // .catch(err => res.status(404).json('No user found'))
+  User.findOne({_id: req.params.id}).then(user => {
+    // debugger
+      // if (err) res.status(404).json('No user')
+      res.status(200).json(user);
+  });
 })
 
 module.exports = router;

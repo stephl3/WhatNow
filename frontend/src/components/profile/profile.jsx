@@ -12,10 +12,14 @@ class Profile extends React.Component {
     componentDidMount() {
         this.props.fetchUserInfo(this.props.match.params.userId)
             .then(user => {
-                debugger
-                return this.setState({firstName: user.user.firstName})
+                // debugger
+                return this.setState({firstName: user.userData.data.firstName})
             });
-        debugger
+        // debugger
+    }
+
+    componentDidUpdate() {
+        
     }
 
     addFriend() {
