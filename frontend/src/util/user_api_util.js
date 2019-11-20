@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export const fetchUserInfo = userId => {
-    debugger
+    // debugger
     return axios.get("/api/users/profile", userId);
 };
