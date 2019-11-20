@@ -8,6 +8,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+.close-session-form-icon-container {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 15;
+  box-sizing: border-box;
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: #efefef;
+  }
+}
+
+#close-session-form-icon {
+  height: 1rem;
+  width: 1rem;
+  color: lightgray;
 }
 
 .session-form {
@@ -24,8 +48,8 @@
 
 #session-form-icon {
   color: var(--theme-color);
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 2rem;
+  width: 2rem;
 }
 
 .session-form-title {
@@ -97,7 +121,7 @@
   outline: none;
   border-style: none;
   &:hover {
-    background-color: #FFB302;
+    background-color: goldenrod;
   }
 }
 

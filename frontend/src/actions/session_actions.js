@@ -1,10 +1,12 @@
 import * as APIUtil from "../util/session_api_util";
+
 import jwt_decode from "jwt-decode";
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
+export const RECEIVE_FRIENDS = "RECEIVE_FRIENDS";
 
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
@@ -23,6 +25,11 @@ export const receiveErrors = errors => ({
 export const logoutUser = () => ({
   type: RECEIVE_USER_LOGOUT
 });
+
+// export const receiveFriends = userData => ({
+//   type: RECEIVE_FRIENDS,
+//   userData
+// })
 
 export const signup = user => dispatch => {
   return APIUtil.signup(user).then(
@@ -50,3 +57,8 @@ export const logout = () => dispatch => {
   APIUtil.setAuthToken(false);
   dispatch(logoutUser());
 };
+
+// export const addFriend = (userId, friendId) => dispatch =>
+//   APIUtil.addFriend(userId, friendId).then(userData => {
+//     dispatch(receiveFriends(userData));
+//   });
