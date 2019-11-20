@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 
 const users = require("./routes/api/users");
-const events = require("./routes/api/events");
+const whativities = require("./routes/api/whativities");
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -21,7 +21,7 @@ require("./config/passport")(passport);
 
 
 app.use("/api/users", users);
-// app.use("/api/events", events);
+app.use("/api/whativities", whativities);
 
 const port = process.envPORT || 7000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
