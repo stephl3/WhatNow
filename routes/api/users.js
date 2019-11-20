@@ -35,7 +35,8 @@ router.post("/register", (req, res) => {
         email: req.body.email,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        password: req.body.password
+        password: req.body.password,
+        friends: []
       })
 
       bcrypt.genSalt(10, (err, salt) => {
@@ -125,10 +126,10 @@ router.get('/:id', (req, res) => {
 
 router.patch('/update/:id', (req, res) => {
   User.findOne({_id: req.params.id})
-    .then(user => {
-      // debugger
+    .then(user => {      
       user.friends.push(req.body.friendId);
-      console.log(user);
+      user.save();
+      
       res.status(200).json(user);
     })
 })
