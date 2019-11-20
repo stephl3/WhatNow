@@ -12,15 +12,8 @@ class Profile extends React.Component {
     componentDidMount() {
         this.props.fetchUserInfo(this.props.match.params.userId)
             .then(user => {
-<<<<<<< HEAD
-                // debugger
-                return this.setState({firstName: user.user.firstName})
-            });
-        // debugger
-=======
                 return this.setState({firstName: user.userData.data.firstName})
             });
->>>>>>> friends
     }
 
     componentDidUpdate() {
@@ -34,17 +27,6 @@ class Profile extends React.Component {
     render() {
         const { friends } = this.props;
         const { firstName } = this.state;
-<<<<<<< HEAD
-        // const user = this.state;
-        // if (!user) {
-        //     debugger
-        //     return null;
-        // }
-        
-        // debugger
-=======
-
->>>>>>> friends
         return (
             <div className="profile-wrapper">
                 <h2> {firstName}'s Profile Page</h2>

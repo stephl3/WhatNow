@@ -36,15 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
   window.findGeneralPlaces = findGeneralPlaces;
   window.fetchNearbyPlaces = fetchNearbyPlaces;
-<<<<<<< HEAD
-  //test
-  
-=======
-  window.axios = axios;
-  window.findPlacePhoto = findPlacePhoto;
+  // window.axios = axios;
+  // window.findPlacePhoto = findPlacePhoto;
   window.addFriend = addFriend;
 
->>>>>>> friends
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
 });
+
