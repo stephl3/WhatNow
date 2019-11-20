@@ -1,6 +1,5 @@
 import React from 'react';
-import '../../stylesheets/whativity_show.scss';
-import { Link } from 'react-router-dom';
+import '../../stylesheets/whativity_index.scss';
 
 class Whativities extends React.Component{
   constructor(props){
@@ -24,8 +23,8 @@ class Whativities extends React.Component{
         <ul className="whativities-list">{this.state.whativities.map(whativity =>
           <li key={whativity._id} className="whativity-item">
             {whativity.name}
+            <br/>
             {whativity.address}
-            {}
           </li>
         )}
         </ul>
