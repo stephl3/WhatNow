@@ -24,9 +24,9 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  events: [{
+  whativities: [{
     type: Schema.Types.ObjectId,
-    ref:  'event'
+    ref:  'whativity'
   }]
 })
 

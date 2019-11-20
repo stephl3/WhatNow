@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const EventSchema = new Schema({
+const WhativitySchema = new Schema({
   name: {
     type: String,
     required: true
   },
-  photo: {
+  photoUrl: {
     type: String,
     // required: true
   },
   rating: {
     type: Number,
-    required: true
+    // required: true
   },
   address: {
     type: String,
@@ -20,6 +20,6 @@ const EventSchema = new Schema({
   }
 });
 
-const Event = mongoose.model('event', EventSchema);
+const Whativity = mongoose.model('whativity', WhativitySchema);
 
-module.exports = Event;
+module.exports = Whativity;
