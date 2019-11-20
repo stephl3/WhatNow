@@ -9,7 +9,6 @@ class Whativities extends React.Component{
   }
 
   componentDidMount(){
-    // debugger
     this.props.fetchWhativities();
   }
 
@@ -18,8 +17,6 @@ class Whativities extends React.Component{
   }
 
   render(){
-    debugger
-    console.log(this.state.whativities)
     return(
       <div>
         <ul className="whativities-list">{this.state.whativities.map(whativity =>
