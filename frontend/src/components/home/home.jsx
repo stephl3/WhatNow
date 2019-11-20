@@ -20,6 +20,7 @@ class Home extends React.Component {
     }
     this.handleWhatNow = this.handleWhatNow.bind(this);
     this.state.shuffleChoices = this.shuffleChoices.bind(this);
+    this.assignType = this.assignType.bind(this);
   }
 
   componentDidMount() {
@@ -37,11 +38,26 @@ class Home extends React.Component {
     // }
     // this.setState({ num })
           // this.shuffleChoices();
+  }
 
+  assignType() {
+    let choices = [];
+    this.props.places.forEach( place => {
+      choices.push([place, "google"]);
+    });
+    this.props.events.forEach( event => {
+      choices.push([event, "yelp"]);
+    });
+    return choices
   }
 
   shuffleChoices() {
-    let choices = this.props.places.concat(this.props.events)
+    // let choices = this.props.places.concat(this.props.events)
+    // let choices = [];
+    // this.props.places.forEach( place => {
+    //   choices.push([place, 'google'])
+    // });
+    let choices = this.assignType();
     let newSpontaneous = [];
     let newPopular = [];
     let newFriends = [];
@@ -62,11 +78,16 @@ class Home extends React.Component {
     this.setState({
       spontaneous: newSpontaneous,
       popular: newPopular,
-      friends: newFriends
+      friends: newFriends,
+      tabVisible: true
     })
   }
 
   handleWhatNow(e) {
+    e.preventDefault();
+    this.shuffleChoices();
+    // let newOptions = [];
+
     // e.preventDefault();
     // let newOptions = [];
     // if (this.state.num === 0) {
@@ -105,7 +126,10 @@ class Home extends React.Component {
               whatItems={this.state.options} */}
             <div className ={`whativities-tab-wrapper ${this.state.tabVisible}`}>
               <WhativitiesTab
-                whativities={this.state.options}
+                // whativities={this.state.options}
+                popular={this.state.popular}
+                spontaneous={this.state.spontaneous}
+                friends={this.state.friends}
                 visibility={this.state.tabVisible}
               />
             </div>
