@@ -1,5 +1,7 @@
 import React from 'react';
 import Place from './place';
+import YelpIndexContainer from '../yelp/yelp_index_container';
+import YelpIndex from '../yelp/yelp_index';
 // import GoogleMaps from '../GoogleMaps/google_maps';
 
 class Home extends React.Component {
@@ -40,7 +42,7 @@ class Home extends React.Component {
 
   render() {
 
-    const { places, findPlacePhoto } = this.props
+    const { places, events, findPlacePhoto } = this.props
 
     return (
       <div className="home wrapper">
@@ -64,6 +66,9 @@ class Home extends React.Component {
                 />
               )
             })}
+          </div>
+          <div clasaName="yelp-events-wrapper">
+            <YelpIndexContainer/>
           </div>
         </div>
         <div className="home-container-3">
