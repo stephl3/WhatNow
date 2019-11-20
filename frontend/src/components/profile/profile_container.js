@@ -1,11 +1,12 @@
 import { connect } from "react-redux";
-import { fetchUserInfo, addFriend } from '../../actions/user_actions';
+import { addFriend } from '../../actions/session_actions';
+import { fetchUserInfo } from "../../actions/user_actions";
 import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => ({
     currentUserId: state.session.user.id,
     // user: state.users[ownProps.match.params.userId]
-    friends: state.users.friends
+    friends: state.session.user.friends
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,7 +1,8 @@
 import {
   RECEIVE_CURRENT_USER,
   RECEIVE_USER_LOGOUT,
-  RECEIVE_USER_SIGN_IN
+  RECEIVE_USER_SIGN_IN,
+  RECEIVE_FRIENDS
 } from "../actions/session_actions";
 
 const initialState = {
@@ -10,9 +11,12 @@ const initialState = {
 };
 
 export default function(state = initialState, action) {
+  Object.freeze(state);
+  let nextState = Object.assign({}, state);
+
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      debugger
+      // debugger
       return {
         ...state,
         isAuthenticated: !!action.currentUser,
@@ -28,6 +32,10 @@ export default function(state = initialState, action) {
         ...state,
         isSignedIn: true
       };
+    // case RECEIVE_FRIENDS:
+    //   debugger
+    //   // nextState[user].friends = action.userData.data.friends;
+    //   return nextState;
     default:
       return state;
   }
