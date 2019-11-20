@@ -12,10 +12,10 @@ class Profile extends React.Component {
     componentDidMount() {
         this.props.fetchUserInfo(this.props.match.params.userId)
             .then(user => {
-                debugger
+                // debugger
                 return this.setState({firstName: user.user.firstName})
             });
-        debugger
+        // debugger
     }
 
     addFriend() {
@@ -32,7 +32,7 @@ class Profile extends React.Component {
         //     return null;
         // }
         
-        debugger
+        // debugger
         return (
             <div className="profile-wrapper">
                 <h2> {firstName}'s Profile Page</h2>

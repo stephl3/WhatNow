@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import places from './places_reducer';
+import places from './google_reducer';
 import ui from "./ui_reducer";
 import session from "./session_reducer";
 import errors from "./errors_reducer";
