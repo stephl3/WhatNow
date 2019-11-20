@@ -110,10 +110,8 @@ class SessionForm extends React.Component {
     );
   }
 
-  
-
   render() {
-    const { formType, switchForm } = this.props;
+    const { formType, switchForm, closeModal } = this.props;
     const sessionFormInputs = (
       <div className='session-form-text-inputs'>
         <label className='session-form-input-label'>Email
@@ -190,24 +188,27 @@ class SessionForm extends React.Component {
     );
 
     return (
-      <div className='session-form-container'>
-        <form className='session-form' onSubmit={this.handleSubmit}>
-          <div className='session-form-icon-container'>
-            <i className='fab fa-weebly' id='session-form-icon'></i>
+      <div className="session-form-container">
+        <div className="close-session-form-icon-container" onClick={closeModal}>
+          <i className="fas fa-times" id="close-session-form-icon"></i>
+        </div>
+        <form className="session-form" onSubmit={this.handleSubmit}>
+          <div className="session-form-icon-container">
+            <i className="fab fa-weebly" id="session-form-icon"></i>
           </div>
-          <div className='session-form-title'>
+          <div className="session-form-title">
             Welcome to WhatNow
           </div>
-          <div className='session-form-inputs'>
+          <div className="session-form-inputs">
             {sessionFormInputs}
             {this.renderErrors()}
-            <input type='submit'
-              className='session-form-button-input'
-              id='form-action'
+            <input type="submit"
+              className="session-form-button-input"
+              id="form-action"
               value={formType}
             />
             {demoLogin}
-            <div className='session-form-spacer'></div>
+            <div className="session-form-spacer"></div>
             {switchFormLink}
           </div>
         </form>
