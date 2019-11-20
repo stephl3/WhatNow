@@ -7,6 +7,7 @@ class Profile extends React.Component {
         this.state = {
             firstName: ""
         }
+        this.addFriend = this.addFriend.bind(this);
     }
 
     componentDidMount() {
@@ -16,12 +17,29 @@ class Profile extends React.Component {
             });
     }
 
-    componentDidUpdate() {
-        
+    renderFriends() {
+        const {friends} = this.props;
+        if (!friends) {
+            return null;
+        }
+        return(
+            <ul>
+                {friends.map((friend, i) => {
+                    return (
+                        <li key={`friend${i}`}>
+                            {friend}
+                        </li>
+                    )
+                })}
+            </ul>
+        )
     }
 
-    addFriend() {
-        
+    addFriend(e) {
+        e.preventDefault();
+        const {currentUserId} = this.props;
+        const friendId = this.props.match.params.userId;
+        this.props.addFriend(currentUserId, friendId);
     }
 
     render() {
@@ -32,8 +50,8 @@ class Profile extends React.Component {
                 <h2> {firstName}'s Profile Page</h2>
                 <div className="friends-container">
                     <h2>Friends</h2>
-                    {/* <div>{friends}</div> */}
-                    <button onClick={this.addFriend()}>Add Friend</button>
+                    {this.renderFriends()}
+                    <button onClick={this.addFriend}>Add Friend</button>
                 </div>
                 <div className="user-events-container">
                     <h2>Events</h2>

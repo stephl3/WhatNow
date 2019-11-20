@@ -21,10 +21,14 @@ const App = () => (
             {/* <AuthRoute path="/" component={HomeContainer} /> */}
             {/* <ProtectedRoute exact path='/:userId/profile' component={ProfileContainer} /> */}
         {/* <YelpIndexContainer /> */}
+            {/* <AuthRoute exact path="/home" component={HomeContainer} /> */}
             <AuthRoute exact path="/home" component={HomeContainer} />
             <AuthRoute exact path="/" component={SplashPage} />
             <ProtectedRoute exact path='/:userId/profile' component={ProfileContainer} />
+            <AuthRoute exact path="/" component={SplashPage} />
             <Link to="/whativities" component={WhativitiesContainer}/>
+            {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
         </Switch>
     </div>
 );
