@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import '../../stylesheets/navbar.scss';
 
 class NavBar extends React.Component {
@@ -13,6 +13,7 @@ class NavBar extends React.Component {
 
   logoutUser(e) {
     e.preventDefault();
+    window.location.href = "/";
     this.props.logout();
   }
 
