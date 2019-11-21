@@ -1,8 +1,13 @@
 import React from 'react';
 
 class YelpIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.showWhativity = this.showWhativity.bind(this);
+  }
   showWhativity(e) {
     e.preventDefault();
+    debugger
     this.props.openModal('whativity');
   }
 

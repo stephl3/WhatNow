@@ -78,10 +78,8 @@ class Home extends React.Component {
       newFriends.push(choiceThree);
     }
 
-    const receiveRandomWhativities = this.props;
-    receiveRandomWhativities(newSpontaneous);
-    receiveRandomWhativities(newPopular);
-    receiveRandomWhativities(newFriends);
+    // debugger
+    this.updateRandomWhativitiesState(newSpontaneous, newPopular, newFriends);
     
     this.props.nowLoading();
     this.setState({
@@ -97,6 +95,13 @@ class Home extends React.Component {
         modal: false
       })
     }, 1300)
+  }
+
+  updateRandomWhativitiesState(newSpontaneous, newPopular, newFriends) {
+    const { receiveRandomWhativities } = this.props;
+    receiveRandomWhativities("spontaneous", newSpontaneous);
+    receiveRandomWhativities("popular", newPopular);
+    receiveRandomWhativities("friends", newFriends);
   }
 
   handleWhatNow(e) {

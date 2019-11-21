@@ -36,7 +36,9 @@ class WhativityIndex extends React.Component {
       return <WhativityIndexItem
               whativity={whativity}
               api={api}
+              itemIdx={idx}
               key={idx}
+              selectedTab={this.props.selectedTab}
               openModal={this.props.openModal}
             />
     })

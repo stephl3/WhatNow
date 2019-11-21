@@ -30,6 +30,7 @@ class WhativitiesTab extends React.Component {
       this.props.friends
     ];
     const whativityIndexTabItems = whativityIndexTabs[this.state.selectedTab];
+    // debugger
     return (
       <div className="whativities-tab-container">
         <div className="whativities-tab-headers-wrapper">
@@ -41,7 +42,7 @@ class WhativitiesTab extends React.Component {
           />
         </div>
         <div className="whativities-tab">
-          <WhativityIndexContainer whatItems={whativityIndexTabItems} />
+          <WhativityIndexContainer selectedTab={headerLabels[this.state.selectedTab]} whatItems={whativityIndexTabItems} />
         </div>
       </div>
     )

@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => ({
   fetchYelpEvents: () => dispatch(fetchYelpEvents()),
   nowLoading: () => dispatch(nowLoading()),
   stopLoading: () => dispatch(stopLoading()),
-  receiveRandomWhativities: whativities => receiveRandomWhativities(whativities);
+  receiveRandomWhativities: (category, whativities) => dispatch(receiveRandomWhativities(category, whativities))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
