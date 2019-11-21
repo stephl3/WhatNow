@@ -4,6 +4,7 @@ import YelpIndexContainer from '../yelp/yelp_index_container';
 import YelpIndex from '../yelp/yelp_index';
 import WhativitiesTab from '../whativity/whativities_tab';
 // import GoogleMaps from '../GoogleMaps/google_maps';
+import LoadingModal from '../modal/loading_modal';
 
 import WhativityIndex from './whativity_index';
 
@@ -16,7 +17,8 @@ class Home extends React.Component {
       tabVisible: false,
       spontaneous: [],
       popular: [],
-      friends: []
+      friends: [],
+      modal: false
     }
     this.handleWhatNow = this.handleWhatNow.bind(this);
     this.state.shuffleChoices = this.shuffleChoices.bind(this);
@@ -75,12 +77,21 @@ class Home extends React.Component {
       newPopular.push(choiceTwo);
       newFriends.push(choiceThree);
     }
+
+    this.props.nowLoading();
     this.setState({
       spontaneous: newSpontaneous,
       popular: newPopular,
       friends: newFriends,
-      tabVisible: true
+      tabVisible: true,
+      modal: true
     })
+    window.setTimeout(() => {
+      this.props.stopLoading();
+      this.setState({
+        modal: false
+      })
+    }, 1500)
   }
 
   handleWhatNow(e) {
@@ -112,15 +123,34 @@ class Home extends React.Component {
       
     //   tabVisible: true
     // })
-    // debugger
+    // // debugger
+    // let newOptions = [];
+    // if (this.state.num === 0) {
+    //   this.props.places.map( place => {
+    //     if (newOptions.length <= 3) {
+    //       newOptions.push([place, 'google'])
+    //     }
+    //   });
+    //   // newOptions = this.props.places;
+    // } else {
+    //   this.props.events.map( event => {
+    //     if (newOptions.length <= 3) {
+    //       newOptions.push([event, 'yelp'])
+    //     }
+    //     // debugger
+    //   });
+    //   // newOptions = this.props.events;
+    // }
+
   }
 
   render() {
     const { places, events, findPlacePhoto } = this.props
+    const loadingModal = this.state.modal ? <LoadingModal /> : null;
 
-
-    return (
-      <div className="home wrapper">
+  return (
+      <div className="home-wrapper">
+        {loadingModal}
         <div className="home-container-1">
             {/* <WhativityIndex
               whatItems={this.state.options} */}
@@ -130,7 +160,6 @@ class Home extends React.Component {
                 popular={this.state.popular}
                 spontaneous={this.state.spontaneous}
                 friends={this.state.friends}
-                visibility={this.state.tabVisible}
               />
             </div>
         </div>

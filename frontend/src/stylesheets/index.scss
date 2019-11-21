@@ -4,11 +4,15 @@
 @import './splash_page.scss';
 @import './navbar.scss';
 @import './profile.scss';
+@import './profile_friends.scss';
 @import './home.scss';
 
 html {
-  --theme-color: goldenrod;
+  --theme-color: #FFB302;
   --theme-font: proxima-nova, helvetica, arial, sans-serif;
+  --background-color: #232629;
+  --subheading-color: #4A90E1;
+  --container-color: #37363D;
 }
 
 #root {

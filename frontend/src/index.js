@@ -3,14 +3,10 @@ import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
 import jwt_decode from "jwt-decode";
+import { logout } from './actions/session_actions';
 import { setAuthToken } from "./util/session_api_util";
-import { logout, signup } from "./actions/session_actions";
-import { fetchUserInfo, addFriend } from './actions/user_actions';
 import "./stylesheets/index.scss";
-import { findGeneralPlaces } from './util/google_api_util';
-import { fetchNearbyPlaces } from './actions//google_actions';
 
-import { findPlacePhoto } from './util/google_api_util';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -33,14 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore({});
   }
   
-  //test
+  // test start
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.findGeneralPlaces = findGeneralPlaces;
-  window.fetchNearbyPlaces = fetchNearbyPlaces;
-  // window.axios = axios;
-  window.findPlacePhoto = findPlacePhoto;
-  window.addFriend = addFriend;
+  // test end
 
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);

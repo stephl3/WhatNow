@@ -6,6 +6,7 @@ import { fetchNearbyPlaces } from '../../actions/google_actions';
 import { findPlacePhoto } from '../../util/google_api_util';
 import { fetchYelpEvents } from '../../actions/yelp_actions';
 import Home from '../home/home';
+import { nowLoading, stopLoading } from '../../actions/loading_actions';
 
 const mapStateToProps = state => ({
   places: state.places,
@@ -15,7 +16,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchNearbyPlaces: () => dispatch(fetchNearbyPlaces()),
   findPlacePhoto: (photoRef) => findPlacePhoto(photoRef),
-  fetchYelpEvents: () => dispatch(fetchYelpEvents())
+  fetchYelpEvents: () => dispatch(fetchYelpEvents()),
+  nowLoading: () => dispatch(nowLoading()),
+  stopLoading: () => dispatch(stopLoading())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

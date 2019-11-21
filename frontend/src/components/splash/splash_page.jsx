@@ -1,5 +1,4 @@
 import React from "react";
-import '../../stylesheets/splash_page.scss';
 
 const images = [
   "https://d.newsweek.com/en/full/1502445/san-francisco-salifornia.webp",

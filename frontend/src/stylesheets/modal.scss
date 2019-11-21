@@ -34,3 +34,123 @@
 //     opacity: 0;
 //   }
 // }
+
+.loading-modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: var(--container-color);
+  z-index: 10;
+}
+
+.loading-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin size($width:inherit, $height:inherit) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flex($vertical, $horizontal, $direction:row) {
+    display: flex;
+    align-items: $vertical;
+    justify-content: $horizontal;
+    flex-direction: $direction;
+}
+
+@mixin border-radius($topLeft:50%, $topRight:50%, $botLeft:50%, $botRight:50%) {
+  border-top-left-radius: $topLeft;
+  border-top-right-radius: $topRight;
+  border-bottom-left-radius: $botLeft;
+  border-bottom-right-radius: $botRight;
+}
+
+$deepBlue-5: #f1f3f4;
+$deepBlue-10: #e4e6ea;
+$deepBlue-20: #CCCED5;
+$deepBlue-40: #999EAC;
+$deepBlue-60: #666D82;
+$deepBlue-80: #333D59;
+$deepBlue-90: #192445;
+$deepBlue-100: #000C2F;
+$deepBlue-120: #000923;
+
+$blue: #2E90EB;
+$salmon: #f56b72;
+
+$swipes-shadow-one: 0 1px 3px rgba(0, 0, 0, 0.06),
+0 1px 2px rgba(0, 0, 0, 0.12);
+$swipes-shadow-two: 0 3px 6px rgba(0, 0, 0, 0.16),
+0 3px 6px rgba(0, 0, 0, 0.23);
+$swipes-shadow-three: 0 10px 20px rgba(0, 0, 0, 0.19),
+0 6px 6px rgba(0, 0, 0, 0.23);
+$swipes-shadow-four: 0 14px 28px rgba(0, 0, 0, 0.25),
+0 10px 10px rgba(0, 0, 0, 0.22);
+$swipes-shadow-five: 0 19px 38px rgba(0, 0, 0, 0.30),
+0 15px 12px rgba(0, 0, 0, 0.22);
+
+html,
+body {
+    @include size(100%);
+  @include flex(center, center);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+    font-family: 'Roboto';
+}
+
+// Custome SCSS
+
+.sw-loader__wrapper {
+  position:relative;
+
+  &--center {
+    position:absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .sw-loader__holder {
+    @include size(70%, 70%);
+    margin-left: 15%; margin-top: 15%;
+    position: relative;
+    transform: rotate(-45deg);
+
+    .rect {
+      @include size(100%, 100%);
+      position: absolute;
+      left: 0; top: 0;
+      background: linear-gradient(
+        to right,
+        #141562, 
+        #486FBC, 
+        #EAB5A1, 
+        #8DD6FF, 
+        #4973C9, 
+        #D07CA7, 
+        #F4915E, 
+        #F5919E, 
+        #B46F89, 
+        #141562, 
+        #486FBC);
+      background-position: 0% 50%;
+      background-size: 1000% 1000%;
+      overflow: hidden;
+      animation: moveGradient 15s infinite;
+    }
+  }
+}
+
+@keyframes moveGradient {
+  to {
+    background-position: 100% 50%;
+  }
+}
