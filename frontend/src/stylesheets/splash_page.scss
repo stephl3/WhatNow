@@ -7,7 +7,6 @@
 }
 
 .splash-background {
-    z-index: -1;
     background-image: url('https://d.newsweek.com/en/full/1502445/san-francisco-salifornia.webp') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -48,7 +47,6 @@
     background-color: black;
     opacity: 0.7;
     // fix this positioning
-    margin-top: 350px;
     color: white;
     font-family: var(--theme-font);
 }

@@ -3,10 +3,6 @@ import YelpIndexItem from '../yelp/yelp_index_item';
 import GoogleIndexItem from './google_index_item';
 
 class WhativityIndex extends React.Component {
-  constructor(props) {
-    super(props);
-    // this.renderInfo = this.renderInfo.bind(this);
-  }
 
   // renderInfo() {
   //   // debugger

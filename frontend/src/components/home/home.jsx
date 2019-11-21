@@ -77,12 +77,21 @@ class Home extends React.Component {
       newPopular.push(choiceTwo);
       newFriends.push(choiceThree);
     }
+
+    this.props.nowLoading();
     this.setState({
       spontaneous: newSpontaneous,
       popular: newPopular,
       friends: newFriends,
-      tabVisible: true
+      tabVisible: true,
+      modal: true
     })
+    window.setTimeout(() => {
+      this.props.stopLoading();
+      this.setState({
+        modal: false
+      })
+    }, 1500)
   }
 
   handleWhatNow(e) {
@@ -132,25 +141,15 @@ class Home extends React.Component {
     //   });
     //   // newOptions = this.props.events;
     // }
-    // this.props.nowLoading();
-    // this.setState({
-    //   options: newOptions,
-    //   modal: true
-    // })
-    // window.setTimeout(() => {
-    //   this.props.stopLoading();
-    //   this.setState({
-    //     modal: false
-    //   })
-    // }, 1500)
+
   }
 
   render() {
     const { places, events, findPlacePhoto } = this.props
     const loadingModal = this.state.modal ? <LoadingModal /> : null;
 
-    return (
-      <div className="home wrapper">
+  return (
+      <div className="home-wrapper">
         {loadingModal}
         <div className="home-container-1">
             {/* <WhativityIndex
@@ -161,7 +160,6 @@ class Home extends React.Component {
                 popular={this.state.popular}
                 spontaneous={this.state.spontaneous}
                 friends={this.state.friends}
-                visibility={this.state.tabVisible}
               />
             </div>
         </div>

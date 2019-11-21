@@ -2,19 +2,16 @@
     overflow: hidden;
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     height: 40px;
     padding: 5px;
-    // box-shadow: 
-    //    inset 0 -3em 3em rgba(0,0,0,0.1), 
-    //          0 0  0 2px rgb(255,255,255),
-    //          0.3em 0.3em 1em rgba(0,0,0,0.3);
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: black;
     opacity: 0.5;
-    z-index: 1;
+    z-index: 5;
 }
 
 .navbar-wrapper h1 {

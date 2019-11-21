@@ -14,6 +14,7 @@ class WhativitiesTab extends React.Component {
   }
 
   selectTab(idx) {
+    
     this.setState({ selectedTab: idx });
   }
 

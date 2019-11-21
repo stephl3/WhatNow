@@ -1,6 +1,6 @@
 import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import { Switch, Link } from "react-router-dom";
+import { Switch } from "react-router-dom";
 
 import Modal from "./modal/modal";
 import NavBarContainer from "./nav/navbar_container";
@@ -16,13 +16,10 @@ const App = () => (
   <div id="main-content">
     <Modal />
     <NavBarContainer/>
-    <HomeContainer />
     <Switch>
-      <AuthRoute exact path="/home" component={HomeContainer} />
-      <AuthRoute exact path="/" component={SplashPage} />
+      <ProtectedRoute path="/home" component={HomeContainer} />
       <ProtectedRoute exact path='/:userId/profile' component={ProfileContainer} />
-      {/* <Link to="/whativities/:id" component={WhativityShow}/> */}
-      <Link to="/whativities" component={WhativitiesContainer}/>
+      <AuthRoute path="/" component={SplashPage} />
     </Switch>
   </div>
 );
