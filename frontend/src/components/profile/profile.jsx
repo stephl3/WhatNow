@@ -17,39 +17,49 @@ class Profile extends React.Component {
   }
 
     componentDidMount() {
-        this.props.fetchUserInfo(this.props.match.params.userId)
-        return this.props.fetchUserInfo(this.props.match.params.userId)
-          .then(user => {
-            //replace poop festival with line below it
-            this.setState({ whativities: [{ name: "poop festival", address: "poop st." }] })
-            // this.setState({ whativities: user.userData.data.whativities })
-            // this.setState({ firstName: user.userData.data.firstName })
-            this.setState({ user: user.userData.data })
-          }); 
+      this.props.fetchWhativities();
+      this.props.fetchUserInfo(this.props.match.params.userId)
+      return this.props.fetchUserInfo(this.props.match.params.userId)
+        .then(user => {
+          //replace poop festival with line below it
+          // this.setState({ whativities: [{ name: "poop festival", address: "poop st." }] })
+          // this.setState({ whativities: user.userData.data.whativities })
+          // this.setState({ firstName: user.userData.data.firstName })
+          this.setState({ user: user.userData.data })
+        }); 
     }
 
     addFriend(e) {
-        e.preventDefault();
-        const {currentUserId} = this.props;
-        const friendId = this.props.match.params.userId;
-        this.props.addFriend(currentUserId, friendId);
+      e.preventDefault();
+      const {currentUserId} = this.props;
+      const friendId = this.props.match.params.userId;
+      this.props.addFriend(currentUserId, friendId);
     }
 
     render() {
-        const { friends } = this.props;
-        const { user, whativities } = this.state;
-        let renderFriends;
-        if (friends) {
-            renderFriends = friends.map((friendId, i) => {
-                if (friendId != null) {
-                    return (
-                        // <div>
-                            <FriendContainer key={i} userId={friendId} />
-                        // </div>
-                    )
-                }
-            })
-        }
+      const { friends } = this.props;
+      const { user } = this.state;
+      let renderFriends;
+      if (friends) {
+        renderFriends = friends.map((friendId, i) => {
+          if (friendId != null) {
+            return (
+              // <div>
+                <FriendContainer key={i} userId={friendId} />
+              // </div>
+            )
+          }
+        })
+      }
+
+      let whativity = this.props.whativities.map( whativity => {
+        return (
+          <WhativityItem 
+            key={whativity.id}
+            item={whativity}
+          />
+        )
+      })
         return (
           <div className="profile-wrapper">
             <div className="profile-left">
@@ -78,9 +88,10 @@ class Profile extends React.Component {
               <div className="user-whativities-container">
                 <h2>Attended Events</h2>
                 <ul className="whativities-list">
-                  {whativities.map(whativity => (
-                    <WhativityItem key={whativity._id} props={whativity} />
-                  ))}
+                  {/* {whativities.map(whativity => (
+                    <WhativityItem key={whativity._id} item={whativity} />
+                  ))} */}
+                  {whativity}
                 </ul>
               </div>
             </div>

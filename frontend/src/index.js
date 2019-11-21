@@ -8,8 +8,11 @@ import { setAuthToken } from "./util/session_api_util";
 import "./stylesheets/index.scss";
 
 import { fetchYelpFeaturedEvents } from './util/yelp_api_util';
+import { getWhativities } from './util/whativity_api_util';
+import { fetchWhativities } from './actions/whativity_actions';
 
-
+window.getWhativities = getWhativities;
+window.fetchWhativities = fetchWhativities;
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;

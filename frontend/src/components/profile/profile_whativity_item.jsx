@@ -1,16 +1,22 @@
 import React from 'react';
 
-const WhativityItem = props => {
-  const { name, address } = props.props
+const WhativityItem = ({ item }) => {
+  // const { name, address } = props.props
   return(
-    <li className="whativity-item" key={props._id}>
-      {name}
-      <p>Placeholder Name</p>
-      <br/>
-      {address}
-      <p>Placeholder Address</p>
+    <li className="whativity-item">
+      <div>
+        <img src={item.photoUrl} alt=""/>
+      </div>
+      <div className="whativitiy-item-info">
+      <div className="whativity-item-name">
+          {item.name}
+      </div>
+      <div className="whativity-item-address">
+          {item.address}
+      </div>
+      </div>
     </li>
   )
 }
 
-export default WhativityItem;
+export default WhativityItem; 
