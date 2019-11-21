@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import '../../stylesheets/navbar.scss';
 
 class NavBar extends React.Component {
@@ -28,11 +28,10 @@ class NavBar extends React.Component {
 
   getLinks() {
     if (this.props.loggedIn) {
+      // debugger
       return (
-        <div>
-          {/* <Link to={"/events"}>All Events</Link> */}
-          {/* <Link to={"/profile"}>Profile</Link> */}
-          {/* <Link to={"/new_tweet"}>Write a Tweet</Link> */}
+        <div className="session-links">
+          <Link className="profile-link" to={`${this.props.userId}/profile`}>Profile</Link>
           <button id="logout-button" onClick={this.logoutUser}>Logout</button>
         </div>
       );
