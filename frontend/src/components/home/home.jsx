@@ -1,5 +1,5 @@
 import React from 'react';
-import Place from './place';
+// import Place from './place';
 import YelpIndexContainer from '../yelp/yelp_index_container';
 import YelpIndex from '../yelp/yelp_index';
 import WhativitiesTab from '../whativity/whativities_tab';

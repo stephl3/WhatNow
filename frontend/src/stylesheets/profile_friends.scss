@@ -1,4 +1,28 @@
-.friends-container {
-  background-color: yellow;
+.friends-container h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.friends-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.friend {
+  background-image: url(../images/user_icon.svg);
+  background-repeat: no-repeat;
+  // background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100px;
+  list-style-type: none;
+  width: 30%;
+  height: 100px;
+  // border: 2px solid white;
+  margin: 1%;
+  -webkit-box-shadow: 1px 1px 2px 2px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    1px 1px 2px 2px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         1px 1px 2px 2px grey;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
