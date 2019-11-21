@@ -7,8 +7,7 @@ export const fetchYelpEvents = () => {
   const params = {
     location: "san francisco, ca",
     // sort_on: "time_start",
-    categories: ("festivals-fairs", "sports-active-life", "nightlife", "performing-arts", "music", "visual-arts", "kids-family", "film"),
-    limit: 5
+    limit: 50
   }
   const urlProxy = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events';
   return Promise.props({

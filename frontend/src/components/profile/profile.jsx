@@ -15,7 +15,7 @@ class Profile extends React.Component {
     }
     this.addFriend = this.addFriend.bind(this);
   }
-
+  
     componentDidMount() {
       this.props.fetchWhativities();
       this.props.fetchUserInfo(this.props.match.params.userId)
@@ -71,19 +71,19 @@ class Profile extends React.Component {
               </div>
             </div>
 
-            <div className="profile-right">
-              <div className="user-info">
-                <h2>
-                  {" "}
-                  {user.firstName} {user.lastName}
-                </h2>
-                <p>San Francisco, United States</p>
-                <span>894 Followers</span>
-                <button onClick={this.addFriend}>Follow</button>
-              </div>
-              <div className="interested-whativities-container">
-                <h2>Upcoming Events</h2>
-              </div>
+        <div className="profile-right">
+          <div className="user-info">
+            <h2>
+              {" "}
+              {user.firstName} {user.lastName}
+            </h2>
+            <p>San Francisco, United States</p>
+            <span>894 Followers</span>
+            <button onClick={this.addFriend}>Follow</button>
+          </div>
+          <div className="interested-whativities-container">
+            <h2>Upcoming Events</h2>
+          </div>
 
               <div className="user-whativities-container">
                 <h2>Attended Events</h2>
@@ -96,8 +96,10 @@ class Profile extends React.Component {
               </div>
             </div>
           </div>
-        );
-    }
+        </div>
+      </div>
+    );
+  }
 }
 
 Profile.defaultProps = {

@@ -9,7 +9,11 @@ const WhativitiesTabHeaders = ({ headerLabels, selectedTab, onTabHeaderClick, ta
       <NavLink
         key={idx}
         to={`/home/${headerLabels[idx]}`}
-        className={`whativities-tab-header-link ${selected}`}
+        className={`whativities-tab-header-link`}
+        activeStyle={{
+          backgroundColor: `var(--hover-color)`,
+          // border:"1px solid darkblue"
+        }}
         onClick={() => onTabHeaderClick(idx)}>
         <div className="whativities-tab-header-label">
           {headerLabels[idx]}

@@ -1,34 +1,33 @@
 .home-wrapper {
   display: flex;
   flex-direction: column;
-  color: #FFFFFF;
+  align-content: flex-start;
+  color: var(--font-color);
   font-family: var(--theme-font);
   width: 100%;
   min-width: 420px;
   position: fixed;
+  height: 100%;
   top: 0;
   left: 0;
+  background-color: var(--background-color);
 }
 
-.home-container-1 {
+.home-container-main {
   background-color: var(--background-color);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 400px;
+  width: 1200px;
+  height: 70%;
+  margin: 0 auto 0 auto;
 }
-.home-container-2 {
+.home-container-what {
   background-color: var(--background-color);
+  padding: 70px 0 0 0;
   width: 100%;
-  height: 600px;
+  height: auto;
   display: flex;
   justify-content: center;
-}
-.home-container-3 {
-  background-color: lightgreen;
-  width: 100%;
-  height: 600px;
 }
 
 .yelp-index-wrapper, .google-index-wrapper {
@@ -40,8 +39,10 @@
 
 
 .whativity-index-items {
+  width: 1200px;
   display: flex;
   justify-content: space-around;
+  margin: 0 auto 0 auto;
 }
 // .yelp-index, .google-index {
 //   display: flex;
@@ -50,18 +51,19 @@
 
 .yelp-index-item, .google-index-item {
   display: flex;
-  width: 30%;
-  height: 240px;
+  width: 350px;
+  height: 100%;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 
               0 1px 4px rgba(0, 0, 0, 0.24);
-  border-radius: 8px;
+  border-radius: 12px;
   background-color: var(--container-color);
   cursor: pointer;
   &:hover {
     // opacity: 0.3;
-    background-color: #242428;
+    background-color: var(--hover-color);
   }
 }
 
@@ -70,28 +72,43 @@
 }
 
 .yelp-item-photo, .google-item-photo {
-  width: 180px;
-  height: 190px;
-  padding: 15px;
-  border-radius: 8px;
+  max-width: 320px;
+  height: auto;
+  // height: 190px;
+  // padding: 15px;
+  border-radius: 12px;
 }
 
 .yelp-item-info, .google-item-info {
   padding: 10px;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: auto;
+  line-height: 2rem;
+  // height: 80%;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  text-align: center;
 }
 
 .yelp-item-info > div, .google-item-info > div {
-  padding: 5px;
+  padding: 10px;
+}
+
+.google-item-name, .yelp-item-name{
+  font-size: 30px;
 }
 
 .what-now-button {
   width: 500px;
   height: 500px;
+}
+
+.whativities-tab-container{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
 }
 
 .whativities-tab-wrapper {
@@ -166,6 +183,8 @@
     100% { background-position: 0 0; }
 }
 
+
+
 .whativities-tab-headers{
   display: flex;
   flex-direction: row;
@@ -174,19 +193,45 @@
   margin-left: auto;
   margin-right: auto;
   :hover{
-    background-color: #151618;
+    background-color: var(--hover-color);
     border-radius:10px;
   }
-  padding: 40px 0 20px 0;
+  padding: 30px 0 30px 0;
 }
 
-.whativities-tab-header-label{
-  display: flex; 
-  justify-content: center;
-  align-items: center;
-  color: var(--subheading-color);
+.whativities-tab-header-link{
+  color: var(--font-color);
+  background-color: var(--container-color);
   width: 120px;
   height: 40px;
   border-radius:10px;
-  background-color: var(--container-color);
+}
+.whativities-tab-header-label{
+  color:inherit;
+  background-color: inherit;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius:inherit;
+  
+}
+
+.social-buttons{
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0 30px 0;
+  width: 100%;
+}
+
+.index-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: var(--theme-color);
 }

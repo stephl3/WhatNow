@@ -5,7 +5,7 @@ import YelpIndex from '../yelp/yelp_index';
 import WhativitiesTab from '../whativity/whativities_tab';
 // import GoogleMaps from '../GoogleMaps/google_maps';
 import LoadingModal from '../modal/loading_modal';
-
+import GoogleMap from '../GoogleMaps/google_maps';
 import WhativityIndex from '../whativity/whativity_index';
 
 class Home extends React.Component {
@@ -63,21 +63,20 @@ class Home extends React.Component {
     let newSpontaneous = [];
     let newPopular = [];
     let newFriends = [];
-    // debugger
     for (let i = 0; i < 3; i++) {
       let randomIdxOne = Math.round(Math.random() * (choices.length - 1));
       let randomIdxTwo = Math.round(Math.random() * (choices.length - 1));
       let randomIdxThree = Math.round(Math.random() * (choices.length - 1));
-      // debugger
       let choiceOne = choices[randomIdxOne];
       let choiceTwo = choices[randomIdxTwo];
       let choiceThree = choices[randomIdxThree];
-      // debugger
       newSpontaneous.push(choiceOne);
       newPopular.push(choiceTwo);
       newFriends.push(choiceThree);
     }
 
+    this.updateRandomWhativitiesState(newSpontaneous, newPopular, newFriends);
+    
     this.props.nowLoading();
     this.setState({
       spontaneous: newSpontaneous,
@@ -94,8 +93,16 @@ class Home extends React.Component {
     }, 1300)
   }
 
+  updateRandomWhativitiesState(newSpontaneous, newPopular, newFriends) {
+    const { receiveRandomWhativities } = this.props;
+    receiveRandomWhativities("spontaneous", newSpontaneous);
+    receiveRandomWhativities("popular", newPopular);
+    receiveRandomWhativities("friends", newFriends);
+  }
+
   handleWhatNow(e) {
     e.preventDefault();
+    window.location.href = "/#/home/Whatever";
     this.shuffleChoices();
     // let newOptions = [];
 
@@ -113,7 +120,6 @@ class Home extends React.Component {
     //     if (newOptions.length < 3) {
     //       newOptions.push([event, 'yelp'])
     //     }
-    //     // debugger
     //   });
     //   // newOptions = this.props.events;
     // }
@@ -123,7 +129,6 @@ class Home extends React.Component {
       
     //   tabVisible: true
     // })
-    // // debugger
     // let newOptions = [];
     // if (this.state.num === 0) {
     //   this.props.places.map( place => {
@@ -137,7 +142,6 @@ class Home extends React.Component {
     //     if (newOptions.length <= 3) {
     //       newOptions.push([event, 'yelp'])
     //     }
-    //     // debugger
     //   });
     //   // newOptions = this.props.events;
     // }
@@ -151,7 +155,14 @@ class Home extends React.Component {
   return (
       <div className="home-wrapper">
         {loadingModal}
-        <div className="home-container-1">
+        <div className="home-container-what">
+          <div className="what-now-button-container">
+            <button onClick={this.handleWhatNow} className="what-now-button">
+              WHAT NOW?
+              </button>
+          </div>
+        </div>
+        <div className="home-container-main">
             {/* <WhativityIndex
               whatItems={this.state.options} */}
             <div className ={`whativities-tab-wrapper ${this.state.tabVisible}`}>
@@ -162,17 +173,6 @@ class Home extends React.Component {
                 friends={this.state.friends}
               />
             </div>
-        </div>
-        <div className="home-container-2">
-          <div className="what-now-button-container">
-            <button onClick={this.handleWhatNow} className="what-now-button">
-              WHAT NOW?
-            </button>
-          </div>
-        </div>
-        <div className="home-container-3">
-          <div className="google-maps-container">
-          </div>
         </div>
       </div>
     )

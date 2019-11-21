@@ -1,7 +1,7 @@
 .friends-container h2 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 8px;
 }
 
 .friends-list {
@@ -11,18 +11,34 @@
 }
 
 .friend {
-  background-image: url(../images/user_icon.svg);
-  background-repeat: no-repeat;
-  // background-attachment: fixed;
-  background-position: center;
-  background-size: 100% 100px;
   list-style-type: none;
   width: 30%;
-  height: 100px;
-  // border: 2px solid white;
-  margin: 1%;
-  -webkit-box-shadow: 1px 1px 2px 2px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow:    1px 1px 2px 2px #ccc;  /* Firefox 3.5 - 3.6 */
-  box-shadow:         1px 1px 2px 2px grey;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  height: auto;
+  padding: 4px;
+  // // border: 2px solid white;
+  // margin: 1%;
+  // -webkit-box-shadow: 1px 1px 2px 2px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  // -moz-box-shadow:    1px 1px 2px 2px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         1px grey;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
+.friend-photo-container {
+  box-sizing: border-box;
+  border-radius: 12px;
+  width: 125px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.friend-photo {
+  width: auto;
+  height: 100px;
+}
+
+.friend-name {
+  margin-top: 4px;
+  font-size: 12px;
+}
