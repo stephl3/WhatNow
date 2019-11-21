@@ -91,7 +91,7 @@ class Home extends React.Component {
       this.setState({
         modal: false
       })
-    }, 1200)
+    }, 1300)
   }
 
   handleWhatNow(e) {
