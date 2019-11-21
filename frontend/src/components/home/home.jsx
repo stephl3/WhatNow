@@ -63,22 +63,18 @@ class Home extends React.Component {
     let newSpontaneous = [];
     let newPopular = [];
     let newFriends = [];
-    // debugger
     for (let i = 0; i < 3; i++) {
       let randomIdxOne = Math.round(Math.random() * (choices.length - 1));
       let randomIdxTwo = Math.round(Math.random() * (choices.length - 1));
       let randomIdxThree = Math.round(Math.random() * (choices.length - 1));
-      // debugger
       let choiceOne = choices[randomIdxOne];
       let choiceTwo = choices[randomIdxTwo];
       let choiceThree = choices[randomIdxThree];
-      // debugger
       newSpontaneous.push(choiceOne);
       newPopular.push(choiceTwo);
       newFriends.push(choiceThree);
     }
 
-    // debugger
     this.updateRandomWhativitiesState(newSpontaneous, newPopular, newFriends);
     
     this.props.nowLoading();
@@ -123,7 +119,6 @@ class Home extends React.Component {
     //     if (newOptions.length < 3) {
     //       newOptions.push([event, 'yelp'])
     //     }
-    //     // debugger
     //   });
     //   // newOptions = this.props.events;
     // }
@@ -133,7 +128,6 @@ class Home extends React.Component {
       
     //   tabVisible: true
     // })
-    // // debugger
     // let newOptions = [];
     // if (this.state.num === 0) {
     //   this.props.places.map( place => {
@@ -147,7 +141,6 @@ class Home extends React.Component {
     //     if (newOptions.length <= 3) {
     //       newOptions.push([event, 'yelp'])
     //     }
-    //     // debugger
     //   });
     //   // newOptions = this.props.events;
     // }

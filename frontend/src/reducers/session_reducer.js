@@ -16,7 +16,6 @@ export default function(state = initialState, action) {
   let nextState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      // debugger
       return {
         ...state,
         isAuthenticated: !!action.currentUser,
@@ -33,7 +32,6 @@ export default function(state = initialState, action) {
         isSignedIn: true
       };
     case RECEIVE_FRIEND:
-      debugger
       nextState.user.friends = action.userData.data.friends;
       return nextState;
     default:

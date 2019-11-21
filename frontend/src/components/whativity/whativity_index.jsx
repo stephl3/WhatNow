@@ -5,12 +5,10 @@ import WhativityIndexItem from './whativity_index_item';
 class WhativityIndex extends React.Component {
 
   // renderInfo() {
-  //   // debugger
   //   if (this.props.whatItems.length > 0) {
   //     this.props.whatItems.map(whatItem => {
   //       let what = whatItem[0];
   //       let type = whatItem[1];
-  //       // debugger
   //       if (type === 'google') {
   //         return (
   //           <div className="google-item-wrapper">

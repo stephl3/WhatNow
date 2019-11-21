@@ -126,8 +126,6 @@ router.get('/:id', (req, res) => {
 router.patch('/update/:id', (req, res) => {
   User.findOne({_id: req.params.id})
     .then(user => {
-      // debugger
-      // let friend =User.findOne({_id: req.body.friendId})
       user.friends.push(req.body.friendId);
       user.save();
       console.log(user);

@@ -7,7 +7,6 @@ class YelpIndexItem extends React.Component {
   }
   showWhativity(e) {
     e.preventDefault();
-    debugger
     this.props.openModal('whativity');
   }
 

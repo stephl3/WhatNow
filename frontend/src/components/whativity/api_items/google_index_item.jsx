@@ -14,7 +14,6 @@ class GoogleIndexItem extends React.Component {
 
   componentDidMount() {
     this.renderPhoto();
-    // debugger
   }
 
   // componentDidUpdate() {
@@ -27,7 +26,6 @@ class GoogleIndexItem extends React.Component {
         photoUrl: res.headers["x-final-url"]
       })
     )
-    // debugger
       // .then(res => console.log(res))
   }
 
@@ -35,7 +33,6 @@ class GoogleIndexItem extends React.Component {
     e.preventDefault();
     const selectedTab = this.props.selectedTab.toLowerCase();
     const {itemIdx} = this.props;
-    // debugger
     this.props.receiveWhativityImg(selectedTab, itemIdx, this.state.photoUrl);
     this.props.openModal('whativity');
   }
