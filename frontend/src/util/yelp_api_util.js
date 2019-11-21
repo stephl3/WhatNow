@@ -7,9 +7,35 @@ export const fetchYelpEvents = () => {
   const params = {
     location: "san francisco, ca",
     // sort_on: "time_start",
-    limit: 10
+    categories: ("festivals-fairs", "sports-active-life", "nightlife", "performing-arts", "music", "visual-arts", "kids-family", "film"),
+    limit: 5
   }
   const urlProxy = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events';
+  return Promise.props({
+    local: axios({
+      url: urlProxy,
+      params: params,
+      json: true,
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${API_KEY}`,
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Origin': 'http://localhost:3000'
+      },
+    })
+  })
+}
+
+export const fetchYelpFeaturedEvents = () => {
+  // refactor with search params
+  const params = {
+    location: "san francisco, ca",
+    limit: 5
+  }
+
+  const urlProxy = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events/featured';
   return Promise.props({
     local: axios({
       url: urlProxy,

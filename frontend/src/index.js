@@ -7,6 +7,8 @@ import { logout } from './actions/session_actions';
 import { setAuthToken } from "./util/session_api_util";
 import "./stylesheets/index.scss";
 
+import { fetchYelpFeaturedEvents } from './util/yelp_api_util';
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -32,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // test start
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.fetchYelpFeaturedEvents = fetchYelpFeaturedEvents;
   // test end
 
   const root = document.getElementById("root");
