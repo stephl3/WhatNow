@@ -28,6 +28,21 @@
     border: 2px solid yellow;
 }
 
+.profile-image-container {
+    box-sizing: border-box;
+    border-radius: 12px;
+    box-shadow: 4px gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.profile-photo {
+    width: auto;
+    height: 230px;
+}
+
 .user-info h2 {
     font-size: 30px;
     margin-bottom: 8px;
