@@ -1,7 +1,11 @@
 import { RECEIVE_RANDOM_WHATIVITIES } from '../actions/whativity_actions';
 
-const 
-const randomWhativiesReducer = (state = {}, action) => {
+const _initialState = {
+  spotaneous: [],
+  popular: [],
+  friends: []
+}
+const randomWhativiesReducer = (state = _initialState, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state);
   switch (action.type) {
