@@ -7,6 +7,7 @@ import { findPlacePhoto } from '../../util/google_api_util';
 import { fetchYelpEvents } from '../../actions/yelp_actions';
 import Home from '../home/home';
 import { nowLoading, stopLoading } from '../../actions/loading_actions';
+import { receiveRandomWhativities } from '../../actions/whativity_actions';
 
 const mapStateToProps = state => ({
   places: state.places,
@@ -18,7 +19,8 @@ const mapDispatchToProps = dispatch => ({
   findPlacePhoto: (photoRef) => findPlacePhoto(photoRef),
   fetchYelpEvents: () => dispatch(fetchYelpEvents()),
   nowLoading: () => dispatch(nowLoading()),
-  stopLoading: () => dispatch(stopLoading())
+  stopLoading: () => dispatch(stopLoading()),
+  receiveRandomWhativities: whativities => receiveRandomWhativities(whativities);
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

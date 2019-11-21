@@ -78,6 +78,11 @@ class Home extends React.Component {
       newFriends.push(choiceThree);
     }
 
+    const receiveRandomWhativities = this.props;
+    receiveRandomWhativities(newSpontaneous);
+    receiveRandomWhativities(newPopular);
+    receiveRandomWhativities(newFriends);
+    
     this.props.nowLoading();
     this.setState({
       spontaneous: newSpontaneous,

@@ -16,9 +16,9 @@ class GoogleIndexItem extends React.Component {
     this.renderPhoto();
   }
 
-  componentDidUpdate() {
-    this.renderPhoto();
-  }
+  // componentDidUpdate() {
+  //   this.renderPhoto();
+  // }
 
   renderPhoto() {
     findPlacePhoto(this.props.place.photos[0].photo_reference)
