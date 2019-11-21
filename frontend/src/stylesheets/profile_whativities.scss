@@ -1,15 +1,36 @@
 .user-whativities-container{
-  // position: absolute;
-  h2{
-    font-size: 20pt;
-  }
-  .whativities-list{
-    height: 500px;
-    width: 300px;
-    overflow-y: auto;
-  }
+
 }
 
-.whativities-item {
-  display :flex;
+
+.whativities-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 600px;
+  // width: 90%;
+  background-color: lightcoral;
+  overflow-y: auto;
+}
+
+.whativity-item {
+  display: flex;
+  align-items: center;
+  border: 1px black solid;
+  padding: 30px;
+}
+
+.whativity-item-photo {
+  width: 180px;
+  height: 190px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.whativity-item-info {
+  display: flex;
+}
+
+.whativity-item-info > div {
+  padding: 500px;
 }

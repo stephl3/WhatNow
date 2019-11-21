@@ -40,17 +40,17 @@ class Profile extends React.Component {
       const { friends } = this.props;
       const { user } = this.state;
       let renderFriends;
-      if (friends) {
-        renderFriends = friends.map((friendId, i) => {
-          if (friendId != null) {
-            return (
-              // <div>
-                <FriendContainer key={i} userId={friendId} />
-              // </div>
-            )
-          }
-        })
-      }
+      // if (friends) {
+      //   renderFriends = friends.map((friendId, i) => {
+      //     if (friendId != null) {
+      //       return (
+      //         // <div>
+      //           <FriendContainer key={i} userId={friendId} />
+      //         // </div>
+      //       )
+      //     }
+      //   })
+      // }
 
       let whativity = this.props.whativities.map( whativity => {
         return (
