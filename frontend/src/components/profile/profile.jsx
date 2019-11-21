@@ -1,5 +1,6 @@
 import React from "react";
 import '../../stylesheets/profile.scss';
+import '../../stylesheets/profile_whativities.scss';
 import WhativityItem from './profile_whativity_item'
 
 class Profile extends React.Component {
@@ -7,22 +8,18 @@ class Profile extends React.Component {
     super(props);
     this.state = {
       firstName: "",
-      users:{
-        whativities: []
-      }
+      whativities: []
     }
   }
 
   componentDidMount() {
-    this.props.fetchUserInfo(this.props.match.params.userId)
+    return this.props.fetchUserInfo(this.props.match.params.userId)
       .then(user => {
-        return this.setState({firstName: user.userData.data.firstName})
-      });
-    
-  }
-
-  componentWillReceiveProps(newState) {
-    this.setState({ users:{whativities: newState.whativities }});
+        //replace poop festival with line below it
+        this.setState({ whativities: [{ name: "poop festival", address: "poop st." }]})
+        // this.setState({ whativities: user.userData.data.whativities })
+        this.setState({firstName: user.userData.data.firstName})
+      }); 
   }
 
   componentDidUpdate() {
@@ -35,7 +32,7 @@ class Profile extends React.Component {
 
   render() {
     const { friends } = this.props;
-    const { firstName } = this.state;
+    const { firstName, whativities } = this.state;
     return (
       <div className="profile-wrapper">
         <h2> {firstName}'s Profile Page</h2>
@@ -45,7 +42,9 @@ class Profile extends React.Component {
           <button onClick={this.addFriend()}>Add Friend</button>
         </div>
         <div className="user-whativities-container">
-          <ul className="whativities-list">{this.state.users.whativities.map(whativity => (
+          <h2>Attended Events</h2>
+          <ul className="whativities-list">
+            {whativities.map(whativity => (
               <WhativityItem key={whativity._id} props={whativity}/>
           ))}
           </ul>
