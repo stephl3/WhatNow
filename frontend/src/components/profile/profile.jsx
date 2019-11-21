@@ -1,23 +1,29 @@
 import React from "react";
 import '../../stylesheets/profile.scss';
 import '../../stylesheets/profile_friends.scss';
+import '../../stylesheets/profile_whativities.scss';
+import WhativityItem from './profile_whativity_item';
 import FriendContainer from './friend_container';
 
 class Profile extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            firstName: ""
-        }
-        this.addFriend = this.addFriend.bind(this);
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: "",
+      whativities: []
     }
+    this.addFriend = this.addFriend.bind(this);
+  }
 
     componentDidMount() {
         this.props.fetchUserInfo(this.props.match.params.userId)
-            .then(user => {
-                // debugger
-                return this.setState({firstName: user.userData.data.firstName})
-            });
+        return this.props.fetchUserInfo(this.props.match.params.userId)
+          .then(user => {
+            //replace poop festival with line below it
+            this.setState({ whativities: [{ name: "poop festival", address: "poop st." }] })
+            // this.setState({ whativities: user.userData.data.whativities })
+            this.setState({ firstName: user.userData.data.firstName })
+          }); 
     }
 
     addFriend(e) {
@@ -29,7 +35,7 @@ class Profile extends React.Component {
 
     render() {
         const { friends } = this.props;
-        const { firstName } = this.state;
+        const { firstName, whativities } = this.state;
         let renderFriends;
         if (friends) {
             renderFriends = friends.map((friendId, i) => {
@@ -50,18 +56,23 @@ class Profile extends React.Component {
                     {renderFriends}
                     <button onClick={this.addFriend}>Add Friend</button>
                 </div>
-                <div className="user-events-container">
-                    <h2>Events</h2>
-                </div>
+              <div className="user-whativities-container">
+                <h2>Attended Events</h2>
+                <ul className="whativities-list">
+                  {whativities.map(whativity => (
+                    <WhativityItem key={whativity._id} props={whativity} />
+                  ))}
+                </ul>
+              </div>
             </div>
         );
     }
 }
 
 Profile.defaultProps = {
-    user:{
-        firstName: "Kevin"
-    }
+  user:{
+    firstName: "Kevin"
+  }
 }
 
 export default Profile;

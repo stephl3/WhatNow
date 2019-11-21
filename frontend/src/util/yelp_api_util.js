@@ -7,7 +7,7 @@ export const fetchYelpEvents = () => {
   const params = {
     location: "san francisco, ca",
     // sort_on: "time_start",
-    limit: 3
+    limit: 10
   }
   const urlProxy = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events';
   return Promise.props({

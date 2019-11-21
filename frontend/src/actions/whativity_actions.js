@@ -27,8 +27,8 @@ export const fetchWhativity = (id) => dispatch => (
     .then(whativity => dispatch(receiveWhativity(whativity)))
     .catch(err => console.log(err))
 );
-export const fetchUserWhativities = (id) => dispatch => (
-  getUserWhativities(id)
+export const fetchUserWhativities = (userId) => dispatch => (
+  getUserWhativities(userId)
     .then(whativities => dispatch(receiveWhativities(whativities)))
     .catch(err => console.log(err))
 );

@@ -1,25 +1,40 @@
 import React from 'react';
+import { findPlacePhoto } from '../../util/google_api_util';
 
 class GoogleIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      photoRef: this.props.place.photos[0].photo_reference,
+      photoUrl: ''
+    }
+    this.renderPhoto = this.renderPhoto.bind(this);
+  }
+
+  componentDidMount() {
+    this.renderPhoto();
+  }
+
+  componentDidUpdate() {
+    this.renderPhoto();
   }
 
   renderPhoto() {
-    // this.props.findPlacePhoto(this.props.place.photos[0].photo_reference)
-    //   .then(res => this.setState({
-    //     photoUrl: res.request.responseURL
-    //   })
-    // )
+    findPlacePhoto(this.props.place.photos[0].photo_reference)
+      .then(res => this.setState({
+        photoUrl: res.headers["x-final-url"]
+      })
+    )
+      // .then(res => console.log(res))
   }
 
   render() {
-    const { place } = this.state
+    const { place } = this.props
     return (
-      <div className="google-index-wrapper">
-        <div className="google-index-container">
           <div className="google-index-item">
-            <div className="google-item-photo"></div>
+            <div>
+              <img src={this.state.photoUrl} className="google-item-photo" alt={place.name} />
+            </div>
             <div className="google-item-info">
               <div className="google-item-name">
                 {place.name}
@@ -29,8 +44,6 @@ class GoogleIndexItem extends React.Component {
               </div>
             </div>
           </div>
-        </div>
-      </div>
     );
   }
 }

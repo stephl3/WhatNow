@@ -1,9 +1,7 @@
 import React from "react";
 
+import WhativityIndex from '../home/whativity_index';
 import WhativitiesTabHeaders from "./whativities_tab_headers";
-import PopularWhativities from './whativity_tabs/popular_whativities';
-import SpontaneousWhativities from './whativity_tabs/spontaneous_whativities';
-import FriendsWhativities from './whativity_tabs/friends_whativities';
 
 class WhativitiesTab extends React.Component {
   constructor(props) {
@@ -25,13 +23,12 @@ class WhativitiesTab extends React.Component {
       'Spontaneous',
       'Friends'
     ];
-    const whativitiesTabs = [
-      <PopularWhativities />,
-      <SpontaneousWhativities />,
-      <FriendsWhativities />
+    const whativityIndexTabs = [
+      this.props.popular,
+      this.props.spontaneous,
+      this.props.friends
     ];
-    const selectedTab = whativitiesTabs[this.state.selectedTab];
-
+    const whativityIndexTabItems = whativityIndexTabs[this.state.selectedTab];
     return (
       <div className="whativities-tab-container">
         <div className="whativities-tab-headers-wrapper">
@@ -39,11 +36,12 @@ class WhativitiesTab extends React.Component {
             headerLabels={headerLabels}
             selectedTab={this.state.selectedTab}
             onTabHeaderClick={this.selectTab}
-            tabs={whativitiesTabs}
+            tabs={whativityIndexTabs}
           />
         </div>
         <div className="whativities-tab">
-          {selectedTab}
+          <WhativityIndex whatItems={whativityIndexTabItems} />
+          {/* <WhativityIndex whatItems={this.props.whativities} /> */}
         </div>
       </div>
     )

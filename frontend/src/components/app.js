@@ -9,26 +9,20 @@ import HomeContainer from './home/home_container';
 import ProfileContainer from "./profile/profile_container";
 import YelpIndexContainer from "./yelp/yelp_index_container";
 import WhativitiesContainer from "./whativity/whativities_container";
+import WhativityShow from "./whativity/whativity_show";
 
 
 const App = () => (
   <div id="main-content">
     <Modal />
-    <NavBarContainer />
+    <NavBarContainer/>
     <HomeContainer />
     <Switch>
-      {/* <AuthRoute path="/" component={SplashPage} /> */}
-      {/* <AuthRoute path="/" component={HomeContainer} /> */}
-      {/* <ProtectedRoute exact path='/:userId/profile' component={ProfileContainer} /> */}
-    {/* <YelpIndexContainer /> */}
-      {/* <AuthRoute exact path="/home" component={HomeContainer} /> */}
       <AuthRoute exact path="/home" component={HomeContainer} />
       <AuthRoute exact path="/" component={SplashPage} />
       <ProtectedRoute exact path='/:userId/profile' component={ProfileContainer} />
-      <AuthRoute exact path="/" component={SplashPage} />
+      {/* <Link to="/whativities/:id" component={WhativityShow}/> */}
       <Link to="/whativities" component={WhativitiesContainer}/>
-      {/* <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} /> */}
     </Switch>
   </div>
 );

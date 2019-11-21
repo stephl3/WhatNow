@@ -10,6 +10,8 @@ import "./stylesheets/index.scss";
 import { findGeneralPlaces } from './util/google_api_util';
 import { fetchNearbyPlaces } from './actions//google_actions';
 
+import { findPlacePhoto } from './util/google_api_util';
+
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -38,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.fetchNearbyPlaces = fetchNearbyPlaces;
   // window.axios = axios;
   // window.findPlacePhoto = findPlacePhoto;
+  window.findPlacePhoto = findPlacePhoto;
+  // window.addFriend = addFriend;
 
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);

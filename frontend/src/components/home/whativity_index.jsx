@@ -1,6 +1,6 @@
 import React from 'react';
 import YelpIndexItem from '../yelp/yelp_index_item';
-import GoogleIndexItem from '../home/place';
+import GoogleIndexItem from './google_index_item';
 
 class WhativityIndex extends React.Component {
   constructor(props) {
@@ -55,7 +55,7 @@ class WhativityIndex extends React.Component {
     })
 
     return (
-      <div className="yelp-index">
+      <div className="whativities-index">
         {whativity}
       </div>
     )
