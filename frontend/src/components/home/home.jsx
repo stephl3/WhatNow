@@ -1,11 +1,12 @@
 import React from 'react';
+// import Place from './place';
 import YelpIndexContainer from '../yelp/yelp_index_container';
 import YelpIndex from '../yelp/yelp_index';
 import WhativitiesTab from '../whativity/whativities_tab';
 // import GoogleMaps from '../GoogleMaps/google_maps';
 import LoadingModal from '../modal/loading_modal';
 
-import WhativityIndex from './whativity_index';
+import WhativityIndex from '../whativity/whativity_index';
 
 class Home extends React.Component {
   constructor(props) {
@@ -90,7 +91,7 @@ class Home extends React.Component {
       this.setState({
         modal: false
       })
-    }, 1500)
+    }, 1300)
   }
 
   handleWhatNow(e) {
@@ -163,8 +164,8 @@ class Home extends React.Component {
             </div>
         </div>
         <div className="home-container-2">
-          <div className="what-now-button">
-            <button onClick={this.handleWhatNow}>
+          <div className="what-now-button-container">
+            <button onClick={this.handleWhatNow} className="what-now-button">
               WHAT NOW?
             </button>
           </div>

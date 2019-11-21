@@ -1,6 +1,6 @@
 import React from 'react';
-import YelpIndexItem from '../yelp/yelp_index_item';
-import GoogleIndexItem from './google_index_item';
+
+import WhativityIndexItem from './whativity_index_item';
 
 class WhativityIndex extends React.Component {
 
@@ -30,29 +30,20 @@ class WhativityIndex extends React.Component {
   // }
 
   render() {
-    let whativity = this.props.whatItems.map(whatItem => {
-      let what = whatItem[0];
-      let type = whatItem[1];
-      if (type === 'google') {
-        return ( 
-          <GoogleIndexItem
-            place={what}
-            key={whatItem.id}
-          />
-        )
-      } else if (type === 'yelp') {
-        return (
-          <YelpIndexItem
-            event={what}
-            key={whatItem.id}
-          />
-        )
-      }
+    const whativityIndexItems = this.props.whatItems.map((whatItem, idx) => {
+      let whativity = whatItem[0];
+      let api = whatItem[1];
+      return <WhativityIndexItem
+              whativity={whativity}
+              api={api}
+              key={idx}
+              openModal={this.props.openModal}
+            />
     })
 
     return (
-      <div className="whativities-index">
-        {whativity}
+      <div className="whativity-index-items">
+        {whativityIndexItems}
       </div>
     )
   }

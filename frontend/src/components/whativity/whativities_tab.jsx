@@ -1,6 +1,6 @@
 import React from "react";
 
-import WhativityIndex from '../home/whativity_index';
+import WhativityIndexContainer from './whativity_index_container';
 import WhativitiesTabHeaders from "./whativities_tab_headers";
 
 class WhativitiesTab extends React.Component {
@@ -41,8 +41,7 @@ class WhativitiesTab extends React.Component {
           />
         </div>
         <div className="whativities-tab">
-          <WhativityIndex whatItems={whativityIndexTabItems} />
-          {/* <WhativityIndex whatItems={this.props.whativities} /> */}
+          <WhativityIndexContainer whatItems={whativityIndexTabItems} />
         </div>
       </div>
     )

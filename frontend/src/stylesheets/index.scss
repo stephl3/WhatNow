@@ -6,10 +6,15 @@
 @import './profile.scss';
 @import './profile_friends.scss';
 @import './home.scss';
+@import './whativity_show.scss';
 
 html {
-  --theme-color: #FFB302;
+  // --theme-color: #FFB302;
+  --theme-color: #4991E4;
   --theme-font: proxima-nova, helvetica, arial, sans-serif;
+  --background-color: #232629;
+  --subheading-color: #4A90E1;
+  --container-color: #37363D;
 }
 
 #root {
