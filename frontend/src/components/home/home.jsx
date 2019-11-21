@@ -5,7 +5,7 @@ import YelpIndex from '../yelp/yelp_index';
 import WhativitiesTab from '../whativity/whativities_tab';
 // import GoogleMaps from '../GoogleMaps/google_maps';
 import LoadingModal from '../modal/loading_modal';
-
+import GoogleMap from '../GoogleMaps/google_maps';
 import WhativityIndex from '../whativity/whativity_index';
 
 class Home extends React.Component {
@@ -175,6 +175,7 @@ class Home extends React.Component {
         </div>
         <div className="home-container-3">
           <div className="google-maps-container">
+            <GoogleMap />
           </div>
         </div>
       </div>

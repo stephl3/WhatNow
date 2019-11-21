@@ -22,13 +22,7 @@ class GoogleMap extends React.Component{
           initialCenter={{ lat: 37.788268, lng: -122.407545}}
         >
           <Marker position={{ lat: 37.788268, lng: -122.407545 }} />
-          {this.props.places.map(marker => (
-            <Marker
-              position={{lat:marker.geometry.location.lat,
-              lng:marker.geometry.location.lng}}
-              key = {marker.geometry.place_id}
-            />
-          ))}
+         
         </Map>
       </div>
     );
