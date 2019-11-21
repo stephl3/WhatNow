@@ -6,7 +6,7 @@ import WhativitiesTab from '../whativity/whativities_tab';
 // import GoogleMaps from '../GoogleMaps/google_maps';
 import LoadingModal from '../modal/loading_modal';
 
-import WhativityIndex from './whativity_index';
+import WhativityIndex from '../whativity/whativity_index';
 
 class Home extends React.Component {
   constructor(props) {
@@ -91,7 +91,7 @@ class Home extends React.Component {
       this.setState({
         modal: false
       })
-    }, 1500)
+    }, 1200)
   }
 
   handleWhatNow(e) {

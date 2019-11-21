@@ -1,5 +1,5 @@
 import React from 'react';
-import { findPlacePhoto } from '../../util/google_api_util';
+import { findPlacePhoto } from '../../../util/google_api_util';
 
 class GoogleIndexItem extends React.Component {
   constructor(props) {
@@ -9,6 +9,7 @@ class GoogleIndexItem extends React.Component {
       photoUrl: ''
     }
     this.renderPhoto = this.renderPhoto.bind(this);
+    this.showWhativity = this.showWhativity.bind(this);
   }
 
   componentDidMount() {
@@ -28,10 +29,15 @@ class GoogleIndexItem extends React.Component {
       // .then(res => console.log(res))
   }
 
+  showWhativity(e) {
+    e.preventDefault();
+    this.props.openModal('whativity');
+  }
+
   render() {
     const { place } = this.props
     return (
-          <div className="google-index-item">
+          <button className="google-index-item" onClick={this.showWhativity}>
             <div>
               <img src={this.state.photoUrl} className="google-item-photo" alt={place.name} />
             </div>
@@ -43,7 +49,7 @@ class GoogleIndexItem extends React.Component {
                 {place.formatted_address}
               </div>
             </div>
-          </div>
+          </button>
     );
   }
 }

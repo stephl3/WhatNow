@@ -1,17 +1,20 @@
-import { connect } from 'react-redux';
+// STILL NEED???
 
-import { fetchYelpEvents } from '../../actions/yelp_actions';
-import YelpIndex from './yelp_index';
 
-const mapStateToProps = (state) => ({
-  events: state.events
-});
+// import { connect } from 'react-redux';
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchYelpEvents: () => dispatch(fetchYelpEvents())
-});
+// import { fetchYelpEvents } from '../../actions/yelp_actions';
+// import YelpIndex from './yelp_index';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(YelpIndex);
+// const mapStateToProps = (state) => ({
+//   events: state.events
+// });
+
+// const mapDispatchToProps = (dispatch) => ({
+//   fetchYelpEvents: () => dispatch(fetchYelpEvents())
+// });
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(YelpIndex);
