@@ -9,7 +9,8 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: "",
+      // firstName: "",
+      user: "",
       whativities: []
     }
     this.addFriend = this.addFriend.bind(this);
@@ -22,7 +23,8 @@ class Profile extends React.Component {
             //replace poop festival with line below it
             this.setState({ whativities: [{ name: "poop festival", address: "poop st." }] })
             // this.setState({ whativities: user.userData.data.whativities })
-            this.setState({ firstName: user.userData.data.firstName })
+            // this.setState({ firstName: user.userData.data.firstName })
+            this.setState({ user: user.userData.data })
           }); 
     }
 
@@ -35,27 +37,44 @@ class Profile extends React.Component {
 
     render() {
         const { friends } = this.props;
-        const { firstName, whativities } = this.state;
+        const { user, whativities } = this.state;
         let renderFriends;
         if (friends) {
             renderFriends = friends.map((friendId, i) => {
                 if (friendId != null) {
                     return (
-                        <div>
+                        // <div>
                             <FriendContainer key={i} userId={friendId} />
-                        </div>
+                        // </div>
                     )
                 }
             })
         }
         return (
-            <div className="profile-wrapper">
-                <h2> {firstName}'s Profile Page</h2>
-                <div className="friends-container">
-                    <h2>Friends</h2>
-                    {renderFriends}
-                    <button onClick={this.addFriend}>Add Friend</button>
-                </div>
+          <div className="profile-wrapper">
+            <div className="profile-left">
+              <div className="profile-image">Image</div>
+
+              <div className="friends-container">
+                <h2>Friends</h2>
+                <ul className="friends-list">{renderFriends}</ul>
+              </div>
+            </div>
+
+            <div className="profile-right">
+              <div className="user-info">
+                <h2>
+                  {" "}
+                  {user.firstName} {user.lastName}
+                </h2>
+                <p>San Francisco, United States</p>
+                <span>894 Followers</span>
+                <button onClick={this.addFriend}>Follow</button>
+              </div>
+              <div className="interested-whativities-container">
+                <h2>Upcoming Events</h2>
+              </div>
+
               <div className="user-whativities-container">
                 <h2>Attended Events</h2>
                 <ul className="whativities-list">
@@ -65,6 +84,7 @@ class Profile extends React.Component {
                 </ul>
               </div>
             </div>
+          </div>
         );
     }
 }

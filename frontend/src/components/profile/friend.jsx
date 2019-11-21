@@ -21,7 +21,7 @@ class Friend extends React.Component {
             return null;
         }
         return (
-            <li key={`friend${key}`}>
+            <li className="friend" key={`friend${key}`}>
                 {user.firstName} {user.lastName}
             </li>
         )
