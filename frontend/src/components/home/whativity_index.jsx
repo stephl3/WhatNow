@@ -1,6 +1,6 @@
 import React from 'react';
 import YelpIndexItem from '../yelp/yelp_index_item';
-import GoogleIndexItem from '../home/place';
+import GoogleIndexItem from './place';
 
 class WhativityIndex extends React.Component {
   constructor(props) {

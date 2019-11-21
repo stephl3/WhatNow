@@ -3,6 +3,7 @@ import Place from './place';
 import YelpIndexContainer from '../yelp/yelp_index_container';
 import YelpIndex from '../yelp/yelp_index';
 // import GoogleMaps from '../GoogleMaps/google_maps';
+import LoadingModal from '../modal/loading_modal';
 
 import WhativityIndex from './whativity_index';
 
@@ -14,7 +15,8 @@ class Home extends React.Component {
       options: [],
       spontaneous: [],
       popular: [],
-      friends: []
+      friends: [],
+      modal: false
     }
     this.handleWhatNow = this.handleWhatNow.bind(this);
   }
@@ -50,18 +52,26 @@ class Home extends React.Component {
       });
       // newOptions = this.props.events;
     }
-
+    this.props.nowLoading();
     this.setState({
-      options: newOptions
+      options: newOptions,
+      modal: true
     })
+    window.setTimeout(() => {
+      this.props.stopLoading();
+      this.setState({
+        modal: false
+      })
+    }, 1500)
   }
 
   render() {
     const { places, events, findPlacePhoto } = this.props
-
+    const loadingModal = this.state.modal ? <LoadingModal /> : null;
 
     return (
       <div className="home wrapper">
+        {loadingModal}
         <div className="home-container-1">
             <WhativityIndex
               whatItems={this.state.options}
