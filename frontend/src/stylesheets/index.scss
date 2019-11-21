@@ -12,16 +12,18 @@ html {
   // --theme-color: #FFB302;
   --theme-color: #4991E4;
   --theme-font: proxima-nova, helvetica, arial, sans-serif;
-  --background-color: #232629;
+  --background-color: #b3cde0;
   --subheading-color: #4A90E1;
-  --container-color: #37363D;
+  --container-color: 	#6497b1;
+  --hover-color:	#005b96;
+  --font-color: #ffffff;
 }
 
 #root {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 #main-content {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }

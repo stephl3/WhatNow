@@ -16,9 +16,9 @@ class GoogleIndexItem extends React.Component {
     this.renderPhoto();
   }
 
-  // componentDidUpdate() {
-  //   this.renderPhoto();
-  // }
+  componentDidUpdate() {
+    // this.renderPhoto();
+  }
 
   renderPhoto() {
     findPlacePhoto(this.props.place.photos[0].photo_reference)
@@ -40,19 +40,27 @@ class GoogleIndexItem extends React.Component {
   render() {
     const { place } = this.props
     return (
-          <button className="google-index-item" onClick={this.showWhativity}>
-            <div>
-              <img src={this.state.photoUrl} className="google-item-photo" alt={place.name} />
-            </div>
+          <div className="google-index-item" onClick={this.showWhativity}>
             <div className="google-item-info">
               <div className="google-item-name">
                 {place.name}
               </div>
-              <div className="google-item-address">
+              {/* <div className="google-item-address">
                 {place.formatted_address}
+              </div> */}
+            </div>
+            <div>
+              <img src={this.state.photoUrl} className="google-item-photo" alt={place.name} />
+            </div>
+            <div className="social-buttons">
+              <div className="index-button interest google">
+                Interested
+              </div>
+              <div className="index-button going google">
+                Going
               </div>
             </div>
-          </button>
+          </div>
     );
   }
 }
