@@ -4,6 +4,10 @@
   color: #FFFFFF;
   font-family: var(--theme-font);
   width: 100%;
+  min-width: 420px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .home-container-1 {
@@ -53,12 +57,13 @@
               0 1px 4px rgba(0, 0, 0, 0.24);
   border-radius: 8px;
   background-color: var(--container-color);
+  cursor: pointer;
+  &:hover {
+    // opacity: 0.3;
+    background-color: #242428;
+  }
 }
 
-.yelp-index-item:hover, .google-index-item:hover {
-  // background-color: black;
-  opacity: 0.3;
-}
 
 .yelp-index-item > div {
   // margin: 50px;
@@ -101,7 +106,7 @@
 .what-now-button {
     width: 220px;
     height: 50px;
-    border: none;
+    border: 1px solid darkblue;
     outline: none;
     color: #fff;
     background: #111;
