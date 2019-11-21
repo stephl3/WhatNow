@@ -1,0 +1,12 @@
+.user-whativities-container{
+  position: absolute;
+  right: 0;
+  h2{
+    font-size: 20pt;
+  }
+  .whativities-list{
+    height: 50px;
+    width: 300px;
+    overflow-y: auto;
+  }
+}
