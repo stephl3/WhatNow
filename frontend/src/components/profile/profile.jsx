@@ -70,7 +70,6 @@ class Profile extends React.Component {
                 <ul className="friends-list">{renderFriends}</ul>
               </div>
             </div>
-
         <div className="profile-right">
           <div className="user-info">
             <h2>
@@ -84,17 +83,14 @@ class Profile extends React.Component {
           <div className="interested-whativities-container">
             <h2>Upcoming Events</h2>
           </div>
-
-              <div className="user-whativities-container">
-                <h2>Attended Events</h2>
-                <ul className="whativities-list">
-                  {/* {whativities.map(whativity => (
-                    <WhativityItem key={whativity._id} item={whativity} />
-                  ))} */}
-                  {whativity}
-                </ul>
-              </div>
-            </div>
+          <div className="user-whativities-container">
+            <h2>Attended Events</h2>
+            <ul className="whativities-list">
+              {/* {whativities.map(whativity => (
+                <WhativityItem key={whativity._id} item={whativity} />
+              ))} */}
+              {whativity}
+            </ul>
           </div>
         </div>
       </div>
