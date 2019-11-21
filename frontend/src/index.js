@@ -6,8 +6,9 @@ import jwt_decode from "jwt-decode";
 import { logout } from './actions/session_actions';
 import { setAuthToken } from "./util/session_api_util";
 import "./stylesheets/index.scss";
-import {receiveRandomWhativities} from './actions/whativity_actions';
 
+window.getWhativities = getWhativities;
+window.fetchWhativities = fetchWhativities;
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -32,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // test start
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.receiveRandomWhativities = receiveRandomWhativities;
   // test end
 
   const root = document.getElementById("root");

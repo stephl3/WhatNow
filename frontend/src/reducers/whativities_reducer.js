@@ -1,6 +1,6 @@
 import { RECEIVE_WHATIVITIES, RECEIVE_WHATIVITY, RECEIVE_USER_WHATIVITIES } from '../actions/whativity_actions';
 
-const WhativitiesReducer = (state = { all:{}, current:{}, userWhativities:{} }, action) => {
+const WhativitiesReducer = (state = { all:[], current:{}, userWhativities:{} }, action) => {
   Object.freeze(state);
   let newState = Object.assign({},state);
   switch(action.type){
