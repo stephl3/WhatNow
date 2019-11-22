@@ -1,0 +1,100 @@
+.developer-wrapper {
+  display: flex;
+  width: 100%;
+  height: 950px;
+  background-color: lightslategray;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.developer-header {
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+}
+
+.developer-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: lightslategray;
+  padding-top: 30px;
+}
+
+.developer-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lisa-developer {
+  background-color:lightslategray;
+  width: 25%;
+  height: 100%;
+}
+
+.chris-developer {
+  background-color:  lightslategray;
+  width: 25%;
+  height: 100%;
+}
+
+.kevin-developer {
+  background-color:  lightslategray;
+  width: 25%;
+  height: 100%;
+}
+
+.stephen-developer {
+  background-color: lightslategray;
+  width: 25%;
+  height: 100%;
+}
+
+.lisa-developer > div, .chris-developer > div, .kevin-developer > div, .stephen-developer > div {
+  padding: 20px;
+}
+
+.lisa-picture, .chris-picture, .kevin-picture, .stephen-picture {
+  width: 300px;
+  height: 450px;
+  border-radius: 75px;
+  .shadow {
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  }
+}
+
+.lisa-info, .chris-info, .kevin-info, .stephen-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lisa-name, .chris-name, .kevin-name, .stephen-name {
+  color: white;
+  font-size: 36px;
+}
+
+.github-links {
+  width: 150px;
+  display: flex;
+  // justify-content: space-between;
+  color: white;
+  cursor: pointer;
+  padding-top: 30px;
+}
+
+.github-links > div:hover {
+  color: green;
+}

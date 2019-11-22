@@ -11,9 +11,12 @@ import YelpIndexContainer from "./yelp/yelp_index_container";
 import WhativitiesContainer from "./whativity/whativities_container";
 import WhativityShow from "./whativity/whativity_show";
 
+import DevelopersPage from './developers';
+
 
 const App = () => (
   <div id="main-content">
+    {/* < DevelopersPage /> */}
     <Modal />
     <NavBarContainer/>
     <Switch>

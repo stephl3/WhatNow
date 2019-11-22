@@ -1,11 +1,13 @@
 import React from "react";
 
 const images = [
-  "https://d.newsweek.com/en/full/1502445/san-francisco-salifornia.webp",
+  "https://images.pexels.com/photos/1796730/pexels-photo-1796730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  "https://images.unsplash.com/photo-1495542779398-9fec7dc7986c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1936&q=80",
   "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80",
-  "https://therealdeal.com/la/wp-content/uploads/2019/04/1200-sanfran.jpg",
+  "https://images.pexels.com/photos/1868676/pexels-photo-1868676.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   "https://images.pexels.com/photos/1115251/pexels-photo-1115251.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-  "https://cdn.vox-cdn.com/thumbor/Mkr-FR0qpPpeEoohWw5q-Wal52E=/0x0:4000x4000/1820x1213/filters:focal(1680x1680:2320x2320):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/55649931/IM_Photo5.0.jpg"
+  "https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+
 ]
 
 class SplashPage extends React.Component {

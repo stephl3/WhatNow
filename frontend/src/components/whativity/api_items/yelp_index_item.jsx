@@ -20,7 +20,7 @@ class YelpIndexItem extends React.Component {
           {/* <div className="yelp-item-description">{event.description}</div>
           <div className="yelp-item-time-start">{event.time_start}</div> */}
         </div>
-        <div>
+        <div className="photo-viewport yelp">
           <img src={event.image_url} alt={event.name} className="yelp-item-photo" />
         </div>
         <div className="social-buttons">

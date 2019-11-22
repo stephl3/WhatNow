@@ -30,6 +30,8 @@ class WhativityIndex extends React.Component {
   render() {
     const whativityIndexItems = this.props.whatItems.map((whatItem, idx) => {
       let whativity = whatItem[0];
+      // debugger
+      // this.props.receieveWhativity(whativity);
       let api = whatItem[1];
       return <WhativityIndexItem
               whativity={whativity}

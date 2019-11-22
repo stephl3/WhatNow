@@ -11,10 +11,12 @@ export const receiveWhativities = whativities => ({
   whativities
 });
 
-export const receiveWhativity = whativity => ({
-  type: RECEIVE_WHATIVITY,
-  whativity
-});
+export const receiveWhativity = whativity => {
+  return ({
+    type: RECEIVE_WHATIVITY,
+    whativity
+  })
+};
 
 export const receiveUserWhativities = whativities => ({
   type: RECEIVE_USER_WHATIVITIES,
@@ -30,6 +32,7 @@ export const receiveRandomWhativities = (category, whativities) => {
 };
 
 export const receiveWhativityImg = (category, idx, imgUrl) => {
+  debugger
   return {
     type: RECEIVE_WHATIVITY_IMG,
     category,
@@ -44,11 +47,11 @@ export const fetchWhativities = () => dispatch => (
     .catch(err => console.log(err))
 );
 
-export const fetchWhativity = (id) => dispatch => (
-  getWhativity(id)
-    .then(whativity => dispatch(receiveWhativity(whativity)))
-    .catch(err => console.log(err))
-);
+// export const fetchWhativity = (id) => dispatch => (
+//   getWhativity(id)
+//     .then(whativity => dispatch(receiveWhativity(whativity)))
+//     .catch(err => console.log(err))
+// );
 
 export const fetchUserWhativities = (userId) => dispatch => (
   getUserWhativities(userId)

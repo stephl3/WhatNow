@@ -14,7 +14,7 @@ const randomWhativiesReducer = (state = _initialState, action) => {
       nextState[action.category] = action.whativities;
       return nextState;
     case RECEIVE_WHATIVITY_IMG:
-      // debugger
+      debugger
       nextState[action.category][action.idx].imgUrl = action.imgUrl;
       return nextState;
     default:

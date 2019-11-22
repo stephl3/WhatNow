@@ -70,12 +70,23 @@
   // margin: 50px;
 }
 
+
 .yelp-item-photo, .google-item-photo {
-  max-width: 320px;
-  height: auto;
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
   // height: 190px;
-  // padding: 15px;
   border-radius: 12px;
+}
+.google-item-photo img:hover + .details-button:hover{
+    display: block;
+  }
+.details-button{
+  height: 20px;
+  width: 100%;
+  background-color: ivory;
+  opacity: 0.7;
+  display: none;
 }
 
 .yelp-item-info, .google-item-info {
@@ -96,7 +107,13 @@
 }
 
 .google-item-name, .yelp-item-name{
-  font-size: 30px;
+  font-size: 24px;
+  overflow: hidden;
+  height: 50px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 }
 
 .what-now-button {
@@ -232,5 +249,8 @@
   width: 100px;
   height: 40px;
   border-radius: 10px;
-  background-color: var(--theme-color);
+  background-color: var(--background-color);
+  :hover{
+
+  }
 }

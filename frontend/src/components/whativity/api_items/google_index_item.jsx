@@ -33,7 +33,9 @@ class GoogleIndexItem extends React.Component {
     e.preventDefault();
     const selectedTab = this.props.selectedTab.toLowerCase();
     const {itemIdx} = this.props;
+    debugger
     this.props.receiveWhativityImg(selectedTab, itemIdx, this.state.photoUrl);
+    this.props.receiveWhativity(this.props.place);
     this.props.openModal('whativity');
   }
 
@@ -49,8 +51,9 @@ class GoogleIndexItem extends React.Component {
                 {place.formatted_address}
               </div> */}
             </div>
-            <div>
+            <div className="photo-viewport yelp">
               <img src={this.state.photoUrl} className="google-item-photo" alt={place.name} />
+              <a href="" className="details-button"></a>
             </div>
             <div className="social-buttons">
               <div className="index-button interest google">

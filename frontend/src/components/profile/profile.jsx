@@ -40,19 +40,15 @@ class Profile extends React.Component {
     const { friends } = this.props;
     const { user } = this.state;
     let renderFriends;
-    // if (friends) {
-    //   renderFriends = friends.map((friendId, i) => {
-    //     if (friendId != null) {
-    //       return (
-    //         // <div>
-    //           <FriendContainer key={i} userId={friendId} />
-    //         // </div>
-    //       )
-    //     }
-    //   })
-    // }
+    if (friends) {
+      renderFriends = friends.map((friendId, i) => {
+        if (friendId != null) {
+          return <FriendContainer key={i} userId={friendId} />
+        }
+      })
+    }
 
-    let whativity = this.props.whativities.map( whativity => {
+    let userWhativities = this.props.whativities.map( whativity => {
       return (
         <WhativityItem 
           key={whativity.id}
@@ -89,10 +85,7 @@ class Profile extends React.Component {
             <div className="user-whativities-container">
               <h2>Attended Events</h2>
               <ul className="whativities-list">
-                {/* {whativities.map(whativity => (
-                  <WhativityItem key={whativity._id} item={whativity} />
-                ))} */}
-                {whativity}
+                {userWhativities}
               </ul>
             </div>
           </div>

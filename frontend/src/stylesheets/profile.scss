@@ -20,17 +20,18 @@
     padding-top: 40px;
 }
 
-.profile-left, .profile-right {
+.profile-left,
+.profile-right {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 50%;
     margin: 20px;
 }
 
-.profile-left > div, .profile-right > div {
-    // background-color: grey;
-    padding: 20px;
-    width: 50%;
+.profile-left > div,
+.profile-right > div {
+    width: 100%;
+    padding: 10px;
 }
 
 .profile-image-container {

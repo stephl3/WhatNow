@@ -102,7 +102,7 @@ class Home extends React.Component {
 
   handleWhatNow(e) {
     e.preventDefault();
-    window.location.href = "/#/home/Whatever";
+    window.location.href = "/#/home/Spontaneous";
     this.shuffleChoices();
     // let newOptions = [];
 
@@ -155,7 +155,14 @@ class Home extends React.Component {
   return (
     <div className="home-wrapper">
       {loadingModal}
-      <div className="home-container-1">
+      <div className="home-container-what">
+        <div className="what-now-button-container">
+          <button onClick={this.handleWhatNow} className="what-now-button">
+            WHAT NOW?
+          </button>
+        </div>
+      </div>
+      <div className="home-container-main">
         {/* <WhativityIndex
               whatItems={this.state.options} */}
         <div className={`whativities-tab-wrapper ${this.state.tabVisible}`}>
@@ -167,21 +174,14 @@ class Home extends React.Component {
           />
         </div>
       </div>
-      <div className="home-container-2">
-        <div className="what-now-button-container">
-          <button onClick={this.handleWhatNow} className="what-now-button">
-            WHAT NOW?
-          </button>
-        </div>
-      </div>
       <div className="home-container-3">
-        <div className="google-maps-container">
+        {/* <div className="google-maps-container">
           <GoogleMap
             popular={this.state.popular}
             spontaneous={this.state.spontaneous}
             friends={this.state.friends}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
