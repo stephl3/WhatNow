@@ -50,37 +50,39 @@ class Profile extends React.Component {
     }
     return (
       <div className="profile-wrapper">
-        <div className="profile-left">
-          <div className="profile-image-container">
-            <img src={user.photoUrl} alt="profile photo" className="profile-photo"/>
-          </div>
-          <div className="friends-container">
-            <h2>Friends</h2>
-            <ul className="friends-list">{renderFriends}</ul>
-          </div>
-        </div>
-
-        <div className="profile-right">
-          <div className="user-info">
-            <h2>
-              {" "}
-              {user.firstName} {user.lastName}
-            </h2>
-            <p>San Francisco, United States</p>
-            <span>894 Followers</span>
-            <button onClick={this.addFriend}>Follow</button>
-          </div>
-          <div className="interested-whativities-container">
-            <h2>Upcoming Events</h2>
+        <div className="profile-container">
+          <div className="profile-left">
+            <div className="profile-photo-container">
+              <img src={user.photoUrl} alt="profile photo" className="profile-photo"/>
+            </div>
+            <div className="friends-container">
+              <h2>Friends</h2>
+              <ul className="friends-list">{renderFriends}</ul>
+            </div>
           </div>
 
-          <div className="user-whativities-container">
-            <h2>Attended Events</h2>
-            <ul className="whativities-list">
-              {whativities.map(whativity => (
-                <WhativityItem key={whativity._id} props={whativity} />
-              ))}
-            </ul>
+          <div className="profile-right">
+            <div className="user-info">
+              <h2>
+                {" "}
+                {user.firstName} {user.lastName}
+              </h2>
+              <p>San Francisco, United States</p>
+              <span>894 Followers</span>
+              <button onClick={this.addFriend}>Follow</button>
+            </div>
+            <div className="interested-whativities-container">
+              <h2>Upcoming Events</h2>
+            </div>
+
+            <div className="user-whativities-container">
+              <h2>Attended Events</h2>
+              <ul className="whativities-list">
+                {whativities.map(whativity => (
+                  <WhativityItem key={whativity._id} props={whativity} />
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
