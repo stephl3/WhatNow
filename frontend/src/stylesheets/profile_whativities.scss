@@ -1,12 +1,60 @@
 .user-whativities-container{
-  // position: absolute;
-  // right: 0;
-  h2{
-    font-size: 20pt;
-  }
-  .whativities-list{
-    height: 50px;
-    width: 300px;
-    overflow-y: auto;
-  }
+
+}
+
+
+.whativities-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 600px;
+  // width: 90%;
+  // background-color: lightblue;
+  overflow-y: auto;
+  box-shadow: 0 1px 6px black(0, 0, 0, 0.12), 
+              0 1px 4px black(0, 0, 0, 0.24);
+}
+
+.whativity-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--container-color);
+  border: 3px black solid;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+.whativity-item:hover {
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.whativity-item-photo {
+  width: 250px;
+  height: 190px;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.whativity-item-info {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.whativity-item-name {
+  display: flex; 
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.whativity-item-address {
+  display: flex;
+  justify-content: center;
+  opacity: 0.6;
+  padding: 5px;
 }

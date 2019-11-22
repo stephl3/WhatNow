@@ -27,6 +27,31 @@ export const fetchYelpEvents = () => {
   })
 }
 
+export const fetchYelpFeaturedEvents = () => {
+  // refactor with search params
+  const params = {
+    location: "san francisco, ca",
+    limit: 5
+  }
+
+  const urlProxy = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events/featured';
+  return Promise.props({
+    local: axios({
+      url: urlProxy,
+      params: params,
+      json: true,
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${API_KEY}`,
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Allow-Origin': 'http://localhost:3000'
+      },
+    })
+  })
+}
+
 export const fetchYelpEvent = (eventId) => {
   // refactor with search params
   const params = {

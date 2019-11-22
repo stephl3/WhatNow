@@ -9,8 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
-    opacity: 0.5;
+    background-color: var(--container-color);
     z-index: 5;
     font-family: var(--theme-font);
 }

@@ -102,6 +102,7 @@ class Home extends React.Component {
 
   handleWhatNow(e) {
     e.preventDefault();
+    window.location.href = "/#/home/Whatever";
     this.shuffleChoices();
     // let newOptions = [];
 

@@ -1,16 +1,20 @@
 import { connect } from "react-redux";
 import { fetchUserInfo, addFriend } from '../../actions/user_actions';
+import { fetchWhativities } from '../../actions/whativity_actions';
 import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => ({
     currentUserId: state.session.user.id,
     user: state.users[ownProps.match.params.userId],
-    friends: state.users.friends
+    friends: state.users.friends,
+    whativities: state.entities.whativity.all
 });
 
 const mapDispatchToProps = dispatch => ({
     fetchUserInfo: userId => dispatch(fetchUserInfo(userId)),
-    addFriend: (userId, friendId) => dispatch(addFriend(userId, friendId))
+    addFriend: (userId, friendId) => dispatch(addFriend(userId, friendId)),
+    fetchWhativities: () => dispatch(fetchWhativities())
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

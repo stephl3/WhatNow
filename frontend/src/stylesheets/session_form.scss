@@ -1,5 +1,5 @@
 .session-form-container {
-  background-color: #fff;
+  background-color: var(--background-color);
   padding: 1.5rem;
   border-radius: 0.25rem;
   box-sizing: border-box;
@@ -58,7 +58,7 @@
   margin-bottom: 1rem;
   font-size: 1.25rem;
   display: block;
-  color: #212124;
+  color: #FFFFFF;
   font-family: var(--theme-font);
   line-height: 1.3;
 }
