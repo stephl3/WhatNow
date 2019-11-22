@@ -25,7 +25,7 @@ class WhativitiesTab extends React.Component {
   render() {
     const headerLabels = [
       'Popular',
-      'Whatever',
+      'Spontaneous',
       'Social'
     ];
     const whativityIndexTabs = [
