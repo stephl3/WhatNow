@@ -13,10 +13,6 @@ class WhativitiesTab extends React.Component {
     this.selectTab = this.selectTab.bind(this);
   }
 
-  componentDidMount(){
-  
-  }
-
   selectTab(idx) {
     
     this.setState({ selectedTab: idx });
@@ -25,8 +21,8 @@ class WhativitiesTab extends React.Component {
   render() {
     const headerLabels = [
       'Popular',
-      'Whatever',
-      'Social'
+      'Spontaneous',
+      'Friends'
     ];
     const whativityIndexTabs = [
       this.props.popular,

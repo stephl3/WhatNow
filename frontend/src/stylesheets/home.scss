@@ -74,7 +74,7 @@
 
 .yelp-item-photo, .google-item-photo {
   width: 320px;
-  height: 280px;
+  height: 320px;
   object-fit: cover;
   // height: 190px;
   border-radius: 12px;
@@ -250,10 +250,8 @@
   width: 100px;
   height: 40px;
   border-radius: 10px;
-  background-color: var(--theme-color);
-}
+  background-color: var(--background-color);
+  :hover{
 
-.photo-viewport{
-  // width:320px;
-  // height:280px;
+  }
 }
