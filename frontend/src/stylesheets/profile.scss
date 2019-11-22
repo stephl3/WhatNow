@@ -1,18 +1,23 @@
 .profile-wrapper {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 50px;
+    position: fixed;
+    top:0;
     left: 0;
     right: 0;
-    bottom: 0;
-    font-family: var(--theme-font);
-    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
     background-color: var(--background-color);
-    padding: 20px;
-    margin: 0;
+    font-family: var(--theme-font);
+    color: var(--font-color);
+}
+
+.profile-container {
+    width: 1200px;
+    height: 1000px;
     display: flex;
     justify-content: space-between;
+    padding-top: 40px;
 }
 
 .profile-left, .profile-right {
@@ -25,10 +30,11 @@
 .profile-left > div, .profile-right > div {
     // background-color: grey;
     padding: 20px;
-    border: 2px solid yellow;
+    width: 50%;
 }
 
 .profile-image-container {
+    width: 100%;
     box-sizing: border-box;
     border-radius: 12px;
     box-shadow: 4px gray;
@@ -39,8 +45,10 @@
 }
 
 .profile-photo {
-    width: auto;
-    height: 230px;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    border-radius: 12px;
 }
 
 .user-info h2 {
