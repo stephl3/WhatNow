@@ -34,6 +34,7 @@ class GoogleIndexItem extends React.Component {
     const selectedTab = this.props.selectedTab.toLowerCase();
     const {itemIdx} = this.props;
     this.props.receiveWhativityImg(selectedTab, itemIdx, this.state.photoUrl);
+    this.props.receiveWhativity(this.props.place);
     this.props.openModal('whativity');
   }
 

@@ -8,7 +8,7 @@ const WhativitiesReducer = (state = { all:{}, current:{}, userWhativities:{} }, 
       newState.all = action.whativities.data;
       return newState;
     case RECEIVE_WHATIVITY:
-      newState.current = action.whativities.data;
+      newState.current = action.whativity;
       return newState;
     case RECEIVE_USER_WHATIVITIES:
       newState.userWhativities = action.whativities.data;
