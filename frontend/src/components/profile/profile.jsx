@@ -72,29 +72,28 @@ class Profile extends React.Component {
               <h2>Friends</h2>
               <ul className="friends-list">{renderFriends}</ul>
             </div>
+
+        <div className="profile-right">
+          <div className="user-info">
+            <h2>
+              {" "}
+              {user.firstName} {user.lastName}
+            </h2>
+            <p>San Francisco, United States</p>
+            <span>894 Followers</span>
+            <button onClick={this.addFriend}>Follow</button>
           </div>
-          <div className="profile-right">
-            <div className="user-info">
-              <h2>
-                {" "}
-                {user.firstName} {user.lastName}
-              </h2>
-              <p>San Francisco, United States</p>
-              <span>894 Followers</span>
-              <button onClick={this.addFriend}>Follow</button>
-            </div>
-            <div className="interested-whativities-container">
-              <h2>Upcoming Events</h2>
-            </div>
-            <div className="user-whativities-container">
-              <h2>Attended Events</h2>
-              <ul className="whativities-list">
-                {/* {whativities.map(whativity => (
-                  <WhativityItem key={whativity._id} item={whativity} />
-                ))} */}
-                {whativity}
-              </ul>
-            </div>
+          <div className="interested-whativities-container">
+            <h2>Upcoming Events</h2>
+          </div>
+          <div className="user-whativities-container">
+            <h2>Attended Events</h2>
+            <ul className="whativities-list">
+              {/* {whativities.map(whativity => (
+                <WhativityItem key={whativity._id} item={whativity} />
+              ))} */}
+              {whativity}
+            </ul>
           </div>
         </div>
       </div>
