@@ -7,6 +7,7 @@
 @import './profile_friends.scss';
 @import './home.scss';
 @import './whativity_show.scss';
+@import './developers_page.scss';
 
 html {
   // --theme-color: #FFB302;
@@ -20,7 +21,10 @@ html {
 #root {
     display: flex;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
+
 #main-content {
     width: 100%;
     height: 100%;
