@@ -72,6 +72,7 @@ class Profile extends React.Component {
               <h2>Friends</h2>
               <ul className="friends-list">{renderFriends}</ul>
             </div>
+          </div>
 
         <div className="profile-right">
           <div className="user-info">
@@ -97,6 +98,7 @@ class Profile extends React.Component {
           </div>
         </div>
       </div>
+    </div>
     );
   }
 }
