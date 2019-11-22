@@ -31,16 +31,24 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       // debugger
       return (
-        <div className="session-links">
-          <Link className="profile-link" to={`/${this.props.userId}/profile`}>Profile</Link>
-          <button id="logout-button" onClick={this.logoutUser}>Logout</button>
+        <div className="session-buttons">
+          <div className="navbar-button-container">
+            <Link to={`/${this.props.userId}/profile`} className="profile-link">Profile</Link>
+          </div>
+          <div className="navbar-button-container">
+            <button onClick={this.logoutUser} className="navbar-button">Logout</button>
+          </div>
         </div>
       );
     } else {
       return (
         <div className="session-buttons">
-          <button onClick={this.signupModal}>Signup</button>
-          <button onClick={this.loginModal}>Login</button>
+          <div className="navbar-button-container">
+            <button onClick={this.signupModal} className="navbar-button">Signup</button>
+          </div>
+          <div className="navbar-button-container">
+            <button onClick={this.loginModal} className="navbar-button">Login</button>
+          </div>
         </div>
       );
     }

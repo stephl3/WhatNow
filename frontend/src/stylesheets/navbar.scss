@@ -22,29 +22,53 @@
     padding-left: 20px;
 }
 
-.session-links {
+
+.session-buttons {
+    margin-right: 24px;
+    width: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-button-container {
+    width: 60px;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    &:hover {
+        background-color: var(--background-color);
+    }
 }
 
 .profile-link {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: var(--theme-font);
+    outline: none;
     text-decoration: none;
-    color: white;
+    color: var(--font-color);
+    &:hover {
+        color: var(--font-color);
+    }
 }
 
-.session-buttons, #logout-button {
-    margin: 20px;
-    width: 120px;
-    height: 25px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.session-buttons button, #logout-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    width: 55px;
-    font-size: 12px;
+.navbar-button {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 12px;
+    font-family: var(--theme-font);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--font-color);
+    background-color: inherit;
 }
