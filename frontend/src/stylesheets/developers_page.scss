@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   height: 950px;
-  background-color: black;
+  background-color: lightslategray;
   display: flex;
   flex-direction: column;
 }
@@ -12,6 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid black;
 }
 
 .developer-header {
@@ -24,30 +25,30 @@
   display: flex;
   width: 100%;
   height: 100%;
-  background-color: grey;
+  background-color: lightslategray;
+  padding-top: 30px;
 }
 
 .developer-container > div {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .lisa-developer {
-  background-color: lightblue;
+  background-color:lightslategray;
   width: 25%;
   height: 100%;
 }
 
 .chris-developer {
-  background-color: lightcoral;
+  background-color:  lightslategray;
   width: 25%;
   height: 100%;
 }
 
 .kevin-developer {
-  background-color: lightgreen;
+  background-color:  lightslategray;
   width: 25%;
   height: 100%;
 }
@@ -63,13 +64,21 @@
 }
 
 .lisa-picture, .chris-picture, .kevin-picture, .stephen-picture {
-  width: 400px;
-  height: 500px;
-  border-radius: 100px;
+  width: 300px;
+  height: 450px;
+  border-radius: 75px;
+  .shadow {
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
 }
 
-
-
 .lisa-name, .chris-name, .kevin-name, .stephen-name {
+  color: white;
+  font-size: 36px;
+}
 
+.github-links {
+  color: white;
 }
