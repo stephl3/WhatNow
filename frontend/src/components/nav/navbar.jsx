@@ -32,7 +32,7 @@ class NavBar extends React.Component {
       // debugger
       return (
         <div className="session-links">
-          <Link className="profile-link" to={`${this.props.userId}/profile`}>Profile</Link>
+          <Link className="profile-link" to={`/${this.props.userId}/profile`}>Profile</Link>
           <button id="logout-button" onClick={this.logoutUser}>Logout</button>
         </div>
       );
@@ -49,7 +49,9 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="navbar-wrapper">
-        <h1>WhatNow</h1>
+        <Link className="home-link" to="/home">
+          <h1>WhatNow</h1>
+        </Link>
         {this.getLinks()}
       </div>
     );
