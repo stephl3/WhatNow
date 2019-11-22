@@ -4,7 +4,10 @@ import { Switch } from "react-router-dom";
 
 import Modal from "./modal/modal";
 import NavBarContainer from "./nav/navbar_container";
+
 import SplashPage from "./splash/splash_page.jsx";
+import SplashPageContainer from './splash/splash_page_container';
+
 import HomeContainer from './home/home_container';
 import ProfileContainer from "./profile/profile_container";
 import YelpIndexContainer from "./yelp/yelp_index_container";
@@ -22,7 +25,7 @@ const App = () => (
     <Switch>
       <ProtectedRoute path="/home" component={HomeContainer} />
       <ProtectedRoute exact path='/:userId/profile' component={ProfileContainer} />
-      <AuthRoute path="/" component={SplashPage} />
+      <AuthRoute path="/" component={SplashPageContainer} />
     </Switch>
   </div>
 );

@@ -25,6 +25,7 @@ class SplashPage extends React.Component {
     this.state = {
       currentImg: 0
     };
+    this.loginModal = this.loginModal.bind(this);
   }
 
   componentDidMount() {
@@ -49,6 +50,11 @@ class SplashPage extends React.Component {
     this.setState({ currentImg: newCurrentImg });
   }
 
+  loginModal(e) {
+    e.preventDefault();
+    this.props.openModal("login");
+  }
+
   render() {
     
     const {currentImg} = this.state;
@@ -57,11 +63,13 @@ class SplashPage extends React.Component {
     return (
       <div className="splash-wrapper">
         <div className="splash-container-1">
-          <div className="whatnow-button">
+          <button className="whatnow-button" onClick={this.loginModal}>
             <h1>What Now?</h1>
-          </div>
+          </button>
+          {/* <div className="whatnow-button"> */}
+          {/* </div> */}
           {/* <div className="splash-background-container"> */}
-          <div className="splash-background" style={{ backgroundImage: urlString }}></div>
+          <div className="splash-background" style={{ backgroundImage: urlString, width: 2000, height: 500 }}></div>
           {/* </div> */}
         </div>
         <div className="splash-container-2">

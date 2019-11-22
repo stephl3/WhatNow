@@ -30,7 +30,6 @@
 
 .splash-background {
     background-image: url('https://d.newsweek.com/en/full/1502445/san-francisco-salifornia.webp') no-repeat center center fixed;
-    -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
@@ -41,12 +40,12 @@
     // position: fixed;
     top: 0;
     left: 0;
-    -webkit-transition: background-image 0.8s ease-in;
-    transition: background-image 0.8s ease-in;
+    // -webkit-transition: background-image 0.8s ease-in;
+    // transition: background-image 0.8s ease-in;
     -webkit-animation-name: fadeInOpacity;
-    -webkit-animation-duration: 5s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in-out;
+    // -webkit-animation-duration: 5s;
+    // -webkit-animation-iteration-count: infinite;
+    // -webkit-animation-timing-function: ease-in-out;
 }
 
 @keyframes fadeInOpacity {
@@ -71,8 +70,13 @@
     // fix this positioning
     color: white;
     font-family: var(--theme-font);
-    z-index: 10;
+    z-index: 0;
     position: absolute;
+}
+
+.whatnow-button:hover {
+	opacity: 0.5;
+	cursor: pointer;
 }
 
 .whatnow-button h1 {
