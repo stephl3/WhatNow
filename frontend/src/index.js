@@ -7,9 +7,6 @@ import { logout } from './actions/session_actions';
 import { setAuthToken } from "./util/session_api_util";
 import "./stylesheets/index.scss";
 
-window.getWhativities = getWhativities;
-window.fetchWhativities = fetchWhativities;
-
 document.addEventListener("DOMContentLoaded", () => {
   let store;
   
