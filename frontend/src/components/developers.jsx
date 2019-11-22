@@ -7,8 +7,6 @@ import KevinMain from '../images/Kevin-Main.jpg';
 import Octicon, { MarkGithub, Mail } from '@primer/octicons-react'
 import { IoLogoLinkedin } from 'react-icons/io';
 
-
-
 export default class Developers extends React.Component {
   render() {
     return (

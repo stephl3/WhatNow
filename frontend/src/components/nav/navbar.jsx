@@ -32,6 +32,7 @@ class NavBar extends React.Component {
       // debugger
       return (
         <div className="session-links">
+          <Link className="contact-link" to="/contact">Contact</Link>
           <Link className="profile-link" to={`/${this.props.userId}/profile`}>Profile</Link>
           <button id="logout-button" onClick={this.logoutUser}>Logout</button>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import { Switch } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import Modal from "./modal/modal";
 import NavBarContainer from "./nav/navbar_container";
@@ -23,6 +23,7 @@ const App = () => (
     <Modal />
     <NavBarContainer/>
     <Switch>
+      <Route path="/contact" component={DevelopersPage} />
       <ProtectedRoute path="/home" component={HomeContainer} />
       <ProtectedRoute exact path='/:userId/profile' component={ProfileContainer} />
       <AuthRoute path="/" component={SplashPageContainer} />
