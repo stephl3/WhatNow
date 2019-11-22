@@ -12,17 +12,54 @@ class GoogleMap extends React.Component{
     super(props);
   }
 
+  renderMarkers(position) {
+    // let positions = [];
+    // const { spontaneous } = this.props;
+    // if (spontaneous.length > 0) {
+    //   for (let i = 0; i < spontaneous.length; i++) {
+    //     positions.push([spontaneous[i].latitude, spontaneous[i].longitude]);
+    //   }
+      
+      //iterate thru positions and pass in lat and lng 
+      // return (
+        
+      //     <Marker position={{ lat: positions[0], lng: positions[0] }} />
+      //     <Marker position={{ lat: 37.788268, lng: -122.407545 }} />
+      //     <Marker position={{ lat: position[0], lng: position[1] }} />
+        
+      // );
+    // }
+  }
+
   render() {
+    // debugger
+    
+    let positions = [];
+    const { spontaneous } = this.props;
+    
+    if (spontaneous.length === 0) {
+      return null;
+    }
+    
+      for (let i = 0; i < spontaneous.length; i++) {
+        if (spontaneous[i][1] === 'yelp') {
+          positions.push([spontaneous[i][0].latitude, spontaneous[i][0].longitude]);
+        } else {
+          positions.push([spontaneous[i][0].geometry.location.lat, spontaneous[i][0].geometry.location.lng])
+        }
+      }
+    // debugger
     return (
       <div className="google-map">
         <Map
           google={this.props.google}
           zoom={13}
           style={mapStyles}
-          initialCenter={{ lat: 37.788268, lng: -122.407545}}
+          initialCenter={{ lat: 37.788268, lng: -122.407545 }}
         >
-          <Marker position={{ lat: 37.788268, lng: -122.407545 }} />
-         
+          <Marker position={{ lat: positions[0][0], lng: positions[0][1] }} />
+          <Marker position={{ lat: positions[1][0], lng: positions[1][1] }} />
+          <Marker position={{ lat: positions[2][0], lng: positions[2][1] }} />
         </Map>
       </div>
     );

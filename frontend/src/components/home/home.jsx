@@ -150,36 +150,40 @@ class Home extends React.Component {
   render() {
     const { places, events, findPlacePhoto } = this.props
     const loadingModal = this.state.modal ? <LoadingModal /> : null;
-
+    // debugger
   return (
-      <div className="home-wrapper">
-        {loadingModal}
-        <div className="home-container-1">
-            {/* <WhativityIndex
+    <div className="home-wrapper">
+      {loadingModal}
+      <div className="home-container-1">
+        {/* <WhativityIndex
               whatItems={this.state.options} */}
-            <div className ={`whativities-tab-wrapper ${this.state.tabVisible}`}>
-              <WhativitiesTab
-                // whativities={this.state.options}
-                popular={this.state.popular}
-                spontaneous={this.state.spontaneous}
-                friends={this.state.friends}
-              />
-            </div>
-        </div>
-        <div className="home-container-2">
-          <div className="what-now-button-container">
-            <button onClick={this.handleWhatNow} className="what-now-button">
-              WHAT NOW?
-            </button>
-          </div>
-        </div>
-        <div className="home-container-3">
-          <div className="google-maps-container">
-            <GoogleMap />
-          </div>
+        <div className={`whativities-tab-wrapper ${this.state.tabVisible}`}>
+          <WhativitiesTab
+            // whativities={this.state.options}
+            popular={this.state.popular}
+            spontaneous={this.state.spontaneous}
+            friends={this.state.friends}
+          />
         </div>
       </div>
-    )
+      <div className="home-container-2">
+        <div className="what-now-button-container">
+          <button onClick={this.handleWhatNow} className="what-now-button">
+            WHAT NOW?
+          </button>
+        </div>
+      </div>
+      <div className="home-container-3">
+        <div className="google-maps-container">
+          <GoogleMap
+            popular={this.state.popular}
+            spontaneous={this.state.spontaneous}
+            friends={this.state.friends}
+          />
+        </div>
+      </div>
+    </div>
+  );
   }
 }
 
