@@ -3,7 +3,8 @@ import LisaPicture from '../images/Lisa_Wen.jpg';
 import ChrisPicture from '../images/Chris_Trinh1.jpg';
 import KevinPicture from '../images/Nathaniel_Suriawijaya.1 copy.jpg';
 import StephenPicture from '../images/Stephen_Lee.jpg';
-import Octicon, { Beaker, Zap, MarkGithub } from '@primer/octicons-react'
+import KevinMain from '../images/Kevin-Main.jpg';
+import Octicon, { MarkGithub, Mail } from '@primer/octicons-react'
 
 
 export default class Developers extends React.Component {
@@ -12,7 +13,7 @@ export default class Developers extends React.Component {
       <div className="developer-wrapper">
         <div className="header-container">
           <div className="developer-header">
-            DEVELOPERS          
+            Developers       
           </div> 
         </div>
         <div className="developer-container">
@@ -23,7 +24,14 @@ export default class Developers extends React.Component {
             <div className="lisa-info">
               <div className="lisa-name">Lisa Wen</div>
               <div className="github-links">
-                <Octicon icon={MarkGithub} size='medium' />
+                <div>
+                  <a href="https://github.com/lisaw97">
+                    <Octicon icon={MarkGithub} size='44px' />
+                  </a>
+                </div>
+                <div>
+                  <Octicon icon={Mail} size='48px' />
+                </div>
               </div>
             </div>
           </div>
@@ -34,18 +42,32 @@ export default class Developers extends React.Component {
             <div className="chris-info">
               <div className="chris-name">Christopher Trinh</div>
               <div className="github-links">
-                <Octicon icon={MarkGithub} size='medium' />
+                <div>
+                  <a href="https://github.com/chris510">
+                    <Octicon icon={MarkGithub} size='44px' />
+                  </a>
+                </div>
+                <div>
+                  <Octicon icon={Mail} size='48px' />
+                </div>
               </div>
             </div>
           </div>
           <div className="kevin-developer">
             <div >
-              <img src={KevinPicture} alt="Kevin Suriawijaya" className="kevin-picture" />
+              <img src={KevinMain} alt="Kevin Suriawijaya" className="kevin-picture" />
             </div>
             <div className="kevin-info">
-              <div className="kevin-name">Kevin Suji</div>
+              <div className="kevin-name">Kevin Suriawijaya</div>
               <div className="github-links">
-                <Octicon icon={MarkGithub} size='medium' />
+                <div>
+                  <a href="https://github.com/airusk">
+                    <Octicon icon={MarkGithub} size='44px'/>
+                  </a>
+                </div>
+                <div>
+                  <Octicon icon={Mail} size='48px' />
+                </div>
               </div>
             </div>
           </div>
@@ -56,7 +78,14 @@ export default class Developers extends React.Component {
             <div className="stephen-info">
               <div className="stephen-name">Stephen Lee</div>
               <div className="github-links">
-                <Octicon icon={MarkGithub} size='medium' />
+                <div>
+                  <a href="https://github.com/stephl3">
+                    <Octicon icon={MarkGithub} size='44px' />
+                  </a>
+                </div>
+                <div>
+                  <Octicon icon={Mail} size='48px' />
+                </div>
               </div>
             </div>
           </div>
