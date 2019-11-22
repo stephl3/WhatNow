@@ -92,8 +92,6 @@ class Profile extends React.Component {
               {whativity}
             </ul>
           </div>
-        </div>
-      </div>
     );
   }
 }
