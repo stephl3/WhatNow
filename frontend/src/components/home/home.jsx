@@ -175,13 +175,13 @@ class Home extends React.Component {
         </div>
       </div>
       <div className="home-container-3">
-        <div className="google-maps-container">
+        {/* <div className="google-maps-container">
           <GoogleMap
             popular={this.state.popular}
             spontaneous={this.state.spontaneous}
             friends={this.state.friends}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
