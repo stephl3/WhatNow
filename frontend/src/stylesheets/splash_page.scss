@@ -1,9 +1,31 @@
 .splash-wrapper {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // width: 100%;
+    // height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.splash-container-1 {
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
+		align-items: center;
+}
+
+.splash-container-2 {
+	// height: 500px;
+	// border-top: 3px solid black;
+}
+
+.splash-background-container {
+    height: 100vh;
+
 }
 
 .splash-background {
@@ -16,16 +38,15 @@
     min-width: 1024px;
     width: 100%;
     height: auto;
-    position: fixed;
+    // position: fixed;
     top: 0;
     left: 0;
     -webkit-transition: background-image 0.8s ease-in;
     transition: background-image 0.8s ease-in;
-    // -webkit-animation-name: fadeInOpacity;
-    // -webkit-animation-duration: 5s;
-    // -webkit-animation-iteration-count: infinite;
-    // -webkit-animation-timing-function: ease-in-out;
-
+    -webkit-animation-name: fadeInOpacity;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
 }
 
 @keyframes fadeInOpacity {
@@ -39,20 +60,42 @@
 
 .whatnow-button {
     // border: 2px solid black;
-    width: 575px;
-    height: 190px;
-    border-radius: 35px;
+    width: 305px;
+    height: 90px;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
-    opacity: 0.7;
+    // opacity: 0.7;
     // fix this positioning
     color: white;
     font-family: var(--theme-font);
+    z-index: 10;
+    position: absolute;
 }
 
 .whatnow-button h1 {
     font-weight: 400;
     font-size: 48px;
+    align-self: center;
+}
+
+.splash-developer-container {
+  display: flex;
+//   width: 100%;
+  // height: 100%;
+  // background-color: lightslategray;
+  padding-top: 30px;
+}
+
+.splash-developer-container > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.splash-lisa-developer, .splash-chris-developer, .splash-kevin-developer, .splash-stephen-developer {
+  // background-color:  lightslategray;
+  width: 25%;
+//   height: 100%;
 }

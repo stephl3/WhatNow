@@ -1,4 +1,13 @@
-import React from "react";
+import React from "react";  
+import DeveloperPage from '../developers';
+
+import LisaPicture from '../../images/Lisa_Wen.jpg';
+import ChrisPicture from '../../images/Chris_Trinh1.jpg';
+import KevinPicture from '../../images/Nathaniel_Suriawijaya.1 copy.jpg';
+import StephenPicture from '../../images/Stephen_Lee.jpg';
+import KevinMain from '../../images/Kevin-Main.jpg';
+import Octicon, { MarkGithub, Mail } from '@primer/octicons-react'
+import { IoLogoLinkedin } from 'react-icons/io';
 
 const images = [
   "https://images.pexels.com/photos/1796730/pexels-photo-1796730.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
@@ -47,9 +56,16 @@ class SplashPage extends React.Component {
 
     return (
       <div className="splash-wrapper">
-        <div className="splash-background" style={{ backgroundImage: urlString }}></div>
-        <div className="whatnow-button">
-          <h1>What Now?</h1>
+        <div className="splash-container-1">
+          <div className="whatnow-button">
+            <h1>What Now?</h1>
+          </div>
+          {/* <div className="splash-background-container"> */}
+          <div className="splash-background" style={{ backgroundImage: urlString }}></div>
+          {/* </div> */}
+        </div>
+        <div className="splash-container-2">
+          <DeveloperPage/>
         </div>
       </div>
     );

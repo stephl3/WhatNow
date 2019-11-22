@@ -1,32 +1,31 @@
 .developer-wrapper {
   display: flex;
   width: 100%;
-  height: 950px;
-  background-color: lightslategray;
+  // height: 950px;
   display: flex;
   flex-direction: column;
+  background-color: #E0E0E0;
 }
 
 .header-container {
-  height: 150px;
+  // height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid black;
+  padding-top: 20px;
+  // border-bottom: 1px solid black;
 }
 
 .developer-header {
   font-size: 48px;
   font-weight: bold;
-  color: white;
+  padding: 20px;
 }
 
 .developer-container {
   display: flex;
   width: 100%;
-  height: 100%;
-  background-color: lightslategray;
-  padding-top: 30px;
+  // height: 100%;
 }
 
 .developer-container > div {
@@ -36,25 +35,21 @@
 }
 
 .lisa-developer {
-  background-color:lightslategray;
   width: 25%;
   height: 100%;
 }
 
 .chris-developer {
-  background-color:  lightslategray;
   width: 25%;
   height: 100%;
 }
 
 .kevin-developer {
-  background-color:  lightslategray;
   width: 25%;
   height: 100%;
 }
 
 .stephen-developer {
-  background-color: lightslategray;
   width: 25%;
   height: 100%;
 }
@@ -82,7 +77,6 @@
 }
 
 .lisa-name, .chris-name, .kevin-name, .stephen-name {
-  color: white;
   font-size: 36px;
 }
 
@@ -90,7 +84,6 @@
   width: 150px;
   display: flex;
   // justify-content: space-between;
-  color: white;
   cursor: pointer;
   padding-top: 30px;
 }
