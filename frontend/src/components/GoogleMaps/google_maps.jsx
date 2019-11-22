@@ -14,7 +14,7 @@ class GoogleMap extends React.Component{
 
   render() {
     let positions = [];
-    const { spontaneous } = this.props;
+    const { spontaneous, popular, friends } = this.props;
     
     if (spontaneous.length === 0) {
       return null;
@@ -27,7 +27,7 @@ class GoogleMap extends React.Component{
           positions.push([spontaneous[i][0].geometry.location.lat, spontaneous[i][0].geometry.location.lng])
         }
       }
-    debugger
+    // debugger
     return (
       <div className="google-map">
         <Map
