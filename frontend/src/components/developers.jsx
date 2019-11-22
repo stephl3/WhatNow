@@ -5,6 +5,8 @@ import KevinPicture from '../images/Nathaniel_Suriawijaya.1 copy.jpg';
 import StephenPicture from '../images/Stephen_Lee.jpg';
 import KevinMain from '../images/Kevin-Main.jpg';
 import Octicon, { MarkGithub, Mail } from '@primer/octicons-react'
+import { IoLogoLinkedin } from 'react-icons/io';
+
 
 
 export default class Developers extends React.Component {
@@ -32,6 +34,11 @@ export default class Developers extends React.Component {
                 <div>
                   <Octicon icon={Mail} size='48px' />
                 </div>
+                <div>
+                  <a href="https://www.linkedin.com/in/lisa-wen-006378133/">
+                    <IoLogoLinkedin size="48px" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -49,6 +56,11 @@ export default class Developers extends React.Component {
                 </div>
                 <div>
                   <Octicon icon={Mail} size='48px' />
+                </div>
+                <div>
+                  <a href="https://www.linkedin.com/in/trinh-christopher/">
+                    <IoLogoLinkedin size="48px" />
+                  </a>
                 </div>
               </div>
             </div>
@@ -68,6 +80,11 @@ export default class Developers extends React.Component {
                 <div>
                   <Octicon icon={Mail} size='48px' />
                 </div>
+                <div>
+                  <a href="https://www.linkedin.com/in/nsuriawijaya/">
+                    <IoLogoLinkedin size="48px" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -85,6 +102,11 @@ export default class Developers extends React.Component {
                 </div>
                 <div>
                   <Octicon icon={Mail} size='48px' />
+                </div>
+                <div>
+                  <a href="https://www.linkedin.com/in/mrstephenlee1/">
+                    <IoLogoLinkedin size="48px" />
+                  </a>
                 </div>
               </div>
             </div>

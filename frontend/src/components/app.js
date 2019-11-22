@@ -16,14 +16,14 @@ import DevelopersPage from './developers';
 
 const App = () => (
   <div id="main-content">
-    {/* < DevelopersPage /> */}
-    <Modal />
+    < DevelopersPage />
+    {/* <Modal />
     <NavBarContainer/>
     <Switch>
       <ProtectedRoute path="/home" component={HomeContainer} />
       <ProtectedRoute exact path='/:userId/profile' component={ProfileContainer} />
       <AuthRoute path="/" component={SplashPage} />
-    </Switch>
+    </Switch> */}
   </div>
 );
 
