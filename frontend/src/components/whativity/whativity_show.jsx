@@ -17,13 +17,13 @@ class WhativityShow extends React.Component {
         return null;
       }
     const formatted_address  = whativity.formatted_address || whativity.location.display_address.join(", ");
-    // const imageUrl = whativity.current.imgUrl || whativity.image_url;
+    const imageUrl = whativity.imgUrl || whativity.image_url;
     return (
       <div id="hoopla">
         <h1>{whativity.name}</h1>
         <p>Address: {formatted_address}</p>
         <p>Rating: {whativity.rating}</p>
-        {/* <p><img src={imageUrl} alt=""/></p> */}
+        <p><img src={imageUrl} alt=""/></p>
       </div>
     );
   }
