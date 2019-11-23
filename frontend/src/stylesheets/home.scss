@@ -48,7 +48,7 @@
 //   justify-content: space-around;
 // }
 
-.yelp-index-item, .google-index-item {
+.yelp-index-item, .google-index-item, .what-index-item {
   display: flex;
   width: 350px;
   height: 100%;
@@ -71,16 +71,18 @@
 }
 
 
-.yelp-item-photo, .google-item-photo {
+.yelp-item-photo, .google-item-photo, .what-item-photo {
   width: 320px;
   height: 320px;
   object-fit: cover;
   // height: 190px;
   border-radius: 12px;
 }
+
 .google-item-photo img:hover + .details-button:hover{
     display: block;
-  }
+}
+
 .details-button{
   height: 20px;
   width: 100%;
@@ -89,7 +91,7 @@
   display: none;
 }
 
-.yelp-item-info, .google-item-info {
+.yelp-item-info, .google-item-info, .what-item-info {
   padding: 10px;
   width: 100%;
   height: auto;
@@ -102,11 +104,11 @@
   text-align: center;
 }
 
-.yelp-item-info > div, .google-item-info > div {
+.yelp-item-info > div, .google-item-info > div, .what-item-info > div {
   padding: 10px;
 }
 
-.google-item-name, .yelp-item-name{
+.google-item-name, .yelp-item-name, .what-item-name {
   font-size: 24px;
   overflow: hidden;
   height: 50px;

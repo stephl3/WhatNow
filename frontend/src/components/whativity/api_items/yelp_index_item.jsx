@@ -5,6 +5,7 @@ class YelpIndexItem extends React.Component {
     super(props);
     this.showWhativity = this.showWhativity.bind(this);
   }
+
   showWhativity(e) {
     e.preventDefault();
     this.props.openModal('whativity');
@@ -26,7 +27,7 @@ class YelpIndexItem extends React.Component {
         <div className="social-buttons">
           <div className="index-button interest yelp">
             Interested
-              </div>
+             </div>
           <div className="index-button going yelp">
             Going
           </div>

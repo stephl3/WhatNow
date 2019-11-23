@@ -17,6 +17,12 @@ const WhativitySchema = new Schema({
   address: {
     type: String,
     required: true
+  },
+  latitude: {
+    type: Number
+  },
+  longitude: {
+    type: Number
   }
 });
 

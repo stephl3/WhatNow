@@ -29,6 +29,7 @@ class Home extends React.Component {
     // let num = Math.round(Math.random());
     this.props.fetchNearbyPlaces();
     this.props.fetchYelpEvents();
+    this.props.fetchWhativities();
     // this.props.fetchYelpEvents();
     // this.shuffleChoices();
     // if (num === 0) {
@@ -50,7 +51,12 @@ class Home extends React.Component {
     this.props.events.forEach( event => {
       choices.push([event, "yelp"]);
     });
+    this.props.whativities.forEach( whativity => {
+      choices.push([whativity, "whativity"])
+    })
+    debugger
     return choices
+    
   }
 
   shuffleChoices() {
