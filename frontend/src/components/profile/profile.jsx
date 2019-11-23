@@ -10,10 +10,11 @@ class Profile extends React.Component {
     super(props);
     this.state = {
       // firstName: "",
-      user: "",
-      whativities: []
+      user: this.props.user,
+      whativities: [],
+      currentUserFriends: this.props.currentUser.friends
     }
-    this.addFriend = this.addFriend.bind(this);
+    this.toggleFriend = this.toggleFriend.bind(this);
   }
   
   componentDidMount() {
@@ -29,15 +30,24 @@ class Profile extends React.Component {
       }); 
   }
 
-  addFriend(e) {
+  toggleFriend(e) {
     e.preventDefault();
-    const {currentUserId} = this.props;
+    const {currentUser} = this.props;
     const friendId = this.props.match.params.userId;
-    this.props.addFriend(currentUserId, friendId);
+    debugger;
+    if (this.state.currentUserFriends.includes(friendId)) {
+      this.props.deleteFriend(currentUser.id, friendId);
+    } else {
+      this.props.addFriend(currentUser.id, friendId);
+    }
+    window.setTimeout(() =>
+      window.location.reload(), 100);
   }
 
+
+
   render() {
-    const { friends } = this.props;
+    const { friends, currentUser, fetchWhativity, openModal } = this.props;
     const { user } = this.state;
     let renderFriends;
     if (friends) {
@@ -48,11 +58,25 @@ class Profile extends React.Component {
       })
     }
 
+    const profileId = this.props.match.params.userId;
+    let followButtonLabel = (this.state.currentUserFriends.includes(profileId)) ? (
+      "Unfollow"
+    ) : (
+      "Follow"
+    );
+    let followButton = (currentUser.id === profileId) ? (
+      null
+    ) : (
+      <button onClick={this.toggleFriend} className="user-info follow-button">{followButtonLabel}</button>
+    )
+
     let userWhativities = this.props.whativities.map( whativity => {
       return (
         <WhativityItem 
           key={whativity.id}
           item={whativity}
+          fetchWhativity={fetchWhativity}
+          openModal={openModal}
         />
       )
     })
@@ -60,30 +84,44 @@ class Profile extends React.Component {
     return (
       <div className="profile-wrapper">
         <div className="profile-container">
-          <div className="profile-left">
+          <div className="profile-left-container">
             <div className="profile-photo-container">
               <img src={user.photoUrl} alt="profile photo" className="profile-photo"/>
             </div>
             <div className="friends-container">
-              <h2>Friends</h2>
+              <div className="profile-section-title">
+                Friends
+              </div>
               <ul className="friends-list">{renderFriends}</ul>
             </div>
           </div>
-          <div className="profile-right">
-            <div className="user-info">
-              <h2>
-                {" "}
+          <div className="profile-right-container">
+            <div className="user-info-container">
+              <div className="user-info name">
                 {user.firstName} {user.lastName}
-              </h2>
-              <p>San Francisco, United States</p>
-              <span>894 Followers</span>
-              <button onClick={this.addFriend}>Follow</button>
+              </div>
+              <div className="user-info location">
+                San Francisco, CA
+              </div>
+              <div className="user-info follow">
+                <div className="user-info followers">
+                  894 followers
+                </div>
+                {followButton}
+              </div>
             </div>
             <div className="interested-whativities-container">
-              <h2>Upcoming Events</h2>
+              <div className="profile-section-title">
+                Interested Whativities
+              </div>
+              <ul className="interested-whativities-list">
+
+              </ul>
             </div>
             <div className="user-whativities-container">
-              <h2>Attended Events</h2>
+              <div className="profile-section-title">
+                Attended Whativities
+              </div>
               <ul className="whativities-list">
                 {userWhativities}
               </ul>

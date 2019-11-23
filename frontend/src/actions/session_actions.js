@@ -57,8 +57,3 @@ export const logout = () => dispatch => {
   APIUtil.setAuthToken(false);
   dispatch(logoutUser());
 };
-
-// export const addFriend = (userId, friendId) => dispatch =>
-//   APIUtil.addFriend(userId, friendId).then(userData => {
-//     dispatch(receiveFriends(userData));
-//   });

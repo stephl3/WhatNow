@@ -27,13 +27,18 @@ class NavBar extends React.Component {
     this.props.openModal("login");
   }
 
+  switchProfile() {
+    window.setTimeout(() =>
+      window.location.reload(), 100);
+  }
+
   getLinks() {
     if (this.props.loggedIn) {
       // debugger
       return (
         <div className="session-buttons">
           <div className="navbar-button-container">
-            <Link to={`/${this.props.userId}/profile`} className="profile-link">Profile</Link>
+            <Link to={`/${this.props.userId}/profile`} onClick={this.switchProfile} className="profile-link">Profile</Link>
           </div>
           <div className="navbar-button-container">
             <button onClick={this.logoutUser} className="navbar-button">Logout</button>
