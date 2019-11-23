@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 class Friend extends React.Component {
   constructor(props) {
     super(props);
@@ -14,6 +16,11 @@ class Friend extends React.Component {
       .then(user => this.setState({user: user.data}))
   }
 
+  switchProfile() {
+    window.setTimeout(() =>
+      window.location.reload(), 100);
+  }
+
   render() {
     const { key, userId } = this.props;
     const { user } = this.state;
@@ -22,12 +29,14 @@ class Friend extends React.Component {
     }
     return (
       <li className="friend" key={`friend${key}`}>
-        <div className="friend-photo-container">
-          <img src={user.photoUrl} alt="friend photo" className="friend-photo"/>
-        </div>
-        <div className="friend-name">
-          {user.firstName} {user.lastName}
-        </div>
+        <Link to={`/${userId}/profile`} onClick={this.switchProfile} className="friend-profile-link">
+          <div className="friend-photo-container">
+            <img src={user.photoUrl} alt="friend photo" className="friend-photo"/>
+          </div>
+          <div className="friend-name">
+            {user.firstName} {user.lastName}
+          </div>
+        </Link>
       </li>
     )
   }

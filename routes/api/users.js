@@ -126,10 +126,18 @@ router.get('/:id', (req, res) => {
 router.patch('/update/:id', (req, res) => {
   User.findOne({_id: req.params.id})
     .then(user => {
-      user.friends.push(req.body.friendId);
-      user.save();
-      console.log(user);
-      res.status(200).json(user);
+      if (!user) {
+        user.friends.push(req.body.friendId);
+        user.save();
+        console.log(user);
+        res.status(200).json(user);
+      } else {
+        let idx = user.friends.indexOf(req.body.friendId);
+        user.friends.splice(idx, 1);
+        user.save();
+        console.log(user);
+        res.status(200).json(user);
+      }
     })
 })
 module.exports = router;

@@ -4,7 +4,10 @@ import {
   RECEIVE_USER_SIGN_IN
 } from "../actions/session_actions";
 
-import { RECEIVE_FRIEND } from '../actions/user_actions';
+import {
+  RECEIVE_FRIEND,
+  REMOVE_FRIEND
+} from '../actions/user_actions';
 
 const initialState = {
   isAuthenticated: false,
@@ -32,6 +35,9 @@ export default function(state = initialState, action) {
         isSignedIn: true
       };
     case RECEIVE_FRIEND:
+      nextState.user.friends = action.userData.data.friends;
+      return nextState;
+    case REMOVE_FRIEND:
       nextState.user.friends = action.userData.data.friends;
       return nextState;
     default:

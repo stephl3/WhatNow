@@ -47,11 +47,11 @@ export const fetchWhativities = () => dispatch => (
     .catch(err => console.log(err))
 );
 
-// export const fetchWhativity = (id) => dispatch => (
-//   getWhativity(id)
-//     .then(whativity => dispatch(receiveWhativity(whativity)))
-//     .catch(err => console.log(err))
-// );
+export const fetchWhativity = (id) => dispatch => (
+  getWhativity(id)
+    .then(whativity => dispatch(receiveWhativity(whativity)))
+    .catch(err => console.log(err))
+);
 
 export const fetchUserWhativities = (userId) => dispatch => (
   getUserWhativities(userId)

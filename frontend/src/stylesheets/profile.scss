@@ -13,11 +13,14 @@
 }
 
 .profile-container {
+    margin-top: 64px;
     width: 1200px;
-    height: 1000px;
+    height: 850px;
     display: flex;
     justify-content: space-between;
-    padding-top: 40px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background-color: var(--container-color);
 }
 
 .profile-left,
@@ -28,17 +31,25 @@
     margin: 20px;
 }
 
-.profile-left > div,
-.profile-right > div {
+.profile-left-container,
+.profile-right-container {
+    min-width: 520px;
+    min-height: 850px;
     width: 100%;
-    padding: 10px;
+    margin: 20px;
 }
 
-.profile-image-container {
+.profile-section-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 8px;
+}
+
+.profile-photo-container {
     width: 100%;
+    padding: 4px;
     box-sizing: border-box;
     border-radius: 12px;
-    box-shadow: 4px gray;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,32 +63,60 @@
     border-radius: 12px;
 }
 
-.user-info h2 {
-    font-size: 30px;
-    margin-bottom: 8px;
-    padding: 10px;
-    font-size: 24px;
+.friends-container {
+    border: none;
 }
 
-.user-info p {
-    font-size: 11px;
+.user-info-container {
+    padding: 4px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid gray;
+}
+
+.user-info.name {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.user-info.location {
+    font-size: 16px;
     color: lightgray;
     margin-bottom: 20px;
+    -webkit-font-smoothing: antialiased;
 }
 
-.user-info span {
+.user-info.follow {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.user-info.followers {
     margin-right: 20px;
-    font-size: 15px;
-    // background-color: grey;
-    // padding: 10px;
+    font-size: 16px;
 }
 
-.user-info button {
-    background-color: #37363D;
-    color: var(--theme-color);
-    height: 25px;
-    border-radius: 19px;
+.user-info.follow-button {
+    width: 72px;
+    height: 30px;
+    color: var(--font-color);
+    font-size: 12px;
+    text-align: center;
+    border-radius: 12px;
     border: 0;
-    // padding: 0;
+    background-color: var(--background-color);
+    &:hover {
+        background-color: var(--hover-color);
+    }
 }
 
+.interested-whativities-container {
+    padding: 4px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid gray;
+}
+
+.user-whativities-container {
+    padding: 4px;
+    margin-bottom: 20px;
+}
