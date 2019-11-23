@@ -9,6 +9,7 @@ import Profile from './profile';
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.session.user,
     user: state.users[ownProps.match.params.userId],
+    currentUserFriends: state.session.user.friends,
     friends: state.users.friends,
     whativities: state.entities.whativity.all
 });

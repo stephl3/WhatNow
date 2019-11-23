@@ -12,7 +12,7 @@ class Profile extends React.Component {
       // firstName: "",
       user: this.props.user,
       whativities: [],
-      currentUserFriends: this.props.currentUser.friends
+      currentUserFriends: this.props.currentUserFriends
     }
     this.toggleFriend = this.toggleFriend.bind(this);
   }
@@ -34,14 +34,16 @@ class Profile extends React.Component {
     e.preventDefault();
     const {currentUser} = this.props;
     const friendId = this.props.match.params.userId;
-    debugger;
+    const prevFriends = this.props.currentUserFriends;
     if (this.state.currentUserFriends.includes(friendId)) {
-      this.props.deleteFriend(currentUser.id, friendId);
+      this.props.deleteFriend(currentUser.id, friendId)
+        .then(() => prevFriends.splice(prevFriends.indexOf(friendId), 1))
+        .then(() => this.setState({ currentUserFriends: prevFriends }))
     } else {
-      this.props.addFriend(currentUser.id, friendId);
+      this.props.addFriend(currentUser.id, friendId)
+        .then(() => prevFriends.push(friendId))
+        .then(() => this.setState({ currentUserFriends: prevFriends }))
     }
-    window.setTimeout(() =>
-      window.location.reload(), 100);
   }
 
 
@@ -60,9 +62,9 @@ class Profile extends React.Component {
 
     const profileId = this.props.match.params.userId;
     let followButtonLabel = (this.state.currentUserFriends.includes(profileId)) ? (
-      "Unfollow"
-    ) : (
       "Follow"
+    ) : (
+      "Unfollow"
     );
     let followButton = (currentUser.id === profileId) ? (
       null

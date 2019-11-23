@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 import WhativityShowContainer from '../whativity/whativity_show_container';
+import UserWhativityContainer from '../profile/user_whativity_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
