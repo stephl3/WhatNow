@@ -36,12 +36,10 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       // debugger
       return (
-        <div className="session-links">
-          <Link className="contact-link" to="/contact">Contact</Link>
-          <Link className="profile-link" to={`/${this.props.userId}/profile`}>Profile</Link>
-          <button id="logout-button" onClick={this.logoutUser}>Logout</button>
-        </div>
         <div className="session-buttons">
+          <div className="navbar-button-container">
+            <Link className="profile-link" to="/contact">Contact</Link>
+          </div>
           <div className="navbar-button-container">
             <Link to={`/${this.props.userId}/profile`} onClick={this.switchProfile} className="profile-link">Profile</Link>
           </div>
