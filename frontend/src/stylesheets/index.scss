@@ -11,13 +11,17 @@
 
 html {
   // --theme-color: #FFB302;
-  --theme-color: #4991E4;
+  // --theme-color: #4991E4;
+  --theme-color: lightyellow;
   --theme-font: proxima-nova, helvetica, arial, sans-serif;
-  --background-color: #b3cde0;
+  // --background-color: #b3cde0;
+  --background-color: #73bef0;
   --subheading-color: #4A90E1;
-  --container-color: 	#6497b1;
-  --hover-color:	#005b96;
-  --font-color: #ffffff;
+  // --container-color: 	#6497b1;
+  --container-color: white;
+  // --hover-color:	#005b96;
+  --hover-color:	#73bef0;
+  --font-color: black;
 }
 
 #root {

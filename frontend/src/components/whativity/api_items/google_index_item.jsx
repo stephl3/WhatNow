@@ -33,7 +33,7 @@ class GoogleIndexItem extends React.Component {
     e.preventDefault();
     const selectedTab = this.props.selectedTab.toLowerCase();
     const {itemIdx} = this.props;
-    debugger
+    // debugger
     this.props.receiveWhativityImg(selectedTab, itemIdx, this.state.photoUrl);
     this.props.receiveWhativity(this.props.place);
     this.props.openModal('whativity');
@@ -42,6 +42,7 @@ class GoogleIndexItem extends React.Component {
   render() {
     const { place } = this.props
     return (
+      <div className="item">
           <div className="google-index-item" onClick={this.showWhativity}>
             <div className="google-item-info">
               <div className="google-item-name">
@@ -64,6 +65,7 @@ class GoogleIndexItem extends React.Component {
               </div>
             </div>
           </div>
+      </div>
     );
   }
 }

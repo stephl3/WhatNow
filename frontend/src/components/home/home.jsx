@@ -155,13 +155,6 @@ class Home extends React.Component {
   return (
     <div className="home-wrapper">
       {loadingModal}
-      <div className="home-container-what">
-        <div className="what-now-button-container">
-          <button onClick={this.handleWhatNow} className="what-now-button">
-            WHAT NOW?
-          </button>
-        </div>
-      </div>
       <div className="home-container-main">
         {/* <WhativityIndex
               whatItems={this.state.options} */}
@@ -174,7 +167,14 @@ class Home extends React.Component {
           />
         </div>
       </div>
-      <div className="home-container-3">
+      <div className="home-container-what">
+        <div className="what-now-button-container">
+          <button onClick={this.handleWhatNow} className="what-now-button">
+            WHAT NOW?
+          </button>
+        </div>
+      </div>
+      {/* <div className="home-container-3"> */}
         {/* <div className="google-maps-container">
           <GoogleMap
             popular={this.state.popular}
@@ -182,7 +182,7 @@ class Home extends React.Component {
             friends={this.state.friends}
           />
         </div> */}
-      </div>
+      {/* </div> */}
     </div>
   );
   }

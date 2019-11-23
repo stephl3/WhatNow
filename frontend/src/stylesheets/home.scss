@@ -1,4 +1,12 @@
 .home-wrapper {
+  background-image: url('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1422226256160-9b266e308ea6%3Fixlib%3Drb-1.2.1%26ixid%3DeyJhcHBfaWQiOjEyMDd9%26auto%3Dformat%26fit%3Dcrop%26w%3D1953%26q%3D80');
+  // background-image: url('../images/home_background.jpg');
+  -ms-background-position-y: bottom;
+  background-size: cover;
+  
+  // background-image: url('https://d.newsweek.com/en/full/1502445/san-francisco-salifornia.webp') no-repeat center center fixed;
+  // background-color: #efe4d5;
+  // background-color: lightyellow;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
@@ -10,23 +18,27 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: var(--background-color);
+  background-position: top;
+  // background-color: var(--background-color);
 }
 
 .home-container-main {
-  background-color: var(--background-color);
+  // background-image: url('https://d.newsweek.com/en/full/1502445/san-francisco-salifornia.webp') no-repeat center center fixed;
+  // background-color: var(--background-color);
+  // background-color: yellow;
+  // z-index: -2;
   display: flex;
   justify-content: space-between;
   width: 1200px;
   height: 70%;
   margin: 0 auto 0 auto;
 }
+
 .home-container-what {
-  background-color: var(--background-color);
-  padding: 70px 0 0 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+    padding: 100px 0 30px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .yelp-index-wrapper, .google-index-wrapper {
@@ -36,51 +48,132 @@
 .yelp-index-container, .google-index-container {
 }
 
-
+.whativities-tab-headers-wrapper {
+  display: flex;
+  justify-content: center;
+}
 .whativity-index-items {
-  width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+  text-align: center;
+  // width: 1200px;
   display: flex;
   justify-content: space-around;
-  margin: 0 auto 0 auto;
+  // margin: 0 auto 0 auto;
 }
-// .yelp-index, .google-index {
-//   display: flex;
-//   justify-content: space-around;
-// }
 
 .yelp-index-item, .google-index-item {
   display: flex;
-  width: 350px;
-  height: 100%;
+  // width: 350px;
+  // height: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 
-              0 1px 4px rgba(0, 0, 0, 0.24);
+  // background: rgb(248, 220, 220);
+  background: rgba(0, 0, 0, 0.803);
+  padding: 1rem;
+  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+  color: white;
   border-radius: 12px;
-  background-color: var(--container-color);
+  // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 
+  //             0 1px 4px rgba(0, 0, 0, 0.24);
+  // border-radius: 12px;
+  // background-color: white;
+  // background-color: var(--container-color);
   cursor: pointer;
-  &:hover {
-    // opacity: 0.3;
-    background-color: var(--hover-color);
-  }
+  // &:hover {
+  //   background-color: var(--hover-color);
+  // }
 }
-
-.yelp-index-item > div {
-  // margin: 50px;
-}
-
 
 .yelp-item-photo, .google-item-photo {
   width: 320px;
   height: 320px;
   object-fit: cover;
-  // height: 190px;
   border-radius: 12px;
 }
+
 .google-item-photo img:hover + .details-button:hover{
     display: block;
   }
+
+.item {
+  width: 30%;
+  display: inline-block;
+  // margin-top: 2rem;
+  // filter: grayscale(100%);
+  opacity: 0.8;
+}
+
+.item .yelp-index-item:before, .item .google-index-item:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  transition: all 0.35s;
+}
+
+.item:nth-of-type(4n+1) {
+  transform: scale(0.8, 0.8) rotate(5deg);
+  transition: all 0.35s;
+}
+
+.item:nth-of-type(4n+1) .yelp-index-item:before, .item:nth-of-type(4n+1) .google-index-item:before {
+  transform: rotate(6deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  right: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.4);
+}
+
+.item:nth-of-type(4n+2) {
+  transform: scale(0.8, 0.8) rotate(-5deg);
+  transition: all 0.35s;
+}
+
+.item:nth-of-type(4n+2) .yelp-index-item:before, .item:nth-of-type(4n+2) .google-index-item:before {
+  transform: rotate(-6deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  left: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.4);
+}
+
+.item:nth-of-type(4n+3) {
+  transform: scale(0.8, 0.8) rotate(-3deg);
+  transition: all 0.35s;
+}
+
+.item:nth-of-type(4n+3) .yelp-index-item:before, .item:nth-of-type(4n+3) .google-index-item:before {
+  transform: rotate(-4deg);
+  height: 20%;
+  width: 47%;
+  bottom: 30px;
+  left: 12px;
+  box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.3);
+}
+
+.item:hover {
+  filter: none;
+  transform: scale(1, 1) rotate(0deg) !important;
+  transition: all 0.35s;
+  opacity: 1;
+}
+
+.item:hover .yelp-index-item:before, .item:hover .google-index-item:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  transform: rotate(0deg);
+  height: 90%;
+  width: 90%;
+  bottom: 0%;
+  right: 5%;
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.2);
+  transition: all 0.35s;
+}
+
 .details-button{
   height: 20px;
   width: 100%;
@@ -90,16 +183,18 @@
 }
 
 .yelp-item-info, .google-item-info {
-  padding: 10px;
-  width: 100%;
-  height: auto;
-  line-height: 2rem;
+  // padding: 10px;
+  // width: 100%;
+  // height: auto;
+  // line-height: 2rem;
   // height: 80%;
   // display: flex;
   // flex-direction: column;
   // justify-content: center;
   // align-items: center;
   text-align: center;
+  font-size: 1.8rem;
+  line-height: 2em;
 }
 
 .yelp-item-info > div, .google-item-info > div {
@@ -116,15 +211,19 @@
   text-overflow: ellipsis;
 }
 
-.what-now-button {
-  width: 500px;
-  height: 500px;
-}
+// .what-now-button {
+//   width: 500px;
+//   height: 500px;
+// }
 
 .whativities-tab-container{
   display: flex;
   flex-direction: column;
   align-content: flex-start;
+}
+
+.whativities-tab-headers-container {
+    width: 100%;
 }
 
 .whativities-tab-wrapper {
@@ -137,9 +236,9 @@
 }
 
 .what-now-button {
-    width: 220px;
-    height: 50px;
-    border: 1px solid darkblue;
+    width: 250px;
+    height: 70px;
+    border: 1px solid var(--background-color);
     outline: none;
     color: #fff;
     background: #111;
@@ -199,39 +298,38 @@
     100% { background-position: 0 0; }
 }
 
-
-
 .whativities-tab-headers{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 420px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 30px 0 30px 0;
   :hover{
     background-color: var(--hover-color);
     border-radius:10px;
   }
-  padding: 30px 0 30px 0;
+  padding: 120px 0 30px 0;
 }
 
 .whativities-tab-header-link{
   color: var(--font-color);
   background-color: var(--container-color);
-  width: 120px;
-  height: 40px;
+  width: 150px;
+  height: 50px;
   border-radius:10px;
 }
-.whativities-tab-header-label{
-  color:inherit;
-  background-color: inherit;
-  display: flex; 
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  border-radius:inherit;
-  
+.whativities-tab-header-label {
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    border: 1px solid var(--background-color);
 }
 
 .social-buttons{
@@ -241,16 +339,14 @@
   width: 100%;
 }
 
-.index-button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #FFFFFF;
-  width: 100px;
-  height: 40px;
-  border-radius: 10px;
-  background-color: var(--background-color);
-  :hover{
-
-  }
+.index-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    width: 130px;
+    height: 45px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: var(--background-color);
 }

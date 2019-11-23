@@ -15,7 +15,7 @@
 }
 
 .navbar-wrapper h1 {
-    color: white;
+    color: var(--theme-font);
     font-weight: 700;
     font-size: 20px;
     font-family: var(--theme-font);
@@ -29,7 +29,7 @@
 
 .profile-link {
     text-decoration: none;
-    color: white;
+    color: var(--theme-font);
 }
 
 .session-buttons, #logout-button {
