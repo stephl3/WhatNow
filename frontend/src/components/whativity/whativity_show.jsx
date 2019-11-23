@@ -11,7 +11,7 @@ class WhativityShow extends React.Component {
   }
 
   render() {
-    debugger
+    // debugger
     const {whativity} = this.props;
     if (!whativity) {
       return null;

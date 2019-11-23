@@ -32,7 +32,7 @@ export const receiveRandomWhativities = (category, whativities) => {
 };
 
 export const receiveWhativityImg = (category, idx, imgUrl) => {
-  debugger
+  // debugger
   return {
     type: RECEIVE_WHATIVITY_IMG,
     category,
