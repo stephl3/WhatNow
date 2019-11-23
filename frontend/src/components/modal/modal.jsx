@@ -20,6 +20,9 @@ function Modal({ modal, closeModal }) {
     case 'whativity':
       component = <WhativityShowContainer />;
       break;
+    case 'user-whativity':
+      component = <UserWhativityContainer />;
+      break;
     default:
       return null;
   }

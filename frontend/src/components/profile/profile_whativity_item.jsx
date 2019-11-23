@@ -6,16 +6,16 @@ class WhativityItem extends React.Component {
     this.props.fetchWhativity(this.props.item._id);
   }
 
-  showWhativity(e) {
-    e.preventDefault();
+  showWhativity() {
+    this.props.openModal('user-whativity');
   }
 
   render() {
-    const { item, openModal } = this.props;
+    const { item } = this.props;
     const { name, address } = item
   
     return(
-      <div className="whativity-item">
+      <div onClick={this.showWhativity} className="whativity-item">
         <img src={item.photoUrl} alt={item.name} className="whativity-item-photo"/>
         <div className="whativity-item-info">
           <div className="whativity-item-name">
