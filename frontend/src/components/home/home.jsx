@@ -27,8 +27,8 @@ class Home extends React.Component {
 
   componentDidMount() {
     // let num = Math.round(Math.random());
-    this.props.fetchNearbyPlaces();
-    this.props.fetchYelpEvents();
+    // this.props.fetchNearbyPlaces();
+    // this.props.fetchYelpEvents();
     this.props.fetchWhativities();
     // this.props.fetchYelpEvents();
     // this.shuffleChoices();
