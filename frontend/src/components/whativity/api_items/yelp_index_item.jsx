@@ -3,10 +3,18 @@ import React from 'react';
 class YelpIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      photoUrl: ''
+    }
     this.showWhativity = this.showWhativity.bind(this);
   }
   showWhativity(e) {
     e.preventDefault();
+    const selectedTab = this.props.selectedTab.toLowerCase();
+    const { itemIdx } = this.props;
+    debugger
+    this.props.receiveWhativityImg(selectedTab, itemIdx, this.state.photoUrl);
+    this.props.receiveWhativity(this.props.event)
     this.props.openModal('whativity');
   }
 
