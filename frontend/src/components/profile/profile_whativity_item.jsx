@@ -1,12 +1,19 @@
 import React from 'react';
 
-class WhativityItem extends React.Component {
+class ProfileWhativityItem extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.showWhativity = this.showWhativity.bind(this);
+  }
 
   componentDidMount() {
     this.props.fetchWhativity(this.props.item._id);
   }
 
   showWhativity() {
+    debugger
+    this.props.receiveWhativity(this.props.item);
     this.props.openModal('user-whativity');
   }
 
@@ -30,4 +37,4 @@ class WhativityItem extends React.Component {
   }
 }
 
-export default WhativityItem; 
+export default ProfileWhativityItem; 

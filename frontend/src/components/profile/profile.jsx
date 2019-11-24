@@ -2,7 +2,8 @@ import React from "react";
 import '../../stylesheets/profile.scss';
 import '../../stylesheets/profile_friends.scss';
 import '../../stylesheets/profile_whativities.scss';
-import WhativityItem from './profile_whativity_item';
+// import ProfileWhativityItem from './profile_whativity_item';
+import ProfileWhativityItemContainer from './profile_whativity_item_container';
 import FriendContainer from './friend_container';
 
 class Profile extends React.Component {
@@ -74,7 +75,7 @@ class Profile extends React.Component {
 
     let userWhativities = this.props.whativities.map( whativity => {
       return (
-        <WhativityItem 
+        <ProfileWhativityItemContainer
           key={whativity.id}
           item={whativity}
           fetchWhativity={fetchWhativity}

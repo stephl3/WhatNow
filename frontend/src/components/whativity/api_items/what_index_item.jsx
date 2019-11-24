@@ -10,9 +10,6 @@ class WhatIndexItem extends React.Component {
 
   showWhativity(e) {
     e.preventDefault();
-
-    const selectedTab = this.props.selectedTab.toLowerCase();
-    const { itemIdx } = this.props;
     
     this.props.receiveWhativity(this.props.what);
     this.props.openModal('user-whativity');
