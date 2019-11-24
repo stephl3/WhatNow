@@ -307,29 +307,44 @@
   margin-right: 20px;
   padding: 30px 0 30px 0;
   :hover{
-    background-color: var(--hover-color);
-    border-radius:10px;
+    color: var(--font-color);
+    text-decoration: underline;
   }
   padding: 120px 0 30px 0;
 }
 
 .whativities-tab-header-link{
-  color: var(--font-color);
-  background-color: var(--container-color);
+  // color: var(--font-color);
+  background-color: var(--subheading-color);
   width: 150px;
   height: 50px;
+  box-sizing: border-box;
   border-radius:10px;
+  border: 1px solid var(--container-color);
+  overflow: hidden;
+  outline: none;
 }
 .whativities-tab-header-label {
     color: white;
-    background-color: black;
+    // background-color: var(--theme-color);
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    border-radius: inherit;
-    border: 1px solid var(--background-color);
+    // border: 1px solid var(--background-color);
+}
+
+.yelp-index-item > .hide,
+.google-index-item > .hide,
+.what-index-item > .hide {
+  visibility: hidden;
+}
+
+.yelp-index-item:hover > .hide,
+.google-index-item:hover > .hide,
+.what-index-item:hover > .hide {
+  visibility: visible;
 }
 
 .social-buttons{
@@ -348,5 +363,8 @@
     height: 45px;
     border-radius: 10px;
     font-size: 20px;
-    background-color: var(--background-color);
+    background-color: var(--theme-color);
+    &:hover {
+      background-color: var(--hover-color);
+    }
 }

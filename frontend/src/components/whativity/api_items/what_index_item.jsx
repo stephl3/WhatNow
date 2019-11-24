@@ -21,7 +21,7 @@ class WhatIndexItem extends React.Component {
               className="what-item-photo"
             />
           </div>
-          <div className="social-buttons">
+          <div className="social-buttons hide">
             <div className="index-button interest photo">Interested</div>
             <div className="index-button going photo">Going</div>
           </div>

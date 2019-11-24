@@ -56,7 +56,7 @@ class GoogleIndexItem extends React.Component {
               <img src={this.state.photoUrl} className="google-item-photo" alt={place.name} />
               <a href="" className="details-button"></a>
             </div>
-            <div className="social-buttons">
+            <div className="social-buttons hide">
               <div className="index-button interest google">
                 Interested
               </div>

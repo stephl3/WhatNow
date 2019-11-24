@@ -62,9 +62,9 @@ class Profile extends React.Component {
 
     const profileId = this.props.match.params.userId;
     let followButtonLabel = (this.state.currentUserFriends.includes(profileId)) ? (
-      "Follow"
-    ) : (
       "Unfollow"
+    ) : (
+      "Follow"
     );
     let followButton = (currentUser.id === profileId) ? (
       null

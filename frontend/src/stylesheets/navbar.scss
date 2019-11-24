@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--container-color);
+    background-color: var(--background-color);
     z-index: 5;
     font-family: var(--theme-font);
 }
@@ -43,7 +43,7 @@
     justify-content: center;
     background-color: transparent;
     &:hover {
-        background-color: var(--background-color);
+        background-color: var(--container-color);
     }
 }
 
