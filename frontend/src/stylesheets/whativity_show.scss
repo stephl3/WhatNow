@@ -1,5 +1,17 @@
-#hoopla {
+#whativity-show-container {
+  display: flex;
   background-color: #fff;
-  width: 800px;
-  height: 500px;
+  width: 1200px;
+  height: 810px;
+}
+.show-name{
+
+}
+
+.month-container{
+  font-family: var(--theme-font);
+  font-size: 16pt;
+  h2{
+    text-transform: capitalize;
+  }
 }

@@ -19,11 +19,17 @@ class WhativityShow extends React.Component {
     const formatted_address  = whativity.formatted_address || whativity.location.display_address.join(", ");
     const imageUrl = whativity.imgUrl || whativity.image_url;
     return (
-      <div id="hoopla">
-        <h1>{whativity.name}</h1>
+      <div id="whativity-show-container">
+        <div className="show-image-container">
+          <img src={imageUrl} alt=""/>
+        </div>
+        <div className="month-container">
+          <h2>Dec</h2>
+          <p>28</p>
+        </div>
+        <h1 className="show-name">{whativity.name}</h1>
         <p>Address: {formatted_address}</p>
         <p>Rating: {whativity.rating}</p>
-        <p><img src={imageUrl} alt=""/></p>
       </div>
     );
   }
