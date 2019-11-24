@@ -1,14 +1,25 @@
-// .what-item-wrapper {
+// .what-show-wrapper {
 //   background-color: #fff;
 //   width: 800px;
 //   height: 500px;
 // }
 
-.what-item-info {
+.what-show-wrapper {
   display: flex;
 }
 
-.whativity-item-photo {
-  width: 200px;
-  height: 200px;
+.what-show-info {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.what-show-photo {
+  width: 400px;
+  height: 300px;
+}
+
+.google-map {
+  height: 100px;
+  width: 100px;
 }
