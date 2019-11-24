@@ -3,6 +3,19 @@ import React from 'react';
 class WhatIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.showWhativity = this.showWhativity.bind(this);
+  }
+
+
+
+  showWhativity(e) {
+    e.preventDefault();
+
+    const selectedTab = this.props.selectedTab.toLowerCase();
+    const { itemIdx } = this.props;
+    
+    this.props.receiveWhativity(this.props.what);
+    this.props.openModal('user-whativity');
   }
 
   render() {
@@ -10,7 +23,7 @@ class WhatIndexItem extends React.Component {
 
     return (
       <div className="item">
-        <div className="what-index-item">
+        <div className="what-index-item" onClick={this.showWhativity}>
           <div className="what-item-info">
             <div className="what-item-name">{what.name}</div>
           </div>

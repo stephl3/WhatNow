@@ -54,17 +54,11 @@ class Home extends React.Component {
     this.props.whativities.forEach( whativity => {
       choices.push([whativity, "whativity"])
     })
-    // debugger
     return choices
     
   }
 
   shuffleChoices() {
-    // let choices = this.props.places.concat(this.props.events)
-    // let choices = [];
-    // this.props.places.forEach( place => {
-    //   choices.push([place, 'google'])
-    // });
     let choices = this.assignType();
     let newSpontaneous = [];
     let newPopular = [];
