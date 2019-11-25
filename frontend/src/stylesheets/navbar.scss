@@ -9,13 +9,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--background-color);
+    background-color: black;
     z-index: 5;
     font-family: var(--theme-font);
 }
 
 .navbar-wrapper h1 {
-    color: var(--theme-font);
+    color: var(--theme-color);
     font-weight: 700;
     font-size: 20px;
     font-family: var(--theme-font);
@@ -25,15 +25,16 @@
 
 .session-buttons {
     margin-right: 24px;
-    width: 180px;
+    width: 220px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    color: var(--theme-color);
 }
 
 .navbar-button-container {
-    width: 60px;
+    width: 100px;
     height: 30px;
     box-sizing: border-box;
     border-radius: 12px;
@@ -42,6 +43,7 @@
     align-items: center;
     justify-content: center;
     background-color: transparent;
+    padding: (0 8px 0 8px);
     &:hover {
         background-color: var(--container-color);
     }
@@ -56,7 +58,6 @@
     font-family: var(--theme-font);
     outline: none;
     text-decoration: none;
-    color: var(--font-color);
     &:hover {
         color: var(--font-color);
     }
@@ -74,4 +75,6 @@
     font-weight: 400;
     color: var(--font-color);
     background-color: inherit;
+    color: var(--theme-color);
+    padding-left: 0;
 }
