@@ -8,19 +8,15 @@
 @import './home.scss';
 @import './whativity_show.scss';
 @import './developers_page.scss';
+@import './what_item_show.scss';
 
 html {
-  // --theme-color: #FFB302;
-  // --theme-color: #4991E4;
-  --theme-color: lightyellow;
+  --theme-color: #daa520;
   --theme-font: proxima-nova, helvetica, arial, sans-serif;
-  // --background-color: #b3cde0;
-  --background-color: #73bef0;
-  --subheading-color: #4A90E1;
-  // --container-color: 	#6497b1;
-  --container-color: white;
-  // --hover-color:	#005b96;
-  --hover-color:	#73bef0;
+  --background-color: white;
+  --subheading-color: #e3b43e;
+  --container-color: #edcf83;
+  --hover-color:	#a77e18;
   --font-color: black;
 }
 
