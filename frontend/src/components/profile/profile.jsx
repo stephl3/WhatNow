@@ -88,17 +88,6 @@ class Profile extends React.Component {
       <div className="profile-wrapper">
         <div className="profile-container">
           <div className="profile-left-container">
-            <div className="profile-photo-container">
-              <img src={user.photoUrl} alt="profile photo" className="profile-photo"/>
-            </div>
-            <div className="friends-container">
-              <div className="profile-section-title">
-                Friends
-              </div>
-              <ul className="friends-list">{renderFriends}</ul>
-            </div>
-          </div>
-          <div className="profile-right-container">
             <div className="user-info-container">
               <div className="user-info name">
                 {user.firstName} {user.lastName}
@@ -113,6 +102,17 @@ class Profile extends React.Component {
                 {followButton}
               </div>
             </div>
+            <div className="profile-photo-container">
+              <img src={user.photoUrl} alt="profile photo" className="profile-photo"/>
+            </div>
+            <div className="friends-container">
+              <div className="profile-section-title">
+                Friends
+              </div>
+              <ul className="friends-list">{renderFriends}</ul>
+            </div>
+          </div>
+          <div className="profile-right-container">
             <div className="interested-whativities-container">
               <div className="profile-section-title">
                 Interested Whativities
