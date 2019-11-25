@@ -7,7 +7,7 @@
 
 .friend {
   list-style-type: none;
-  width: 30%;
+  width: 20%;
   height: 120px;
   margin: 4px;
 }
@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 2px black;
+  box-shadow: 0 1px 8px 0 var(--container-color), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 .friend-photo {
@@ -33,4 +33,6 @@
   margin-top: 4px;
   font-size: 12px;
   font-weight: 400px;
+  text-align: center;
+  color: white;
 }
