@@ -1,19 +1,53 @@
+#hoopla {
+    width: 1000px;
+    height: 700px;
+    background-color: rgba(49, 47, 47, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 15px 0 white, 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: var(--theme-font);
+    justify-content: space-evenly;
+    color: var(--container-color);
+}
+
 .what-show-wrapper {
   display: flex;
+  margin: 20px;
 }
 
 .what-show-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
 }
 
+.what-show-name {
+  font-size: 30px;
+  margin: 30px;
+  text-align: center;
+  color: var(--theme-color);
+  border-bottom: 2px solid rgb(141, 124, 30);
+}
+
+.what-show-address {
+  font-size: 18px;
+  text-align: center;
+}
 
 .what-show-photo {
   width: 400px;
   height: 300px;
+  border-radius: 8px;
+  margin: 20px;
+  box-shadow: 0 8px 15px 0 white, 0 8px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.google-map {
-  height: 100px;
-  width: 100px;
+.what-show-map {
+  width: 1000px;
+  height: 300px;
+  // display: flex;
+  // justify-content: center;
+//  border: 2px solid black;
 }
