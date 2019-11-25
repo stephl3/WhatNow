@@ -7,7 +7,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    background-color: var(--background-color);
+  background-image: url('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1422226256160-9b266e308ea6%3Fixlib%3Drb-1.2.1%26ixid%3DeyJhcHBfaWQiOjEyMDd9%26auto%3Dformat%26fit%3Dcrop%26w%3D1953%26q%3D80');
     font-family: var(--theme-font);
     color: var(--font-color);
 }
@@ -20,7 +20,8 @@
     justify-content: space-between;
     box-sizing: border-box;
     border-radius: 12px;
-    background-color: var(--theme-color);
+    background-color: rgba(255, 255, 255, 0.3);
+
 }
 
 .profile-left,
