@@ -8,9 +8,9 @@ const WhativityIndexItem = ({ whativity, api, openModal, itemIdx, selectedTab })
   if (api === 'google') {
     return <GoogleIndexItemContainer openModal={openModal} place={whativity} itemIdx={itemIdx} selectedTab={selectedTab} />
   } else if (api === 'yelp') {
-    return <YelpIndexItem openModal={openModal} event={whativity} />
+    return <YelpIndexItem openModal={openModal} event={whativity} itemIdx={itemIdx} />
   } else if (api === 'whativity') {
-    return <WhatIndexItem openModal={openModal} what={whativity} />
+    return <WhatIndexItem openModal={openModal} what={whativity} itemIdx={itemIdx} />
   }
 }
 

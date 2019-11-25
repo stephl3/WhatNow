@@ -10,6 +10,8 @@ class GoogleIndexItem extends React.Component {
     }
     this.renderPhoto = this.renderPhoto.bind(this);
     this.showWhativity = this.showWhativity.bind(this);
+    this.handleInterest = this.handleInterest.bind(this);
+    this.handleGoing = this.handleGoing.bind(this);
   }
 
   componentDidMount() {
@@ -39,8 +41,34 @@ class GoogleIndexItem extends React.Component {
     this.props.openModal('whativity');
   }
 
+  handleInterest(e) {
+    e.preventDefault();
+    let idx = Number(e.currentTarget.id);
+
+    document.querySelectorAll(".notify")[idx].classList.toggle("active");
+    document.querySelectorAll("#notifyType")[idx].classList.toggle("interesting");
+
+    setTimeout(function () {
+      document.querySelectorAll(".notify")[idx].classList.toggle("active");
+      document.querySelectorAll("#notifyType")[idx].classList.toggle("interesting");
+    }, 3000);
+  }
+
+  handleGoing(e) {
+    e.preventDefault();
+    let idx = Number(e.currentTarget.id);
+
+    document.querySelectorAll(".notify")[idx].classList.toggle("active");
+    document.querySelectorAll("#notifyType")[idx].classList.toggle("attending");
+
+    setTimeout(function () {
+      document.querySelectorAll(".notify")[idx].classList.toggle("active");
+      document.querySelectorAll("#notifyType")[idx].classList.toggle("attending");
+    }, 3000);
+  }
+
   render() {
-    const { place } = this.props
+    const { place, itemIdx } = this.props
     return (
       <div className="item">
           <div className="google-index-item" onClick={this.showWhativity}>
@@ -57,12 +85,19 @@ class GoogleIndexItem extends React.Component {
               <a href="" className="details-button"></a>
             </div>
             <div className="social-buttons hide">
-              <div className="index-button interest google">
+              <button
+                onClick={this.handleInterest}
+                id={itemIdx}
+                className="index-button interest google">
                 Interested
-              </div>
-              <div className="index-button going google">
+              </button>
+              <button
+                onClick={this.handleGoing}
+                id ={itemIdx}
+                className="index-button going google">
                 Going
-              </div>
+              </button>
+              <div className="notify"><span id="notifyType" className=""></span></div>
             </div>
           </div>
       </div>

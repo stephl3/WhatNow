@@ -3,10 +3,38 @@ import React from 'react';
 class WhatIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.handleInterest = this.handleInterest.bind(this);
+    this.handleGoing = this.handleGoing.bind(this);
+  }
+
+  handleInterest(e) {
+    e.preventDefault();
+    let idx = Number(e.currentTarget.id);
+
+    document.querySelectorAll(".notify")[idx].classList.toggle("active");
+    document.querySelectorAll("#notifyType")[idx].classList.toggle("interesting");
+
+    setTimeout(function () {
+      document.querySelectorAll(".notify")[idx].classList.toggle("active");
+      document.querySelectorAll("#notifyType")[idx].classList.toggle("interesting");
+    }, 3000);
+  }
+
+  handleGoing(e) {
+    e.preventDefault();
+    let idx = Number(e.currentTarget.id);
+
+    document.querySelectorAll(".notify")[idx].classList.toggle("active");
+    document.querySelectorAll("#notifyType")[idx].classList.toggle("attending");
+
+    setTimeout(function () {
+      document.querySelectorAll(".notify")[idx].classList.toggle("active");
+      document.querySelectorAll("#notifyType")[idx].classList.toggle("attending");
+    }, 3000);
   }
 
   render() {
-    const { what } = this.props;
+    const { what, itemIdx } = this.props;
 
     return (
       <div className="item">
@@ -22,8 +50,19 @@ class WhatIndexItem extends React.Component {
             />
           </div>
           <div className="social-buttons hide">
-            <div className="index-button interest photo">Interested</div>
-            <div className="index-button going photo">Going</div>
+            <button
+              onClick={this.handleInterest}
+              id={itemIdx}
+              className="index-button interest photo">
+              Interested
+            </button>
+            <button
+              onClick={this.handleGoing}
+              id={itemIdx}
+              className="index-button going photo">
+              Going
+            </button>
+            <div className="notify"><span id="notifyType"></span></div>
           </div>
         </div>
       </div>
