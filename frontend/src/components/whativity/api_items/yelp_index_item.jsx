@@ -23,6 +23,7 @@ class YelpIndexItem extends React.Component {
 
   handleInterest(e) {
     e.preventDefault();
+    e.stopPropagation();
     let idx = Number(e.currentTarget.id);
 
     document.querySelectorAll(".notify")[idx].classList.toggle("active");
@@ -36,6 +37,7 @@ class YelpIndexItem extends React.Component {
 
   handleGoing(e) {
     e.preventDefault();
+    e.stopPropagation();
     let idx = Number(e.currentTarget.id);
 
     document.querySelectorAll(".notify")[idx].classList.toggle("active");
