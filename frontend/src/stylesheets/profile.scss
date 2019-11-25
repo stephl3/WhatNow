@@ -20,7 +20,7 @@
     justify-content: space-between;
     box-sizing: border-box;
     border-radius: 12px;
-    background-color: var(--container-color);
+    background-color: var(--theme-color);
 }
 
 .profile-left,
@@ -80,7 +80,7 @@
 
 .user-info.location {
     font-size: 16px;
-    color: lightgray;
+    color: #9696a1;
     margin-bottom: 20px;
     -webkit-font-smoothing: antialiased;
 }

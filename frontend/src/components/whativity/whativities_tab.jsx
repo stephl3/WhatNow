@@ -20,9 +20,9 @@ class WhativitiesTab extends React.Component {
 
   render() {
     const headerLabels = [
-      'Popular',
-      'Spontaneous',
-      'Friends'
+      'popular',
+      'spontaneous',
+      'friends'
     ];
     const whativityIndexTabs = [
       this.props.popular,

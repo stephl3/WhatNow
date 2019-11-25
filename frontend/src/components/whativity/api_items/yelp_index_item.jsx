@@ -7,6 +7,8 @@ class YelpIndexItem extends React.Component {
       photoUrl: ''
     }
     this.showWhativity = this.showWhativity.bind(this);
+    this.handleInterest = this.handleInterest.bind(this);
+    this.handleGoing = this.handleGoing.bind(this);
   }
 
   showWhativity(e) {
@@ -19,8 +21,34 @@ class YelpIndexItem extends React.Component {
     this.props.openModal('whativity');
   }
 
+  handleInterest(e) {
+    e.preventDefault();
+    let idx = Number(e.currentTarget.id);
+
+    document.querySelectorAll(".notify")[idx].classList.toggle("active");
+    document.querySelectorAll("#notifyType")[idx].classList.toggle("interesting");
+
+    setTimeout(function () {
+      document.querySelectorAll(".notify")[idx].classList.toggle("active");
+      document.querySelectorAll("#notifyType")[idx].classList.toggle("interesting");
+    }, 3000);
+  }
+
+  handleGoing(e) {
+    e.preventDefault();
+    let idx = Number(e.currentTarget.id);
+
+    document.querySelectorAll(".notify")[idx].classList.toggle("active");
+    document.querySelectorAll("#notifyType")[idx].classList.toggle("attending");
+
+    setTimeout(function () {
+      document.querySelectorAll(".notify")[idx].classList.toggle("active");
+      document.querySelectorAll("#notifyType")[idx].classList.toggle("attending");
+    }, 3000);
+  }
+
   render() {
-    const { event } = this.props;
+    const { event, itemIdx } = this.props;
 
     return (
       <div className="item">
@@ -33,14 +61,22 @@ class YelpIndexItem extends React.Component {
           <div className="photo-viewport yelp">
             <img src={event.image_url} alt={event.name} className="yelp-item-photo" />
           </div>
-          <div className="social-buttons">
-            <div className="index-button interest yelp">
+          <div className="social-buttons hide">
+            <button
+              onClick={this.handleInterest}
+              id={itemIdx}
+              className="index-button interest yelp">
               Interested
-                </div>
-            <div className="index-button going yelp">
+            </button>
+            <button
+              onClick={this.handleGoing}
+              id={itemIdx}
+              className="index-button going yelp">
               Going
-            </div>
+            </button>
+            <div className="notify"><span id="notifyType" className=""></span></div>
           </div>
+          <div></div>
         </div>
       </div>
     )
