@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../stylesheets/whativity_index.scss';
+// import '../../stylesheets/whativity_index.scss';
 
 class Whativities extends React.Component{
   constructor(props){

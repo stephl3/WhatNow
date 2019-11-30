@@ -26,11 +26,11 @@ export default class UserWhativity extends Component {
               {whativity.address}
             </div>
           </div>
-          <div className="what-show-map">
-            <GoogleMaps 
-              whativity={whativity}
-            />
-          </div>
+        </div>
+        <div className="what-show-map">
+          <GoogleMaps 
+            whativity={whativity}
+          />
         </div>
       </div>
     )

@@ -7,9 +7,12 @@
     height: 100%;
     display: flex;
     justify-content: center;
-  background-image: url('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1422226256160-9b266e308ea6%3Fixlib%3Drb-1.2.1%26ixid%3DeyJhcHBfaWQiOjEyMDd9%26auto%3Dformat%26fit%3Dcrop%26w%3D1953%26q%3D80');
-    font-family: var(--theme-font);
-    color: var(--font-color);
+    background-image: url('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1422226256160-9b266e308ea6%3Fixlib%3Drb-1.2.1%26ixid%3DeyJhcHBfaWQiOjEyMDd9%26auto%3Dformat%26fit%3Dcrop%26w%3D1953%26q%3D80');
+    // font-family: var(--theme-font);
+    // font-family: 'Abel', sans-serif;
+    font-family: 'Audiowide', cursive;
+    // color: var(--subheading-color);
+    color: white;
 }
 
 .profile-container {
@@ -20,7 +23,10 @@
     justify-content: space-between;
     box-sizing: border-box;
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(49, 47, 47, 0.5);
+    // border: 1px solid var(--container-color);
+    // opacity: 0.8;
+    // background-color: rgba(255, 255, 255, 0.3);
 
 }
 
@@ -40,8 +46,21 @@
     margin: 20px;
 }
 
+.profile-right-container {
+    margin-top: 61px;
+    // padding: 50px;
+    // padding-left: 20px;
+    
+}
+
+.profile-left-container {
+    // padding-left: 40px;
+    padding-right: 50px;
+    // margin-right: 100px;
+}
+
 .profile-section-title {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 400;
     margin: 8px;
 }
@@ -55,6 +74,8 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    box-shadow: 0 3px 8px 0 var(--container-color), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    // box-shadow: 0 3px 8px 0 white, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .profile-photo {
@@ -65,13 +86,12 @@
 }
 
 .friends-container {
+    margin-top: 30px;
     border: none;
 }
 
 .user-info-container {
     padding: 4px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid gray;
 }
 
 .user-info.name {
@@ -81,15 +101,16 @@
 
 .user-info.location {
     font-size: 16px;
-    color: #9696a1;
-    margin-bottom: 20px;
+    color: #b0b0b9;
+    margin-bottom: 10px;
     -webkit-font-smoothing: antialiased;
 }
 
 .user-info.follow {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
+    color: #b0b0b9;
 }
 
 .user-info.followers {
@@ -113,11 +134,11 @@
 
 .interested-whativities-container {
     padding: 4px;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     border-bottom: 1px solid gray;
 }
 
 .user-whativities-container {
     padding: 4px;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
 }
