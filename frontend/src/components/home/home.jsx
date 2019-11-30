@@ -30,7 +30,7 @@ class Home extends React.Component {
     // this.props.fetchNearbyPlaces();
     // this.props.fetchYelpEvents();
     this.props.fetchWhativities();
-    // this.props.fetchYelpEvents();
+
     // this.shuffleChoices();
     // if (num === 0) {
     //   this.props.fetchNearbyPlaces();
@@ -63,17 +63,40 @@ class Home extends React.Component {
     let newSpontaneous = [];
     let newPopular = [];
     let newFriends = [];
-    for (let i = 0; i < 3; i++) {
-      let randomIdxOne = Math.round(Math.random() * (choices.length - 1));
-      let randomIdxTwo = Math.round(Math.random() * (choices.length - 1));
-      let randomIdxThree = Math.round(Math.random() * (choices.length - 1));
-      let choiceOne = choices[randomIdxOne];
-      let choiceTwo = choices[randomIdxTwo];
-      let choiceThree = choices[randomIdxThree];
-      newSpontaneous.push(choiceOne);
-      newPopular.push(choiceTwo);
-      newFriends.push(choiceThree);
+    
+
+    // Randomizes choice of events fetched by the API; no repeated choices.
+    while (newSpontaneous.length < 3) {
+      let randomChoiceIdx = Math.round(Math.random() * (choices.length - 1));
+      let randomChoice = choices[randomChoiceIdx];
+
+      if (!newSpontaneous.includes(randomChoice)) newSpontaneous.push(randomChoice);
     }
+
+    while (newPopular.length < 3) {
+      let randomChoiceIdx = Math.round(Math.random() * (choices.length - 1));
+      let randomChoice = choices[randomChoiceIdx];
+
+      if (!newPopular.includes(randomChoice) && !newSpontaneous.includes(randomChoice)) newPopular.push(randomChoice);
+    }
+
+    while (newFriends.length < 3) {
+      let randomChoiceIdx = Math.round(Math.random() * (choices.length - 1));
+      let randomChoice = choices[randomChoiceIdx];
+
+      if (!newFriends.includes(randomChoice) && !newPopular.includes(randomChoice) && !newSpontaneous.includes(randomChoice) ) newFriends.push(randomChoice);
+    }
+    // for (let i = 0; i < 3; i++) {
+    //   let randomIdxOne = Math.round(Math.random() * (choices.length - 1));
+    //   let randomIdxTwo = Math.round(Math.random() * (choices.length - 1));
+    //   let randomIdxThree = Math.round(Math.random() * (choices.length - 1));
+    //   let choiceOne = choices[randomIdxOne];
+    //   let choiceTwo = choices[randomIdxTwo];
+    //   let choiceThree = choices[randomIdxThree];
+    //   newSpontaneous.push(choiceOne);
+    //   newPopular.push(choiceTwo);
+    //   newFriends.push(choiceThree);
+    // }
 
     this.updateRandomWhativitiesState(newSpontaneous, newPopular, newFriends);
     
