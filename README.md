@@ -35,6 +35,10 @@ WhatNow, is a web-based app primarily built on the MERN stack (comprised of `Mon
  
 ## Features
 
+**Randomized Events**
+
+Using the google maps and yelp APIs, as well as our internal database, we created a function to be able to randomly select certain events that would be able to be shown to the user after clicking the "What Now" button. Out of a list of 40+ events, the function chooses 9 events without any duplicates.
+
 ```
 shuffleChoices() {
  let choices = this.assignType();
@@ -69,6 +73,9 @@ shuffleChoices() {
  })
 }
 ```
+**Location of the Event**
+
+With each event or activity that the user can select, they are able to find the location of that event. We integrated the google maps API to be able to show a visual location of varied events to the relative current user location. The user is able to interact with the map and be able to see certain details.
 
 ```
 <Map
@@ -122,3 +129,14 @@ User can view details of selected whativity, including a description and locatio
 **Profile**
 
 Users have a profile, which displays their past whativities, future whativities, and friends. Users have the option to follow other users.
+
+## Bonus Features to be made
+
+**Geolocation**
+Allows the user to be able to access the map and have the current location be created anywhere.
+**Create Events**
+The user is able to create and delete events that show up in the randomizer when other users click the button.
+**User Interaction**
+Users are able to see their "friends" and how many other users are attending a certain event.
+**Comments and Event interaction**
+Users are able to post on a message board pertaining to an event
