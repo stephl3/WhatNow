@@ -30,17 +30,6 @@ class Home extends React.Component {
     // this.props.fetchNearbyPlaces();
     // this.props.fetchYelpEvents();
     this.props.fetchWhativities();
-
-    // this.shuffleChoices();
-    // if (num === 0) {
-    //   this.props.fetchNearbyPlaces();
-    //   // this.shuffleChoices();
-    // } else {
-    //   this.props.fetchYelpEvents();
-    //   // this.shuffleChoices();
-    // }
-    // this.setState({ num })
-          // this.shuffleChoices();
   }
 
   assignType() {
