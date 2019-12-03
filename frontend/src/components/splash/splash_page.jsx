@@ -69,7 +69,7 @@ class SplashPage extends React.Component {
           {/* <div className="whatnow-button"> */}
           {/* </div> */}
           {/* <div className="splash-background-container"> */}
-          <div className="splash-background" style={{ backgroundImage: urlString, width: 2000, height: 500 }}></div>
+          <div className="splash-background" style={{ backgroundImage: urlString }}></div>
           {/* </div> */}
         </div>
         <div className="splash-container-2">
