@@ -25,7 +25,7 @@
 
 .session-buttons {
     margin-right: 24px;
-    width: 220px;
+    width: 250px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -34,7 +34,7 @@
 }
 
 .navbar-button-container {
-    width: 100px;
+    width: 80px;
     height: 30px;
     box-sizing: border-box;
     border-radius: 12px;
@@ -43,7 +43,6 @@
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    padding: (0 8px 0 8px);
     &:hover {
         background-color: var(--container-color);
     }
@@ -76,5 +75,8 @@
     color: var(--font-color);
     background-color: inherit;
     color: var(--theme-color);
-    padding-left: 0;
+    padding: 0;
+    &:hover {
+        color: var(--font-color);
+    }
 }

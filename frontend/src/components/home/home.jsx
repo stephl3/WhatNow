@@ -173,6 +173,11 @@ class Home extends React.Component {
 
   render() {
     const { places, events, findPlacePhoto } = this.props
+    const whatNowBtnPos = (this.state.tabVisible) ? (
+      ""
+    ) : (
+      "center"
+    );
     const loadingModal = this.state.modal ? <LoadingModal /> : null;
     // debugger
   return (
@@ -190,7 +195,7 @@ class Home extends React.Component {
           />
         </div>
       </div>
-      <div className="home-container-what">
+      <div className={`home-container-what ${whatNowBtnPos}`}>
         <div className="what-now-button-container">
           <button onClick={this.handleWhatNow} className="what-now-button">
             WHAT NOW?

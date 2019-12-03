@@ -5,14 +5,16 @@
     right: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
     background-image: url('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1422226256160-9b266e308ea6%3Fixlib%3Drb-1.2.1%26ixid%3DeyJhcHBfaWQiOjEyMDd9%26auto%3Dformat%26fit%3Dcrop%26w%3D1953%26q%3D80');
+    background-size: cover;
+    background-repeat: no-repeat;
     // font-family: var(--theme-font);
     // font-family: 'Abel', sans-serif;
     font-family: 'Audiowide', cursive;
     // color: var(--subheading-color);
     color: white;
+    display: flex;
+    justify-content: center;
 }
 
 .profile-container {
