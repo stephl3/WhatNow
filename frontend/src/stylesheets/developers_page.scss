@@ -1,10 +1,15 @@
 .developer-wrapper {
+  background-image: url('https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1422226256160-9b266e308ea6%3Fixlib%3Drb-1.2.1%26ixid%3DeyJhcHBfaWQiOjEyMDd9%26auto%3Dformat%26fit%3Dcrop%26w%3D1953%26q%3D80');
+  // background-image: url('../images/home_background.jpg');
+  -ms-background-position-y: bottom;
+  background-size: cover;
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #98A1B3;
+  justify-content: center;
+  align-items: center;
   padding-top: 40px;
 }
 
@@ -13,19 +18,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
+  padding-bottom: 45px;
   // border-bottom: 1px solid black;
 }
 
 .developer-header {
-  font-size: 48px;
+  font-size: 54px;
   font-weight: bold;
   padding: 20px;
+  font-family: var(--theme-font);
+  color: var(--theme-color);
 }
 
 .developer-container {
   display: flex;
-  width: 100%;
+  width: 80%;
+  background-color: #121212;
+  opacity: 0.95;
+  box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px 5px;
+  border-radius: 10px;
   // height: 100%;
 }
 
@@ -78,7 +89,9 @@
 }
 
 .lisa-name, .chris-name, .kevin-name, .stephen-name {
-  font-size: 36px;
+  font-size: 32px;
+  font-family: var(--theme-font);
+  color: var(--theme-color);
 }
 
 .github-links {
@@ -87,8 +100,10 @@
   // justify-content: space-between;
   cursor: pointer;
   padding-top: 30px;
+  color: var(--theme-color);
 }
 
 .github-links > div:hover {
-  color: green;
+  color: whitesmoke;
+  padding: 0.5px;
 }
