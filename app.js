@@ -31,5 +31,5 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/whativities", whativities);
 
-const port = process.env.PORT || 5060;
+const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
