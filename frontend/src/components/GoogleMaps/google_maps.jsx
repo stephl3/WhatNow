@@ -1,4 +1,4 @@
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import React from 'react';
 const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
@@ -10,38 +10,69 @@ const mapStyles = {
 class GoogleMap extends React.Component{
   constructor(props) {
     super(props);
+    this.state = {
+      showingInfoWindow: false, //Hides or the shows the infoWindow
+      activeMarker: {}, //Shows the active marker upon click
+      selectedPlace: {} //Shows the infoWindow to the selected place upon a marker
+    };
+    this.onMarkerClick = this.onMarkerClick.bind(this);
+    this.onClose = this.onClose.bind(this);
   }
 
+  onMarkerClick = (props, marker, e) => {
+    return (
+      this.setState({
+        selectedPlace: props,
+        activeMarker: marker,
+        showingInfoWindow: true
+      })
+    )
+  }
+
+  onClose = () => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+  };
+
   render() {
-    // let positions = [];
-    // const { spontaneous, popular, friends } = this.props;
-    
-    // if (spontaneous.length === 0) {
-    //   return null;
-    // }
-    
-    //   for (let i = 0; i < spontaneous.length; i++) {
-    //     if (spontaneous[i][1] === 'yelp') {
-    //       positions.push([spontaneous[i][0].latitude, spontaneous[i][0].longitude]);
-    //     } else {
-    //       positions.push([spontaneous[i][0].geometry.location.lat, spontaneous[i][0].geometry.location.lng])
-    //     }
-    //   }
-
-    const { whativity } = this.props
-
+    const { whativity } = this.props;
     return (
       <div className="google-map" style={{ height: '200px', width: '200px' }}>
         <Map
           google={this.props.google}
-          zoom={13}
+          zoom={11}
           style={mapStyles}
-          initialCenter={{ lat: 37.788268, lng: -122.407545 }}
+          initialCenter={{lat: 37.788268, lng: -122.407545} }
         >
-          <Marker position={{ lat: whativity.latitude , lng: whativity.longitude }} />
-          {/* <Marker position={{ lat: positions[0][0], lng: positions[0][1] }} />
-          <Marker position={{ lat: positions[1][0], lng: positions[1][1] }} />
-          <Marker position={{ lat: positions[2][0], lng: positions[2][1] }} /> */}
+           <Marker 
+            onClick={this.onMarkerClick}
+            name={'Current Location'}
+            position={{ 
+              lat: 37.788268,
+              lng: -122.407545
+            }} 
+          />
+          <Marker 
+            onClick={this.onMarkerClick}
+            name={whativity.name}
+            position={{ 
+              lat: whativity.latitude, 
+              lng: -(whativity.longitude) 
+            }} 
+          />
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+            onClose={this.onClose}
+          >
+            <div className="map-info-window">
+              {this.state.selectedPlace.name}
+            </div>
+          </InfoWindow>
         </Map>
       </div>
     );
