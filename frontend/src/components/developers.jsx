@@ -87,7 +87,7 @@ export default class Developers extends React.Component {
             </div>
           </div>
           <div className="stephen-developer">
-            <div className="stephen-picture">
+            <div>
               <img src={StephenPicture} alt="Stephen Lee" className="stephen-picture" />
             </div>
             <div className="stephen-info">

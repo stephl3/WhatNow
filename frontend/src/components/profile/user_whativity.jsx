@@ -13,7 +13,7 @@ export default class UserWhativity extends Component {
     }
 
     return (
-      <div id="hoopla"> 
+      <div id="what-show"> 
         <div className="what-show-wrapper">
           <div className="what-show-photo-container">
             <img src={whativity.photoUrl} alt={whativity.name} className="what-show-photo"/>

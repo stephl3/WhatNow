@@ -97,8 +97,9 @@
 }
 
 .yelp-item-photo, .google-item-photo, .what-item-photo {
-  width: 100%;
-  height: 100%;
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
 }
 
 .google-item-photo img:hover + .details-button:hover{
@@ -238,7 +239,8 @@
     position: relative;
     z-index: 0;
     border-radius: 10px;
-    font-family: var(--theme-font);
+    font-family: var(--logo-font);
+    letter-spacing: 1px;
     font-size: 24px;
     font-weight: bold;
 }
@@ -347,6 +349,7 @@
     width: 130px;
     height: 45px;
     border-radius: 10px;
+    font-family: var(--theme-font);
     font-size: 20px;
     background-color: var(--theme-color);
     &:hover {

@@ -59,8 +59,9 @@
 // }
 
 .whativity-item-photo {
-  width: 150px;
-  height: 100px;
+  width: 320px;
+  height: 280px;
+  object-fit: cover;
   padding: 15px;
   border-radius: 20px;
 }
