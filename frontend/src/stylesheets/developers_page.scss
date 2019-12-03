@@ -24,7 +24,7 @@
 
 .developer-header {
   font-size: 54px;
-  font-weight: bold;
+  font-weight: var(--theme-font-weight);
   padding: 20px;
   font-family: var(--theme-font);
   color: var(--theme-color);
@@ -33,11 +33,12 @@
 .developer-container {
   display: flex;
   width: 80%;
+  height: auto;
   background-color: #121212;
   opacity: 0.95;
   box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px 5px;
   border-radius: 10px;
-  // height: 100%;
+  min-width: 1000px;
 }
 
 .developer-container > div {
@@ -71,8 +72,8 @@
 }
 
 .lisa-picture, .chris-picture, .kevin-picture, .stephen-picture {
-  width: 300px;
-  height: 450px;
+  width: 100%;
+  height: auto;
   border-radius: 75px;
   .shadow {
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
@@ -89,7 +90,7 @@
 }
 
 .lisa-name, .chris-name, .kevin-name, .stephen-name {
-  font-size: 32px;
+  font-size: 24px;
   font-family: var(--theme-font);
   color: var(--theme-color);
 }

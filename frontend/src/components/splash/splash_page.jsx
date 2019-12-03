@@ -64,7 +64,7 @@ class SplashPage extends React.Component {
       <div className="splash-wrapper">
         <div className="splash-container-1">
           <button className="whatnow-button" onClick={this.loginModal}>
-            <h1>What Now?</h1>
+            <h1>WhatNow</h1>
           </button>
           {/* <div className="whatnow-button"> */}
           {/* </div> */}

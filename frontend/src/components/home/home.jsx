@@ -187,7 +187,7 @@ class Home extends React.Component {
       <div className={`home-container-what ${whatNowBtnPos}`}>
         <div className="what-now-button-container">
           <button onClick={this.handleWhatNow} className="what-now-button">
-            WHAT NOW?
+            WhatNow
           </button>
         </div>
       </div>

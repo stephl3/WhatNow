@@ -3,8 +3,8 @@ import React from 'react';
 const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
 const mapStyles = {
-  width: '1000px',
-  height: '300px',
+  width: '96%',
+  height: '42%',
 };
 
 class GoogleMap extends React.Component{
