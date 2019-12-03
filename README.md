@@ -26,12 +26,27 @@ WhatNow, is a web-based app primarily built on the MERN stack (comprised of `Mon
 **Google Maps API & Yelp API**
  - Allows the app to locate the users location and pinpoint certain activities around them.
 
+**Libraries & Other Technologies**
+ - google-maps-react
+ - bcrypt
+ - passport
+ - jsonwebtoken
+ - mongoose
+ 
 ## Primary Components
+
+**User Authorization**
+User authentication is achieved through the use of `Passport` and `JSON Web Token`. 
+When the user logs in, `JSON Web Token` assigns and passes around an encrypted token in requests that helps to identify the logged in user. All requests needing authentication pass through the Passport middleware that checks the provided token and allows the request only if the token is verified
+
 **Random Whativities**
-On the click of a button, random activities are fetched through the Google Maps API shown to the user through 3 categories: spontaneous, friends, and popular whativities.
+
+On the click of a button, random activities are fetched through the `Google Maps API` and `Yelp API`. They are shown to the user through 3 categories: spontaneous, friends, and popular whativities.
 
 **Whativity Show Page**
-User can view details of selected whativity, including a description and location, which is displayed through Google Maps.
+
+User can view details of selected whativity, including a description and location, which is displayed through `google-maps-react library`.
 
 **Profile**
+
 Users have a profile, which displays their past whativities, future whativities, and friends. Users have the option to follow other users.
