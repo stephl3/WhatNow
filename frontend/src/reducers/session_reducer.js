@@ -6,7 +6,8 @@ import {
 
 import {
   RECEIVE_FRIEND,
-  REMOVE_FRIEND
+  REMOVE_FRIEND,
+  RECEIVE_USER_WHATIVITY
 } from '../actions/user_actions';
 
 const initialState = {
@@ -39,6 +40,9 @@ export default function(state = initialState, action) {
       return nextState;
     case REMOVE_FRIEND:
       nextState.user.friends = action.userData.data.friends;
+      return nextState;
+    case RECEIVE_USER_WHATIVITY:
+      nextState.user.whativities = action.userData.data.whativities;
       return nextState;
     default:
       return state;

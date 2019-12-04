@@ -7,12 +7,12 @@ class ProfileWhativityItem extends React.Component {
     this.showWhativity = this.showWhativity.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchWhativity(this.props.item._id);
-  }
+  // componentDidMount() {
+  //   this.props.fetchWhativity(this.props.key);
+  // }
 
   showWhativity() {
-    debugger
+    // debugger
     this.props.receiveWhativity(this.props.item);
     this.props.openModal('user-whativity');
   }
@@ -20,7 +20,7 @@ class ProfileWhativityItem extends React.Component {
   render() {
     const { item } = this.props;
     const { name, address } = item
-  
+    // debugger
     return(
       <div onClick={this.showWhativity} className="whativity-item">
         <img src={item.photoUrl} alt={item.name} className="whativity-item-photo"/>
