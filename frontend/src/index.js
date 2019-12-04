@@ -6,6 +6,8 @@ import jwt_decode from "jwt-decode";
 import { logout } from './actions/session_actions';
 import { setAuthToken } from "./util/session_api_util";
 import "./stylesheets/index.scss";
+// import { addUserWhativity } from './util/user_api_util';
+import { addUserWhativity } from './actions/user_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -30,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // test start
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.addUserWhativity = addUserWhativity;
   // test end
 
   const root = document.getElementById("root");
