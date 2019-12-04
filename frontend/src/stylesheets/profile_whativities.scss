@@ -4,7 +4,8 @@
 }
 
 .interested-whativities-list {
-  height: 24px;
+  height: 300px;
+  overflow: scroll;
 }
 
 .user-whativities-container{
@@ -59,8 +60,8 @@
 // }
 
 .whativity-item-photo {
-  width: 320px;
-  height: 280px;
+  width: 200px;
+  height: 100px;
   object-fit: cover;
   padding: 15px;
   border-radius: 20px;

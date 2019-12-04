@@ -15,7 +15,7 @@ class YelpIndexItem extends React.Component {
     e.preventDefault();
     const selectedTab = this.props.selectedTab.toLowerCase();
     const { itemIdx } = this.props;
-    debugger
+    // debugger
     this.props.receiveWhativityImg(selectedTab, itemIdx, this.state.photoUrl);
     this.props.receiveWhativity(this.props.event)
     this.props.openModal('whativity');

@@ -21,6 +21,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.get('/user/:user_id', (req, res) => {
+  
   Whativity.find({ user: req.params.user_id })
     .then(whativities => res.json(whativities))
     .catch(err =>

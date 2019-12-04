@@ -44,12 +44,13 @@ router.post("/register", (req, res) => {
           newUser.password = hash;
           newUser.save()
             .then(user => {
-              const payload = { 
-                id: user.id, 
-                username: user.username, 
+              const payload = {
+                id: user.id,
+                username: user.username,
                 firstName: user.firstName,
                 lastName: user.lastName,
-                friends: user.friends
+                friends: user.friends,
+                whativities: user.whativities
               };
 
               jwt.sign(
@@ -94,7 +95,8 @@ router.post("/login", (req, res) => {
           username: user.username,
           firstName: user.firstName,
           lastName: user.lastName,
-          friends: user.friends
+          friends: user.friends,
+          whativities: user.whativities
         };
 
         jwt.sign(
@@ -126,18 +128,49 @@ router.get('/:id', (req, res) => {
 router.patch('/update/:id', (req, res) => {
   User.findOne({_id: req.params.id})
     .then(user => {
-      if (!user) {
+      if (req.body.friendId) { //add friend
         user.friends.push(req.body.friendId);
         user.save();
         console.log(user);
         res.status(200).json(user);
-      } else {
-        let idx = user.friends.indexOf(req.body.friendId);
-        user.friends.splice(idx, 1);
+      } else if (req.body.whativityId) { //add user whativity
+        user.whativities.push(req.body.whativityId);
         user.save();
         console.log(user);
         res.status(200).json(user);
       }
+      
+      // if (!user) {
+      //   user.friends.push(req.body.friendId);
+      //   user.save();
+      //   console.log(user);
+      //   res.status(200).json(user);
+      // } else {
+      //   let idx = user.friends.indexOf(req.body.friendId);
+      //   user.friends.splice(idx, 1);
+      //   user.save();
+      //   console.log(user);
+      //   res.status(200).json(user);
+      // }
     })
 })
+
+// router.patch('/update/:id', (req, res) => {
+//   User.findOne({_id: req.params.id})
+//     .then(user => {
+      // debugger
+      // if (!user) {
+        // user.whativities.push(req.body.whativityId);
+        // user.save();
+        // console.log(user);
+        // res.status(200).json(user);
+      // } else {
+      //   let idx = user.whativities.indexOf(req.body.whativityId);
+      //   user.whativities.splice(idx, 1);
+      //   user.save();
+      //   console.log(user);
+      //   res.status(200).json(user);
+      // }
+//     })
+// })
 module.exports = router;

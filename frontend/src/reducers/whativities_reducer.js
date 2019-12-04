@@ -16,7 +16,6 @@ const WhativitiesReducer = (state = { all:[], current:{ imgUrl:""}, userWhativit
       newState.userWhativities = action.whativities.data;
       return newState;
     case RECEIVE_WHATIVITY_IMG:
-      debugger
       newState.current.imgUrl = action.imgUrl;
       return newState;
     default:

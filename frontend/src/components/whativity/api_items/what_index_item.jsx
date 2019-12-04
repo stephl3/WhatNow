@@ -27,6 +27,8 @@ class WhatIndexItem extends React.Component {
       document.querySelectorAll(".notify")[idx].classList.toggle("active");
       document.querySelectorAll("#notifyType")[idx].classList.toggle("interesting");
     }, 3000);
+
+    this.props.addUserWhativity(this.props.userId, this.props.what._id)
   }
 
   handleGoing(e) {
