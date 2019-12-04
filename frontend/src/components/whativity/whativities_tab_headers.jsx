@@ -16,7 +16,7 @@ const WhativitiesTabHeaders = ({ headerLabels, selectedTab, onTabHeaderClick, ta
         }}
         onClick={() => onTabHeaderClick(idx)}>
         <div className="whativities-tab-header-label">
-          {headerLabels[idx].toUpperCase()}
+          {headerLabels[idx].charAt(0).toUpperCase() + headerLabels[idx].slice(1)}
         </div>
       </NavLink>
     )
