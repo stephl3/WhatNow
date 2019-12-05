@@ -25,7 +25,7 @@ export default class Developers extends React.Component {
               <div className="lisa-name">Lisa Wen</div>
               <div className="github-links">
                 <div>
-                  <a href="https://github.com/lisaw97">
+                  <a href="https://github.com/lisaw97" target="_blank">
                     <Octicon icon={MarkGithub} size='44px' />
                   </a>
                 </div>
@@ -33,7 +33,7 @@ export default class Developers extends React.Component {
                   <Octicon icon={Mail} size='48px' />
                 </div>
                 <div>
-                  <a href="https://www.linkedin.com/in/lisa-wen-006378133/">
+                  <a href="https://www.linkedin.com/in/lisa-wen-006378133/" target="_blank">
                     <IoLogoLinkedin size="48px" />
                   </a>
                 </div>
@@ -48,7 +48,7 @@ export default class Developers extends React.Component {
               <div className="chris-name">Christopher Trinh</div>
               <div className="github-links">
                 <div>
-                  <a href="https://github.com/chris510">
+                  <a href="https://github.com/chris510" target="_blank">
                     <Octicon icon={MarkGithub} size='44px' />
                   </a>
                 </div>
@@ -56,7 +56,7 @@ export default class Developers extends React.Component {
                   <Octicon icon={Mail} size='48px' />
                 </div>
                 <div>
-                  <a href="https://www.linkedin.com/in/trinh-christopher/">
+                  <a href="https://www.linkedin.com/in/trinh-christopher/" target="_blank">
                     <IoLogoLinkedin size="48px" />
                   </a>
                 </div>
@@ -71,7 +71,7 @@ export default class Developers extends React.Component {
               <div className="kevin-name">Kevin Suriawijaya</div>
               <div className="github-links">
                 <div>
-                  <a href="https://github.com/airusk">
+                  <a href="https://github.com/airusk" target="_blank">
                     <Octicon icon={MarkGithub} size='44px'/>
                   </a>
                 </div>
@@ -79,7 +79,7 @@ export default class Developers extends React.Component {
                   <Octicon icon={Mail} size='48px' />
                 </div>
                 <div>
-                  <a href="https://www.linkedin.com/in/nsuriawijaya/">
+                  <a href="https://www.linkedin.com/in/airusk/" target="_blank">
                     <IoLogoLinkedin size="48px" />
                   </a>
                 </div>
@@ -94,7 +94,7 @@ export default class Developers extends React.Component {
               <div className="stephen-name">Stephen Lee</div>
               <div className="github-links">
                 <div>
-                  <a href="https://github.com/stephl3">
+                  <a href="https://github.com/stephl3" target="_blank">
                     <Octicon icon={MarkGithub} size='44px' />
                   </a>
                 </div>
@@ -102,7 +102,7 @@ export default class Developers extends React.Component {
                   <Octicon icon={Mail} size='48px' />
                 </div>
                 <div>
-                  <a href="https://www.linkedin.com/in/mrstephenlee1/">
+                  <a href="https://www.linkedin.com/in/mr-stephen-lee/" target="_blank">
                     <IoLogoLinkedin size="48px" />
                   </a>
                 </div>
