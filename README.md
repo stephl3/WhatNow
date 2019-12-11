@@ -1,6 +1,6 @@
 # WhatNow
 
-Check out WhatNow [live](http://wut-now.herokuapp.com/#/)!
+[Live Demo](http://wut-now.herokuapp.com/#/)!
 
 ## Background and Overview
 
