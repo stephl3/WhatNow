@@ -1,8 +1,10 @@
 # WhatNow
 
-Check out WhatNow [live](http://wut-now.herokuapp.com/#/)!
+[Live Demo](http://wut-now.herokuapp.com/#/)!
 
 ## Background and Overview
+
+![](splash1.png)
 
 Sometimes, plans fall through, and you find yourself in a state of social limbo. You and your friends decide to go to the state fair only to find that it's just been closed down for money laundering. Everyone’s thinking it and you blurt it out loud, _what now?_
 
@@ -16,6 +18,9 @@ Our application will display a list of events and once you have a general idea o
 * Spontaneous: We don’t want users to be bogged down by the sheer mass of options in the next coming days, weeks, and months. We put emphasis on the _now_ and filter events that aren't happening in the very near future. What _now_, not what later.
 
 WhatNow, is a web-based app primarily built on the MERN stack (comprised of `MongoDB`, `Express`, `React`, and `Node`).
+
+![](main1.png)
+
 
 ## Technologies
 
@@ -39,7 +44,7 @@ WhatNow, is a web-based app primarily built on the MERN stack (comprised of `Mon
 
 Using the google maps and yelp APIs, as well as our internal database, we created a function to be able to randomly select certain events that would be able to be shown to the user after clicking the "What Now" button. Out of a list of 40+ events, the function chooses 9 events without any duplicates.
 
-```
+```javascript
 shuffleChoices() {
  let choices = this.assignType();
  let newSpontaneous = [];
@@ -77,7 +82,7 @@ shuffleChoices() {
 
 With each event or activity that the user can select, they are able to find the location of that event. We integrated the google maps API to be able to show a visual location of varied events to the relative current user location. The user is able to interact with the map and be able to see certain details.
 
-```
+```javascript
 <Map
   google={this.props.google}
   zoom={11}
@@ -134,9 +139,21 @@ Users have a profile, which displays their past whativities, future whativities,
 
 **Geolocation**
 Allows the user to be able to access the map and have the current location be created anywhere.
+
 **Create Events**
 The user is able to create and delete events that show up in the randomizer when other users click the button.
+
 **User Interaction**
 Users are able to see their "friends" and how many other users are attending a certain event.
+
 **Comments and Event interaction**
 Users are able to post on a message board pertaining to an event
+
+### Contributors
+
+------
+
+[Christopher Trinh](https://github.com/chris510) |
+[Stephen Lee](https://github.com/stephl3) |
+[Lisa Wen](https://github.com/lisaw97) |
+[Kevin Suriawijaya](https://github.com/airusk)

@@ -3,6 +3,7 @@ import * as UserAPIUtil from "../util/user_api_util";
 export const RECEIVE_USER_INFO = 'RECEIVE_USER_INFO';
 export const RECEIVE_FRIEND = 'RECEIVE_FRIEND';
 export const REMOVE_FRIEND = 'REMOVE_FRIEND';
+export const RECEIVE_USER_WHATIVITY = 'RECEIVE_USER_WHATIVITY';
 
 export const receiveUserInfo = userData => {
     return {
@@ -20,6 +21,14 @@ const removeFriend = userData => ({
     type: REMOVE_FRIEND,
     userData
 })
+
+export const receiveUserWhativity = userData => {
+    // debugger
+    return {
+        type: RECEIVE_USER_WHATIVITY,
+        userData
+    }
+};
 
 export const fetchUserInfo = userId => dispatch => {
     return (UserAPIUtil.fetchUserInfo(userId)
@@ -39,3 +48,8 @@ export const deleteFriend = (userId, friendId) => dispatch => (
             dispatch(removeFriend(userData))
         })
 )
+
+export const addUserWhativity = (userId, whativityId) => dispatch =>
+  UserAPIUtil.addUserWhativity(userId, whativityId).then(userData => {
+    dispatch(receiveUserWhativity(userData));
+  });

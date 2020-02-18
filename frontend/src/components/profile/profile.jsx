@@ -5,6 +5,7 @@ import '../../stylesheets/profile_whativities.scss';
 // import ProfileWhativityItem from './profile_whativity_item';
 import ProfileWhativityItemContainer from './profile_whativity_item_container';
 import FriendContainer from './friend_container';
+import { fetchWhativity } from "../../actions/whativity_actions";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -21,14 +22,20 @@ class Profile extends React.Component {
   componentDidMount() {
     this.props.fetchWhativities();
     this.props.fetchUserInfo(this.props.match.params.userId)
-    return this.props.fetchUserInfo(this.props.match.params.userId)
       .then(user => {
-        //replace poop festival with line below it
-        // this.setState({ whativities: [{ name: "poop festival", address: "poop st." }] })
-        // this.setState({ whativities: user.userData.data.whativities })
-        // this.setState({ firstName: user.userData.data.firstName })
         this.setState({ user: user.userData.data })
-      }); 
+        let interested = [];
+        user.userData.data.whativities.forEach(id => {
+          this.props.fetchWhativity(id)
+            .then(whativity => {
+              whativity = whativity.whativity.data;
+              if (whativity) {  
+                interested.push(whativity);
+                this.setState({ whativities: interested });
+              }
+            })  
+        })
+      })
   }
 
   toggleFriend(e) {
@@ -47,9 +54,8 @@ class Profile extends React.Component {
     }
   }
 
-
-
   render() {
+    // debugger
     const { friends, currentUser, fetchWhativity, openModal } = this.props;
     const { user } = this.state;
     let renderFriends;
@@ -72,6 +78,22 @@ class Profile extends React.Component {
     ) : (
       <button onClick={this.toggleFriend} className="user-info follow-button">{followButtonLabel}</button>
     )
+
+    let userInterested;
+    if (this.state.whativities.length > 0) {
+      // debugger
+      userInterested = this.state.whativities.map((whativityId, i) => {
+        return (
+          <ProfileWhativityItemContainer
+            key={whativityId}
+            item={this.state.whativities[i]}
+            fetchWhativity={fetchWhativity}
+            openModal={openModal}
+          />
+        );
+      });
+    }
+    
 
     let userWhativities = this.props.whativities.map( whativity => {
       return (
@@ -118,7 +140,7 @@ class Profile extends React.Component {
                 Interested Whativities
               </div>
               <ul className="interested-whativities-list">
-
+                {userInterested}
               </ul>
             </div>
             <div className="user-whativities-container">
