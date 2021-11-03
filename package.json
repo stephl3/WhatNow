@@ -47,7 +47,7 @@
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "validator": "^12.0.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
