@@ -35,7 +35,7 @@
     "frontend": "file:frontend",
     "google-maps-react": "^2.0.2",
     "googleapis": "^45.0.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "jwt-decode": "^2.2.0",
     "mongoose": "^5.7.11",
     "node-sass": "^4.13.0",
